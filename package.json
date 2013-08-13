@@ -1,7 +1,7 @@
 {
-  "name": "dgu-joint-assets",
+  "name": "shared_dguk_assets",
   "version": "1.0.0",
-  "description": "CSS/JS/static files for Drupal & CKAN sides of data.gov.uk.",
+  "description": "Source for DGUK assets shared by both CKAN and Drupal.",
   "main": "index.js",
   "dependencies": {
     "nodewatch": "~0.3.1",
@@ -21,13 +21,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/datagovuk/dgu-joint-assets"
+    "url": "git://github.com/datagovuk/shared_dguk_assets"
   },
   "author": "Tom Rees",
   "license": "",
   "readmeFilename": "README.md",
   "gitHead": "9df642337923cd7fb0b8618a5a6a79e856654c4a",
   "bugs": {
-    "url": "https://github.com/datagovuk/dgu-joint-assets/issues"
+    "url": "https://github.com/datagovuk/shared_dguk_assets/issues"
   }
 }

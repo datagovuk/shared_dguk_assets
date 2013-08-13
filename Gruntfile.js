@@ -28,12 +28,12 @@ module.exports = function(grunt) {
       },
       styles: {
         src: [  /* Order of resources is important. */
-          'assets/src/css/bootstrap.css',
-          'assets/src/css/bootstrap-responsive.css',
-          'assets/src/css/jquery-ui-1.10.2.custom.css',
-          'assets/src/css/jquery.chosen.css',
-          'assets/src/css/elements.less',
-          'assets/src/css/datagovuk.less'
+          'src/css/bootstrap.css',
+          'src/css/bootstrap-responsive.css',
+          'src/css/jquery-ui-1.10.2.custom.css',
+          'src/css/jquery.chosen.css',
+          'src/css/elements.less',
+          'src/css/datagovuk.less'
         ],
         dest: 'assets/css/datagovuk.less'
       }
@@ -72,13 +72,13 @@ module.exports = function(grunt) {
           {
             expand: true,
             src: '*.jpg',
-            cwd: 'assets/src/img/',
+            cwd: 'src/img/',
             dest: 'assets/img/'
           },
           {
             expand: true,
             src: '*.png',
-            cwd: 'assets/src/img/',
+            cwd: 'src/img/',
             dest: 'assets/img/'
           }
         ]
