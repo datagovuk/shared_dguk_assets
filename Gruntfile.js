@@ -33,7 +33,9 @@ module.exports = function(grunt) {
           'src/css/jquery-ui-1.10.2.custom.css',
           'src/css/jquery.chosen.css',
           'src/css/elements.less',
-          'src/css/datagovuk.less'
+          'src/css/dgu-shared.less',
+          'src/css/dgu-drupal.less',
+          'src/css/dgu-ckan.less'
         ],
         dest: 'assets/css/datagovuk.less'
       }
