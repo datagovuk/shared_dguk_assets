@@ -6,8 +6,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     copy: {
       jquery: {
-        src: 'src/js/jquery-1.9.1.min.js',
-        dest: 'assets/js/jquery-1.9.1.min.js',
+        src: 'src/js/jquery-1.8.3.min.js',
+        dest: 'assets/js/jquery-1.8.3.min.js',
       },
     },
     concat: {
@@ -112,6 +112,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('styles', ['concat:styles','less:build','timestamp']);
-  grunt.registerTask('scripts', ['concat:scripts','uglify:build','timestamp']);
+  grunt.registerTask('scripts', ['copy','concat:scripts','uglify:build','timestamp']);
   grunt.registerTask('default', ['styles','scripts','imagemin','timestamp']);
 };
