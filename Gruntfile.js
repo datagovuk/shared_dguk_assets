@@ -10,19 +10,19 @@ module.exports = function(grunt) {
       },
       scripts: {
         src: [ /* Order of resources is important */
-          'assets/js/jquery-ui-1.10.2.custom.js',
-          'assets/js/underscore-1.1.6.js',
-          'assets/js/backbone-0.5.1.js',
-          'assets/js/modernizr-2.6.2.custom.js',
-          'assets/js/spin.min.js',
-          'assets/js/json2.js',
-          'assets/js/jquery.tmpl.beta1.js',
-          'assets/js/jquery.cookie.min.js',
-          'assets/js/jquery.chosen-0.9.7.js',
-          'assets/js/jquery.dotdotdot-1.5.9.js',
-          'assets/js/jquery.placeholder.js',
-          'assets/js/bootstrap-2.0.3.min.js',
-          'assets/js/bootstrap-hashchange.js'
+          'src/js/jquery-ui-1.10.2.custom.js',
+          'src/js/underscore-1.1.6.js',
+          'src/js/backbone-0.5.1.js',
+          'src/js/modernizr-2.6.2.custom.js',
+          'src/js/spin.min.js',
+          'src/js/json2.js',
+          'src/js/jquery.tmpl.beta1.js',
+          'src/js/jquery.cookie.min.js',
+          'src/js/jquery.chosen-0.9.7.js',
+          'src/js/jquery.dotdotdot-1.5.9.js',
+          'src/js/jquery.placeholder.js',
+          'src/js/bootstrap-2.0.3.min.js',
+          'src/js/bootstrap-hashchange.js'
         ],
         dest: 'assets/js/vendor.js'
       },
