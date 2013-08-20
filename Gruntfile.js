@@ -4,6 +4,12 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    copy: {
+      jquery: {
+        src: 'src/js/jquery-1.9.1.min.js',
+        dest: 'assets/js/jquery-1.9.1.min.js',
+      },
+    },
     concat: {
       options: {
         banner: '/*! VENDOR JS concatenated <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -97,6 +103,7 @@ module.exports = function(grunt) {
     grunt.file.write(this.files[0].dest, Date.now());
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
