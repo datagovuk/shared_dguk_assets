@@ -71,6 +71,53 @@ textarea:focus {
     .box-shadow-double(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(50, 100, 0, 0.6));
 }
 
+
+/* Bootstrap overrides */
+/* ------------------- */
+.btn-primary {
+    /* Very delicate modified Bootstrap code here: */
+    background-color: #ade44e;
+    background-image: -moz-linear-gradient(top, #bae772, #a4d84a);
+    background-image: -ms-linear-gradient(top, #bae772, #a4d84a);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bae772), to(#a4d84a));
+    background-image: -webkit-linear-gradient(top, #bae772, #a4d84a);
+    background-image: -o-linear-gradient(top, #bae772, #a4d84a);
+    background-image: linear-gradient(top, #bae772, #a4d84a);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bae772', endColorstr='#a4d84a', GradientType=0);
+    border-color: #690;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+    color: #333333;
+    &:hover,
+    &:active,
+    &.active,
+    &.disabled,
+    &[disabled] {
+        background-color: #a4d84a;
+    }
+    &:active,
+    &.active {
+        background-color: #79aa00 \9;
+    }
+    &.active {
+        color: #333333;
+        color: rgba(255, 255, 255, 0.75);
+    }
+    .caret {
+        border-top-color: #333;
+    }
+    &:hover {
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+        color: #333333;
+    }
+}
+.btn-group .btn-primary.dropdown-toggle {
+    border-left: 1px solid #7b2;
+}
+
 /* Page Header */
 /* ----------- */
 body {
@@ -320,6 +367,47 @@ nav {
   margin: 20px;
 }
 
+#subnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 6px 18px;
+    border: 1px solid #ccc;
+    border-top: none;
+    li {
+        display: inline;
+    }
+    .divider {
+        color: #bbb;
+    }
+    a.active {
+        font-weight: bold;
+        color: #336600;
+    }
+}
+
+
+/* Autocomplete dialogs */
+.ui-autocomplete {
+  background: #fff;
+  .ui-state-hover,
+  .ui-state-focus {
+    background-color: #B8E56E;
+    background-image: none;
+    border-color: #97CB42;
+    color: #000;
+  }
+}
+
+
+/* The classic "boxed" look */
+.facet-box,
+.boxed {
+    .drop-shadow(0px, 2px, 6px, 0.10);
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 14px 17px;
+}
 
 .panel-pane,
 div.view-id-blogs div.views-row {
@@ -331,3 +419,5 @@ div.view-id-blogs div.views-row {
   margin-bottom: 10px;
   padding: 14px 17px;
 }
+
+
