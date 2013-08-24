@@ -9,6 +9,10 @@ module.exports = function(grunt) {
         src: 'src/js/jquery-1.8.3.min.js',
         dest: 'assets/js/jquery-1.8.3.min.js',
       },
+      favicon: {
+        src: 'src/img/favicon.ico',
+        dest: 'assets/img/favicon.ico',
+      },
     },
     concat: {
       options: {

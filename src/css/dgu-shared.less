@@ -121,11 +121,12 @@ textarea:focus {
 /* Page Header */
 /* ----------- */
 body {
+  background: #f4f4f4;
   @media (max-width: 767px) { 
     padding-left: 0;
     padding-right: 0;
+    background: #fff;
   }
-  background: #f4f4f4;
 }
 
 #blackbar {
@@ -171,6 +172,11 @@ body {
     position: absolute;
     top: 25px;
     right: 10px;
+    @media (max-width: 400px) {
+        /* Invented a new breakpoint for really small screens */
+        top: 18px;
+        right: 4px;
+    }
   }
 
   #dgu-header.retina-img {
@@ -187,6 +193,16 @@ body {
           background-size: 100% 100%;
           img { display: none; } 
       }
+      @media (max-width: 400px) {
+          /* Invented a new breakpoint for really small screens */
+          @scale: 0.8;
+          margin-top: 10px;
+          margin-bottom: 15px;
+          margin-left: -15px;
+          transform: scale(@scale,@scale);
+          -ms-transform: scale(@scale,@scale); /* IE 9 */
+          -webkit-transform: scale(@scale,@scale); /* Safari and Chrome */
+      }
   }
 }
 
@@ -201,7 +217,13 @@ body {
     li {
         background: #3A3A3A;
         float: none;
-        &:hover { a{color: #fff;} background-color: #303030; }
+        &:hover { 
+            a { 
+                color: #fff;
+                @media (max-width: 767px) { background: none !important; }
+            }
+            background-color: #303030; 
+        }
         a { 
             color: #ccc; 
             font-size: 14px;
@@ -210,7 +232,11 @@ body {
         }
     }
     li.active  {
-        a { color: #fff; }
+        @media (max-width: 767px) { background: #111111 !important; }
+        a { 
+            color: #fff;
+            @media (max-width: 767px) { background: none !important; }
+        }
     }
 }
 /* Multi-mode nav bar */
@@ -268,7 +294,9 @@ body {
         }
         &.nav-data-requests { width: 14%; }
         &.nav-linked-data { width: 13%; }
-        &.nav-participate { width: 13%; }
+        &.nav-home { width: 11%; }
+        &.nav-data { width: 11%; }
+        &.nav-location { width: 11%; }
         &.nav-home { 
             a { border-left: 1px solid #000; }
         }
@@ -292,11 +320,8 @@ body {
 
 .content-container {
   padding-top: 20px;
-}
-@media (max-width: 767px) {
-  .content-container {
-    padding-left: 10px;
-    padding-right: 10px;
+  @media (max-width: 767px) {
+    padding-top: 0px;
   }
 }
 
@@ -315,6 +340,9 @@ body {
     }
     .links a {
         color: #666;
+    }
+    @media (max-width: 767px) {
+      margin-top: 0;
     }
     @media (max-width: 979px) { 
       .links li {
@@ -347,22 +375,19 @@ body {
 /* Drupal main page furniture */
 #main-content {
   margin-bottom: 20px;
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+    > h1 {
+      background: #f4f4f4;
+      margin: 0 0 0 0;
+      padding: 10px 10px 10px 10px;
+    }
+  }
 }
 nav {
   margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
-  #main-content {
-    float: left;
-    width: 100%;
-  }
-  #sidebar1 {
-    float: left;
-    width: 38%;
-    padding-left: 2%;
-  }
-}
 .drupal-messages {
   margin: 20px;
 }
@@ -400,24 +425,18 @@ nav {
 
 
 /* The classic "boxed" look */
+// div.view-id-blogs div.views-row 
 .facet-box,
 .boxed {
-    .drop-shadow(0px, 2px, 6px, 0.10);
+    //.drop-shadow(0px, 2px, 6px, 0.10);
     background: #fff;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     padding: 14px 17px;
+    overflow: hidden;
+    word-wrap: break-word;
+    @media (max-width: 767px) {
+        margin-bottom: 0 !important;
+        border: none !important;
+    }
 }
-
-.panel-pane,
-div.view-id-blogs div.views-row {
-  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  padding: 14px 17px;
-}
-
-
