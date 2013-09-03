@@ -13,6 +13,16 @@ module.exports = function(grunt) {
         src: 'src/img/favicon.ico',
         dest: 'assets/img/favicon.ico',
       },
+      fontawesome_ie7: {
+        src: 'src/css/font-awesome-ie7.min.css',
+        dest: 'assets/css/font-awesome-ie7.min.css',
+      },
+      font: {
+        expand: true,
+        cwd: 'src/font/',
+        src: '*',
+        dest: 'assets/font/',
+      },
     },
     concat: {
       options: {
@@ -42,6 +52,7 @@ module.exports = function(grunt) {
           'src/css/bootstrap-responsive.css',
           'src/css/jquery-ui-1.10.2.custom.css',
           'src/css/jquery.chosen.css',
+          'src/css/font-awesome.css',
           'src/css/elements.less',
           'src/css/dgu-shared.less',
           'src/css/dgu-drupal.less',
@@ -116,6 +127,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('styles', ['concat:styles','less:build','timestamp']);
-  grunt.registerTask('scripts', ['copy','concat:scripts','uglify:build','timestamp']);
-  grunt.registerTask('default', ['styles','scripts','imagemin','timestamp']);
+  grunt.registerTask('scripts', ['copy:jquery','concat:scripts','uglify:build','timestamp']);
+  grunt.registerTask('default', ['styles','scripts','copy','imagemin','timestamp']);
 };
