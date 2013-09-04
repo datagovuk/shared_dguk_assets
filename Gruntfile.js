@@ -31,8 +31,7 @@ module.exports = function(grunt) {
       scripts: {
         src: [ /* Order of resources is important */
           'src/js/jquery-ui-1.10.2.custom.js',
-          'src/js/underscore-1.1.6.js',
-          'src/js/backbone-0.5.1.js',
+          'src/js/jquery.tagcloud.js',
           'src/js/modernizr-2.6.2.custom.js',
           'src/js/spin.min.js',
           'src/js/json2.js',
@@ -63,7 +62,8 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! VENDOR JS minified <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*! VENDOR JS minified <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        beautify: true, mangle: false, compress: false, // <-- DEBUG MODE
       },
       build: {
         src: 'assets/js/vendor.js',
