@@ -26,6 +26,10 @@ module.exports = function(grunt) {
     },
     uglify: {
       //options: { beautify: true, mangle: false, compress: false, }, // <-- DEBUG MODE 
+      respondjs: {
+        src: 'src/js/respond.src.js',
+        dest: 'assets/js/respond.min.js',
+      },
       vendor: {
         src: [ /* Order of resources is important */
           'src/js/jquery-ui-1.10.2.custom.js',
@@ -107,6 +111,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('styles', ['less:shared','less:drupal','timestamp']);
-  grunt.registerTask('scripts', ['copy:jquery','uglify:vendor','timestamp']);
+  grunt.registerTask('scripts', ['copy:jquery','uglify:vendor','uglify:respondjs','timestamp']);
   grunt.registerTask('default', ['styles','scripts','copy','imagemin','timestamp']);
 };
