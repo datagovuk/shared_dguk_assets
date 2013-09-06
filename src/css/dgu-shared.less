@@ -212,31 +212,24 @@ body {
   margin-bottom: 0;
 }
 #dgu-nav {
-    background: #000;
+    background: #3A3A3A;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
     margin: 0 0 0 0;
     float: none;
     li {
-        background: #3A3A3A;
         float: none;
-        &:hover { 
-            a { 
-                color: #fff;
-                @media (max-width: 767px) { background: none !important; }
-            }
-            background-color: #303030; 
-        }
         a { 
             color: #ccc; 
             font-size: 14px;
             font-weight: 300;
             .no-drop-shadow();
         }
-    }
-    li.active  {
-        @media (max-width: 767px) { background: #111111 !important; }
-        a { 
-            color: #fff;
-            @media (max-width: 767px) { background: none !important; }
+        &.active a, a:hover {
+          color: #fff;
+          .at2x('/assets/img/nav-chevron.png',14px,7px);
+          background-position: 50% 100% !important;
         }
     }
 }
@@ -245,6 +238,15 @@ body {
 @media (max-width: 767px) {
     /* Hide on phones, allow nav buttons to make appear */
     .main-nav-collapse { height: 0; overflow: hidden; }
+    #dgu-nav {
+        li:hover {
+          background: #333;
+        }
+        li a {
+          /* Hide chevron */
+          background-image: none !important;
+        }
+    }
 }
 @media (min-width: 768px) {
     /* Whatever the button state, height is automatic */
@@ -256,61 +258,28 @@ body {
         -moz-transition: none !important;
     }
     #dgu-nav {
-      background: none;
-      width: 100%;
+      height: 40px;
       display: block !important;
     }
     #dgu-nav li {
         width: 10%;
         float: left;
-        &:hover {
-            background: #3A3A3A;
-        }
         a {
             padding-left: 0;
             padding-right: 0;
             text-align: center;
-            border-top: 1px solid #000;
-            &:hover {
-                color: #fff;
-                .at2x('/assets/img/nav-chevron.png',14px,7px);
-                background-position: 50% 100% !important;
-            }
-            .nav-icon {
-                width: 21px;
-                height: 18px;
-                margin: 0 10px -1px 0;
-                .at2x('/assets/img/home-icon.png',21px,36px);
-                display: inline-block;
-                zoom: 1;
-                *display: inline;
-                vertical-align: top;
-            }
         }
-        &.active a { 
-            color: #fff;
-            .at2x('/assets/img/nav-chevron.png',14px,7px);
-            background-color: transparent !important; 
-            background-position: 50% 100% !important;
+        &.active a {
+          /* Hide highlight */
+          background-color: transparent;
         }
         &.nav-data-requests { width: 14%; }
         &.nav-linked-data { width: 13%; }
         &.nav-home { width: 11%; }
         &.nav-data { width: 11%; }
-        &.nav-location { width: 11%; }
-        &.nav-home { 
-            a { border-left: 1px solid #000; }
-        }
-        &.nav-about { 
-            a { border-right: 1px solid #000; }
-        }
-        &:hover {
-            a {
-                .nav-icon {
-                    background-position: 0 -18px;
-                }
-            }
-        }
+        &.nav-participate { width: 11%; }
+        &.nav-apps { width: 9%; }
+        &.nav-location { width: 10%; }
     }
 }
 @media (min-width: 1200px) {
@@ -373,10 +342,11 @@ body {
 }
 
 
-/* Drupal main page furniture */
 #main-content {
+  margin-top: 20px;
   margin-bottom: 20px;
   @media (max-width: 767px) {
+    margin-top: 0;
     margin-bottom: 0;
     > h1 {
       background: #f4f4f4;
@@ -424,6 +394,10 @@ nav {
   }
 }
 
+.flash-messages > * {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
 
 /* The classic "boxed" look */
 // div.view-id-blogs div.views-row 
@@ -436,8 +410,18 @@ nav {
     padding: 14px 17px;
     overflow: hidden;
     word-wrap: break-word;
+    > h2 {
+      margin: -14px -17px 14px -17px;
+      padding: 10px 17px;
+      border-bottom: 1px solid #ddd;
+    }
     @media (max-width: 767px) {
-        margin-bottom: 0 !important;
-        border: none !important;
+      margin-bottom: 0 !important;
+      border: none !important;
+      > h2 {
+        background: #f4f4f4;
+        border-top: 1px solid #ddd;
+      }
     }
 }
+

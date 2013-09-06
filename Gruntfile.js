@@ -64,6 +64,10 @@ module.exports = function(grunt) {
         src:  'src/css/dgu-drupal.less',
         dest: 'assets/css/dgu-drupal.min.css',
       },
+      less_than_ie9: {
+        src:  'src/css/less-than-ie9.less',
+        dest:  'assets/css/less-than-ie9.min.css',
+      },
     },
     watch: {
       styles: {
@@ -110,7 +114,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('styles', ['less:shared','less:drupal','timestamp']);
+  grunt.registerTask('styles', ['less','timestamp']);
   grunt.registerTask('scripts', ['copy:jquery','uglify:vendor','uglify:respondjs','timestamp']);
   grunt.registerTask('default', ['styles','scripts','copy','imagemin','timestamp']);
 };
