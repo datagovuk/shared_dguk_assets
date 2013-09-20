@@ -546,6 +546,54 @@ header .submitted {
   padding-right: 17px;
 }
 
+/* Drupal Tags/Categories/etc */
+/* -------------------------- */
+/* These two fields appear at the bottom of library documents */
+.field-name-field-tags,
+.field-name-field-resource-file {
+  border-left: 3px solid #ccc;
+  padding: 3px 15px;
+}
+.field-name-field-resource-file {
+  .field-label, 
+  .field-items, 
+  .field-items .field-item {
+    display: inline;
+  }
+}
+/* Generic styling for taxonomy attached to documents */
+.field-type-taxonomy-term-reference {
+  display: none;
+  /* One exception: The tags */
+  &.field-name-field-tags {
+    display: block;
+  }
+  .field-label {
+    margin-top: 6px;
+    margin-bottom: 3px;
+    display: inline;
+  }
+  .field-items {
+    display: inline;
+    .field-item {
+      display: inline;
+      a { 
+        color: #fff; 
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        padding: 2px 8px;
+        margin: 2px 3px;
+        background: #9DC93D;
+        font-weight: 300;
+        font-size: 12px;
+        &:hover {
+          background: darken(#9DC93D,10%);
+        }
+      }
+    }
+  }
+}
 
 
 
