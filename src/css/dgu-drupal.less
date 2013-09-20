@@ -1,3 +1,9 @@
+/* Drupal will helpfully put articles inside .boxed area. I do not want it to do this. */
+.boxed article {
+  padding: 0 0 0 0;
+  overflow: visible;
+  border: none;
+}
 
 /* Drupal Library pages */
 /* -------------------- */
@@ -306,10 +312,13 @@ html.js input.form-autocomplete {
 
 
 /* Drupal blogs */
+body.page-blog .view-blogs .views-row {
+  /* Only leave room for the avatar on the page where an avatar appears. */
+  padding-left: 70px;
+}
 .view-blogs {
   .views-row {
     position: relative;
-    padding-left: 70px;
     padding-right: 112px;
     min-height: 75px;
     padding-top: 4px;
