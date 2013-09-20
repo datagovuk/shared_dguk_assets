@@ -362,3 +362,60 @@ body.page-blog .view-blogs .views-row {
     }
   }
 }
+
+/* /odug-roadmap */
+.tableauPlaceholder {
+  padding: 20px 0;
+  margin: 0 auto !important; 
+  border: 1px solid #000 !important;
+}
+
+/* /odug */
+.view-dataset-requests {
+  .views-row {
+    position: relative;
+    padding-right: 112px;
+    min-height: 75px;
+    padding-top: 4px;
+    padding-bottom: 10px;
+    .views-field-title {
+      font-size: 19px;
+      line-height: 23px;
+    }
+    .views-field-id {
+      position: absolute;
+      right: 0;
+      top: 3px;
+      color: #999; 
+      min-width: 85px;
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 2px 8px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      display: block;
+    }
+    .views-field-field-review-status {
+      .views-label { 
+        color: #999; 
+      }
+      .field-content {
+        display: inline;
+        color: #666;
+        font-weight: bold;
+      }
+    }
+  }
+}
+/* This looks ridiculous on tablet */
+@media (min-width: 768px) and (max-width: 979px) { 
+  .view-dataset-requests {
+    .views-row {
+      padding-right: 0;
+      .views-field-id {
+        position: static;
+      }
+    }
+  }
+}
