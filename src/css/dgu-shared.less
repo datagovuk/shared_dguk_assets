@@ -596,4 +596,38 @@ header .submitted {
 }
 
 
-
+/* Drupal comments and forum pages */
+.replies-header {
+  margin-top: 10px;
+}
+.replies-wrapper {
+  .reply {
+    padding: 5px;
+    padding-top: 0;
+    margin-bottom: 9px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-image: url('/assets/img/comment.png');
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+    .field-name-field-reply-subject {
+      .field-label {
+        display: none;
+      }
+      .field-items {
+        font-size: 19px;
+        line-height: 23px;
+        margin-bottom: 8px;
+        padding-left: 50px;
+      }
+    }
+    .field-name-field-reply-comment {
+      .field-label {
+        display: none;
+      }
+      .field-items {
+        padding-left: 50px;
+      }
+    }
+  }
+}
