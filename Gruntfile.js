@@ -32,6 +32,10 @@ module.exports = function(grunt) {
     },
     uglify: {
       //options: { beautify: true, mangle: false, compress: false, }, // <-- DEBUG MODE 
+      dgu_drupal_js: {
+        src: 'src/js/dgu-drupal.js',
+        dest: 'assets/js/dgu-drupal.min.js',
+      },
       respondjs: {
         src: 'src/js/respond.src.js',
         dest: 'assets/js/respond.min.js',
@@ -45,7 +49,8 @@ module.exports = function(grunt) {
           'src/js/jquery.dotdotdot-1.5.9.js',
           'src/js/jquery.placeholder.js',
           'src/js/bootstrap-2.0.3.min.js',
-          'src/js/bootstrap-hashchange.js'
+          'src/js/bootstrap-hashchange.js',
+          'src/js/jquery.fancybox.js'
         ],
         dest: 'assets/js/vendor.min.js'
       }
@@ -61,6 +66,7 @@ module.exports = function(grunt) {
           'src/css/bootstrap-responsive.css',
           'src/css/jquery-ui-1.10.2.custom.css',
           'src/css/jquery.chosen.css',
+          'src/css/jquery.fancybox.css',
           'src/css/font-awesome.css',
           'src/css/dgu-shared.less',
         ],
@@ -79,6 +85,10 @@ module.exports = function(grunt) {
       styles: {
         files: 'src/css/**.less',
         tasks: 'styles'
+      },
+      scripts: {
+        files: 'src/js/dgu-drupal.js',
+        tasks: 'uglify:dgu_drupal_js',
       }
     },
     imagemin: {
@@ -121,7 +131,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('styles', ['less','timestamp']);
-  grunt.registerTask('scripts', ['copy:jquery','uglify:vendor','uglify:respondjs','timestamp']);
+  grunt.registerTask('scripts', ['copy:jquery','uglify','timestamp']);
   grunt.registerTask('images', ['copy:gifs','imagemin',]);
   grunt.registerTask('default', ['styles','scripts','copy','imagemin','timestamp']);
 };

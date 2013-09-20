@@ -227,10 +227,12 @@ html.js input.form-autocomplete {
     padding-left: 54px;
     padding-right: 97px;
     min-height: 54px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     .views-field-nothing {
       position: absolute;
       left: 0;
-      top: 0px;
+      top: 4px;
     }
     .views-field-title {
       font-size: 19px;
@@ -242,9 +244,44 @@ html.js input.form-autocomplete {
     .views-field-field-rating {
       position: absolute;
       right: 0;
-      top: 4px;
+      top: 8px;
     }
   }
 }
+.node-app {
+  .field-name-field-app-charge {
+    display: none;
+  }
+  .field-name-field-developed-by {
+    display: none;
+  }
+  .field-name-field-rating {
+    .help-block {
+      display: none;
+    }
+    .fivestar-summary {
+      color: #666;
+      font-size: 11px;
+      line-height: 12px;
+      padding-top: 2px;
+    }
+    .average-rating {
+      color: #aaa;
+    }
+  }
+  .field-name-field-submitter-name div,
+  .field-name-field-submitter-email div{
+    display: inline !important;
+  }
+}
 
+.fancybox {
+  padding: 10px 0;
+  .screenshot.thumbnail {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    img { height: 200px; }
+  }
+}
 
