@@ -248,6 +248,7 @@ html.js input.form-autocomplete {
     }
   }
 }
+
 .node-app {
   .field-name-field-app-charge {
     display: none;
@@ -304,6 +305,51 @@ html.js input.form-autocomplete {
 }
 
 
-
-
-
+/* Drupal blogs */
+.view-blogs {
+  .views-row {
+    position: relative;
+    padding-left: 70px;
+    padding-right: 112px;
+    min-height: 75px;
+    padding-top: 4px;
+    padding-bottom: 10px;
+    .views-field-field-avatar {
+      position: absolute;
+      left: 0;
+      top: 4px;
+    }
+    .views-field-title {
+      font-size: 19px;
+      line-height: 23px;
+    }
+    .views-field-field-submitter-name {
+      color: #666;
+    }
+    .views-field-name,
+    .views-field-created {
+      color: #999;
+      a { color: #666; }
+    }
+    .views-field-id {
+      position: absolute;
+      right: 0;
+      top: 3px;
+      a { 
+        color: #999; 
+        min-width: 85px;
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 2px 8px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        display: block;
+        &:hover {
+          color: #fff;
+          background: #ccc;
+        }
+      }
+    }
+  }
+}
