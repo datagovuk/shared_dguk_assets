@@ -1,61 +1,227 @@
-/*
-  LESS file for Drupal styles.
-  If you have shared drupal/ckan styles consider moving them to dgu-shared.less .
-*/
 
-
-body {
- padding-top: 0;  // Remove the inherited whitespace above the body from style.css in bootstrap theme.
- }
-
-
-/* Blogs */
- div.view-id-blogs div.views-row div.views-field-field-avatar {
-   //border: 5px solid black;
-   //padding: 10px;
-   //margin: 10px;
- }
-
- div.views-field-field-avatar {
-   float: left;
- }
-
-div.views-field-field-avatar img {
-   border: 4px solid ;
-   margin: 10px; 
- }
-
-div.views-field-id span{
-  background: url(/assets/img/comment.png) 0 4px no-repeat;
-  padding-left: 20px;
+/* Drupal Library pages */
+/* -------------------- */
+header .submitted {
+  // background: #f0f;
+  color: #aaa;
+  background: #eee;
+  display: block;
+  padding: 5px;
+  margin-bottom: 8px;
+  font-style: italic;
+  a { color: #999; text-decoration: underline; }
+}
+.boxed > header > .submitted {
+  margin-left: -17px;
+  padding-left: 17px;
+  margin-right: -17px;
+  padding-right: 17px;
 }
 
-
-/* Apps */
-div.view-id-apps div.views-field-nothing {
-  float: left;
-  padding-right: 10px;
+/* Drupal Tags/Categories/etc */
+/* -------------------------- */
+/* These two fields appear at the bottom of library documents */
+.field-name-field-tags,
+.field-name-field-resource-file {
+  border-left: 3px solid #ccc;
+  padding: 3px 15px;
 }
-
-/* Forums */
-div.view-id-forum_categories div.views-field-nothing {
-  float: left;
+.field-name-field-resource-file {
+  .field-label, 
+  .field-items, 
+  .field-items .field-item {
+    display: inline;
+  }
 }
-
-/* These are not yet used? */
-ul.breadcrumb {
+/* Generic styling for taxonomy attached to documents */
+.field-type-taxonomy-term-reference {
   display: none;
+  /* One exception: The tags */
+  &.field-name-field-tags {
+    display: block;
+  }
+  .field-label {
+    margin-top: 6px;
+    margin-bottom: 3px;
+    display: inline;
+  }
+  .field-items {
+    display: inline;
+    .field-item {
+      display: inline;
+      a { 
+        color: #fff; 
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        padding: 2px 8px;
+        margin: 2px 3px;
+        background: #9DC93D;
+        font-weight: 300;
+        font-size: 12px;
+        &:hover {
+          background: darken(#9DC93D,10%);
+        }
+      }
+    }
+  }
 }
 
-#block-user-login {
-  label {
-    white-space: nowrap;
-  }
-  input[type="password"],
-  input[type="text"] {
-    width: 92%;
-  }
-  button {
-    margin-left: 30px;
+
+/* Drupal comments and forum pages */
+.replies-header {
+  margin-top: 10px;
+}
+.replies-wrapper {
+  .reply {
+    padding: 5px;
+    padding-top: 0;
+    margin-bottom: 9px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-image: url('/assets/img/comment.png');
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+    .field-name-field-reply-subject {
+      .field-label {
+        display: none;
+      }
+      .field-items {
+        font-size: 19px;
+        line-height: 23px;
+        margin-bottom: 8px;
+        padding-left: 50px;
+      }
+    }
+    .field-name-field-reply-comment {
+      .field-label {
+        display: none;
+      }
+      .field-items {
+        padding-left: 50px;
+      }
+    }
   }
 }
+
+
+
+/* Drupal throbber  eg. Search Forums */
+html.js input.form-autocomplete {
+  background-image: none;
+  &.throbbing {
+    background-image: url('/assets/img/ajax-loader.gif');
+  }
+  background-size: 17px;
+  background-position: 97% 5px;
+}
+
+/* Forum Categories */
+.view-forum-categories {
+  .views-field-name {
+    display: inline;
+  }
+  .views-field-nid {
+    display: inline;
+    font-weight: bold;
+    color: #666;
+  }
+}
+/* Forum categories on the front page of /forum */
+#forum .view-forum-categories {
+  @gutter: 17px;
+  @topPadding: 10px;
+  @l: 55px;
+  @r: 100px;
+  @titleheight: 20px;
+  margin: -14px -@gutter;
+  .views-row {
+    position: relative;
+    padding-left: @l + @gutter;
+    padding-top: @topPadding + @titleheight + 3px;
+    padding-right: @r + @gutter;
+    padding-bottom: 5px;
+    overflow: hidden;
+    min-height: 45px;
+    border-bottom: 1px solid #ccc;
+    &.views-row-last { border-bottom: none; }
+  }
+  .views-row-odd {
+    background: #eee;
+  }
+  .views-row-even {
+  }
+  .views-field-nothing {
+    position: absolute;
+    display: block;
+    top: @topPadding;
+    left: @gutter;
+  }
+  .views-field-name {
+    font-size: 18px;
+    position: absolute;
+    top: @topPadding;
+    left: @l + @gutter;
+    right: @r + @gutter;
+    height: @titleheight;
+  }
+  .views-field-description {
+    p { margin-bottom: 0; }
+  }
+  .views-field-nid {
+    display: block;
+    position: absolute;
+    width: @r - 10px;
+    top: @topPadding + 7px;
+    right: @gutter;
+    color: #aaa;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: right;
+    .field-content { color: #333; }
+  }
+  .views-field-id {
+    position: absolute;
+    width: @r - 10px;
+    top: @topPadding + 28px;
+    right: @gutter;
+    color: #aaa;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: right;
+    .field-content { color: #333; }
+  }
+}
+
+/* Drupal tables eg. list of forum posts */
+.views-table {
+  margin-top: -14px;
+  th {
+    background: #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    &.views-field-title {
+      border-left: 1px solid #ccc;
+    }
+    a { 
+      color: #555; 
+      img { 
+        padding-left: 5px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+  td.views-field-id {
+    font-weight: bold;
+    text-align: right;
+  }
+  td.views-field-created,
+  td.views-field-created-1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+
+
+
