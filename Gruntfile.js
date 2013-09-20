@@ -23,6 +23,12 @@ module.exports = function(grunt) {
         src: '*',
         dest: 'assets/font/',
       },
+      gifs: {
+        expand: true,
+        cwd: 'src/img/',
+        src: '*.gif',
+        dest: 'assets/img',
+      }
     },
     uglify: {
       //options: { beautify: true, mangle: false, compress: false, }, // <-- DEBUG MODE 
@@ -116,5 +122,6 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('styles', ['less','timestamp']);
   grunt.registerTask('scripts', ['copy:jquery','uglify:vendor','uglify:respondjs','timestamp']);
+  grunt.registerTask('images', ['copy:gifs','imagemin',]);
   grunt.registerTask('default', ['styles','scripts','copy','imagemin','timestamp']);
 };
