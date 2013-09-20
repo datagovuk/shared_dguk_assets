@@ -2,6 +2,10 @@
 /* Drupal Library pages */
 /* -------------------- */
 header .submitted {
+  margin-left: -17px;
+  padding-left: 17px;
+  margin-right: -17px;
+  padding-right: 17px;
   // background: #f0f;
   color: #aaa;
   background: #eee;
@@ -11,13 +15,6 @@ header .submitted {
   font-style: italic;
   a { color: #999; text-decoration: underline; }
 }
-.boxed > header > .submitted {
-  margin-left: -17px;
-  padding-left: 17px;
-  margin-right: -17px;
-  padding-right: 17px;
-}
-
 /* Drupal Tags/Categories/etc */
 /* -------------------------- */
 /* These two fields appear at the bottom of library documents */
@@ -223,5 +220,31 @@ html.js input.form-autocomplete {
 }
 
 
+/* Drupal apps */
+.view-apps {
+  .views-row {
+    position: relative;
+    padding-left: 54px;
+    padding-right: 97px;
+    min-height: 54px;
+    .views-field-nothing {
+      position: absolute;
+      left: 0;
+      top: 0px;
+    }
+    .views-field-title {
+      font-size: 19px;
+      line-height: 23px;
+    }
+    .views-field-field-submitter-name {
+      color: #666;
+    }
+    .views-field-field-rating {
+      position: absolute;
+      right: 0;
+      top: 4px;
+    }
+  }
+}
 
 
