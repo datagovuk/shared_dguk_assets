@@ -468,4 +468,97 @@ body.page-blog .view-blogs .views-row {
   }
 }
 
+/* 
+ * Fix ugly headers which Drupal is technically misusing within articles... 
+ * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api 
+ */
+.pane-node-content h2 {
+  margin-bottom: 0;
+  border-bottom: none;
+  margin-top: 8px;
+  &.pane-title {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
 
+/* Login pages */
+.toboggan-unified {
+  .help-block {
+    font-style: italic;
+    color: #999;
+  }
+  #login-message {
+    text-align: left;
+    @media(max-width: 767px) { margin-top: 15px; }
+    margin-bottom: 18px;
+    font-style: normal;
+    // From bootstrap h1
+    font-size: 24px; line-height: 30px; margin-bottom: 10px; 
+  }
+  .login-forgot {
+    margin: 5px 0 10px 20px;
+    &:after { content: ' »' }
+  }
+  #login-form, 
+  #register-form {
+    background: #fff;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  .password-parent {
+    max-width: 500px;
+  }
+  .password-strength > * {
+    float: right;
+    margin: 0 4px;
+  }
+  #login-links {
+    border-bottom: 1px solid #ccc;
+    height: 36px;
+    a {
+      display: block;
+      float: left;
+      padding-top: 8px;
+      font-size: 15px;
+      line-height: 20px;
+      border: 1px solid transparent !important;
+      -webkit-border-radius: 4px 4px 0 0;
+         -moz-border-radius: 4px 4px 0 0;
+              border-radius: 4px 4px 0 0;
+      background: none !important;
+      &.lt-active {
+        color: #000;
+        background: #fff !important;
+        border-color: #ccc !important;
+        border-bottom-color: #fff !important;
+      }
+    }
+  }
+}
+
+/*
+.nav-tabs > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 20px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px 4px 0 0;
+     -moz-border-radius: 4px 4px 0 0;
+          border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  color: #555555;
+  cursor: default;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+*/
