@@ -38,11 +38,6 @@ header .submitted {
 }
 /* Generic styling for taxonomy attached to documents */
 .field-type-taxonomy-term-reference {
-  display: none;
-  /* One exception: The tags */
-  &.field-name-field-tags {
-    display: block;
-  }
   .field-label {
     margin-top: 6px;
     margin-bottom: 3px;
@@ -284,12 +279,6 @@ html.js input.form-autocomplete {
 }
 
 .node-app {
-  .field-name-field-app-charge {
-    display: none;
-  }
-  .field-name-field-developed-by {
-    display: none;
-  }
   .field-name-field-rating {
     .help-block {
       display: none;
@@ -323,16 +312,6 @@ html.js input.form-autocomplete {
 
 /* Blogs: Frequent Bloggers */
 .view-frequent-bloggers {
-  .views-row { display: none; }
-  // Display the first six rows
-  .views-row-1,
-  .views-row-2,
-  .views-row-3,
-  .views-row-4,
-  .views-row-5,
-  .views-row-6 {
-    display: block; 
-  }
   .views-field-nid {
     color: #777;
   }
