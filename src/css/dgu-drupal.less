@@ -479,13 +479,19 @@ body.page-blog .view-blogs .views-row {
  * Fix ugly headers which Drupal is technically misusing within articles... 
  * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api 
  */
-.pane-node-content h2 {
-  margin-bottom: 0;
-  border-bottom: none;
-  margin-top: 8px;
-  &.pane-title {
-    margin-top: 0;
-    padding-top: 0;
+.pane-node-content {
+  h2 {
+    margin-bottom: 0;
+    border-bottom: none;
+    margin-top: 8px;
+    &.pane-title {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+  header h2 {
+    margin-top: 0px;
+    padding-top: 0px;
   }
 }
 
