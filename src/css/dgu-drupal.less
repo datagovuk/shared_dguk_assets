@@ -75,9 +75,8 @@ header .submitted {
     padding: 10px;
     padding-bottom: 2px;
     margin-bottom: 9px;
-    border: none;
-    border-bottom: 1px solid #ccc;
     position: relative;
+    border-color: #ccc;
     &.push-1 {margin-left: 30px;}
     &.push-2 {margin-left: 60px;}
     &.push-3 {margin-left: 90px;}
@@ -122,6 +121,11 @@ header .submitted {
       .field-items {
         padding-bottom: 0;
       }
+    }
+  }
+  @media(max-width:767px) {
+    h3 {
+      border-top: none;
     }
   }
 }
@@ -322,12 +326,18 @@ html.js input.form-autocomplete {
 body.page-blog .view-blogs .views-row {
   /* Only leave room for the avatar on the page where an avatar appears. */
   padding-left: 70px;
+  padding-right: 112px;
+  min-height: 75px;
+  .views-field-id {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    display: block;
+  }
 }
 .view-blogs {
   .views-row {
     position: relative;
-    padding-right: 112px;
-    min-height: 75px;
     padding-top: 4px;
     padding-bottom: 10px;
     .views-field-field-avatar {
@@ -348,9 +358,7 @@ body.page-blog .view-blogs .views-row {
       a { color: #666; }
     }
     .views-field-id {
-      position: absolute;
-      right: 0;
-      top: 3px;
+      display: none;
       a { 
         color: #999; 
         min-width: 85px;
@@ -489,9 +497,11 @@ body.page-blog .view-blogs .views-row {
       padding-top: 0;
     }
   }
-  header h2 {
-    margin-top: 0px;
-    padding-top: 0px;
+  @media(min-width:768px) {
+    header h2 {
+      margin-top: 0px;
+      padding-top: 0px;
+    }
   }
 }
 
