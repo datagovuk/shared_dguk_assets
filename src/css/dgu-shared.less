@@ -566,39 +566,41 @@ h1 .subheading {
         padding-top: 15px;
         text-align: center;
     }
-    .form-search {
-        padding: 9px;
-        margin-left: 10px;
-        position: relative;
-        /* Gradient */
-        height: 50px;
-        padding: 0;
-        .textbox {
-            position: absolute;
-            width: auto;
-            left: 8px;
-            right: 86px;
-            top: 11px;
-            input[type="text"] {
-              width: 100%;
-            }
+}
+.form-search {
+    padding: 9px;
+    margin-left: 10px;
+    position: relative;
+    /* Gradient */
+    height: 50px;
+    padding: 0;
+    /* Controls on Drupal, textbox on CKAN */
+    .controls,
+    .textbox {
+        position: absolute;
+        width: auto;
+        left: 8px;
+        right: 86px;
+        top: 11px;
+        input[type="text"] {
+          width: 100%;
         }
-        .form-submit,
-        input[type="submit"] {
-            position: absolute;
-            right: 8px;
-            top: 7px;
-            width: 80px;
-            height: 35px;
-            font-size: 14px;
-        }
-        .search-spinner {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            right: 100px;
-            top: 15px;
-        }
+    }
+    .form-submit,
+    input[type="submit"] {
+        position: absolute;
+        right: 8px;
+        top: 7px;
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .search-spinner {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 100px;
+        top: 15px;
     }
 }
 
