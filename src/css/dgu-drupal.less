@@ -325,7 +325,6 @@ html.js input.form-autocomplete {
 /* Drupal blogs */
 body.page-blog .view-blogs .views-row {
   /* Only leave room for the avatar on the page where an avatar appears. */
-  padding-left: 70px;
   padding-right: 112px;
   min-height: 75px;
   .views-field-id {
@@ -335,7 +334,13 @@ body.page-blog .view-blogs .views-row {
     display: block;
   }
 }
+.view-display-id-blogs_same_author .views-row {
+  padding-left: 0;
+}
+
+
 .view-blogs {
+  padding-left: 70px;
   .views-row {
     position: relative;
     padding-top: 4px;
