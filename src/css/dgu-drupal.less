@@ -77,14 +77,40 @@ header .submitted {
 }
 .replies-wrapper {
   .reply {
-    padding: 5px;
-    padding-top: 0;
+    padding: 10px;
+    padding-bottom: 2px;
     margin-bottom: 9px;
     border: none;
     border-bottom: 1px solid #ccc;
-    background-image: url('/assets/img/comment.png');
-    background-repeat: no-repeat;
-    background-position: 0 2px;
+    position: relative;
+    &.push-1 {margin-left: 30px;}
+    &.push-2 {margin-left: 60px;}
+    &.push-3 {margin-left: 90px;}
+    &.push-4 {margin-left: 120px;}
+    &.push-5 {margin-left: 140px;}
+    &.push-6 {margin-left: 160px;}
+    &.push-7 {margin-left: 180px;}
+    &.push-8 {margin-left: 190px;}
+    &.push-9 {margin-left: 200px;}
+    &.push-10 {margin-left: 210px;}
+    h3 {
+      padding-left: 60px;
+      padding-top: 0;
+      margin-left: 0px;
+      margin-bottom: 3px;
+    }
+    .submitted {
+      border-bottom: 1px solid #ccc;
+      display: block;
+      padding-left: 60px;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+    > a { 
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     .field-name-field-reply-subject {
       .field-label {
         display: none;
@@ -92,8 +118,6 @@ header .submitted {
       .field-items {
         font-size: 19px;
         line-height: 23px;
-        margin-bottom: 8px;
-        padding-left: 50px;
       }
     }
     .field-name-field-reply-comment {
@@ -101,7 +125,7 @@ header .submitted {
         display: none;
       }
       .field-items {
-        padding-left: 50px;
+        padding-bottom: 0;
       }
     }
   }
