@@ -189,6 +189,11 @@ html.js input.form-autocomplete {
     display: block;
     top: @topPadding;
     left: @gutter;
+    background-image: url('/assets/img/icon-forum.png');
+    background-size: 45px;
+    width: 45px;
+    height: 45px;
+    img { display: none; }
   }
   .views-field-name {
     font-size: 18px;
@@ -225,6 +230,14 @@ html.js input.form-autocomplete {
     .field-content { color: #333; }
   }
 }
+.node-forum h2,
+.pane-forum-topics-panel-pane-1 h2 {
+  background-image: url('/assets/img/icon-forum.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 10px 9px;
+  padding-left: 49px;
+}
 
 /* Drupal tables eg. list of forum posts */
 .views-table {
@@ -258,6 +271,7 @@ html.js input.form-autocomplete {
 
 /* Drupal apps */
 .view-apps {
+  td,
   .views-row {
     position: relative;
     padding-left: 54px;
@@ -269,6 +283,14 @@ html.js input.form-autocomplete {
       position: absolute;
       left: 0;
       top: 4px;
+      .field-content {
+        width: 45px;
+        height: 45px;
+        display:block;
+        background: url('/assets/img/icon-app.png');
+        background-size: 45px;
+        img { display: none; }
+      }
     }
     .views-field-title {
       font-size: 19px;
@@ -415,6 +437,15 @@ body.page-blog .view-blogs .views-row {
   margin-left: 6px;
   a { color: #fff; }
 }
+.node-blog {
+  h2 {
+    background-image: url('/assets/img/icon-blog.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 10px 9px;
+    padding-left: 49px;
+  }
+}
 
 /* /odug-roadmap */
 .tableauPlaceholder {
@@ -429,7 +460,7 @@ body.page-odug .pane-custom.pane-2 img {
 }
 .view-dataset-requests {
   .views-row {
-    background-image: url('/assets/img/ideas.png');
+    background-image: url('/assets/img/icon-dataset-request.png');
     background-position: 0 5px;
     background-repeat: no-repeat;
     background-size: 23px;
@@ -460,12 +491,23 @@ body.page-odug .pane-custom.pane-2 img {
     }
   }
 }
+.node-dataset-request h2,
 .node-type-dataset-request h2 {
-  background-image: url('/assets/img/ideas.png');
+  background-image: url('/assets/img/icon-dataset-request.png');
   background-size: 30px;
   background-repeat: no-repeat;
-  background-position: 10px 0;
+  background-position: 10px 9px;
   padding-left: 49px;
+}
+.node-app h2 {
+  background-image: url('/assets/img/icon-app.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 10px 9px;
+  padding-left: 49px;
+}
+.node-type-dataset-request h2 {
+  background-position-y: 0;
 }
 /* This looks ridiculous on tablet */
 @media (min-width: 768px) and (max-width: 979px) { 
@@ -545,6 +587,7 @@ body.page-odug .pane-custom.pane-2 img {
     header h2 {
       margin-top: 0px;
       padding-top: 0px;
+      background-position-y: 0;
     }
   }
 }
@@ -678,3 +721,25 @@ body.page-home {
     }
   }
 }
+/* Taxonomy page */
+.page-taxonomy #main-content > footer {
+  display: none;
+}
+/* Library pages*/
+.node-resource h2 {
+  background-image: url('/assets/img/icon-library.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 10px 9px;
+  padding-left: 49px;
+}
+
+/* General pages*/
+.node-page h2 {
+  background-image: url('/assets/img/icon-page.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 10px 9px;
+  padding-left: 49px;
+}
+
