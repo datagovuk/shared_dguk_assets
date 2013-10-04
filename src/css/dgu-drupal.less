@@ -24,12 +24,14 @@ header .submitted {
 /* Drupal Tags/Categories/etc */
 /* -------------------------- */
 /* These two fields appear at the bottom of library documents */
+.field-name-field-developed-by,
+.field-name-field-rating,
+.field-name-field-app-link,
+.field-name-field-app-charge,
 .field-name-field-tags,
 .field-name-field-resource-file {
   border-left: 3px solid #ccc;
   padding: 3px 15px;
-}
-.field-name-field-resource-file {
   .field-label, 
   .field-items, 
   .field-items .field-item {
@@ -283,6 +285,7 @@ html.js input.form-autocomplete {
 }
 
 .node-app {
+  position: relative;
   .field-name-field-rating {
     .help-block {
       display: none;
@@ -300,6 +303,20 @@ html.js input.form-autocomplete {
   .field-name-field-submitter-name div,
   .field-name-field-submitter-email div{
     display: inline !important;
+  }
+  h2 {
+    padding-right: 110px;
+  }
+  .field-name-field-rating {
+    padding: 0 0 0 0;
+    .field-label {
+      display: none;
+    }
+    .field-items {
+      position: absolute;
+      right: 5px;
+      top: 10px;
+    }
   }
 }
 
@@ -375,26 +392,27 @@ body.page-blog .view-blogs .views-row {
       color: #999;
       a { color: #666; }
     }
-    .views-field-id {
-      display: inline-block;
-      color: #999; 
-      background-color: #bbb;
-      -webkit-border-radius: 8px;
-      -moz-border-radius: 8px;
-      border-radius: 8px;
-      background-image: url('/assets/img/comment.png');
-      background-size: 20px;
-      background-repeat: no-repeat;
-      color: #fff;
-      font-weight: bold;
-      padding-left: 26px;
-      padding-right: 10px;
-      font-size: 11px;
-      margin-bottom: 6px;
-      margin-left: 6px;
-      a { color: #fff; }
-    }
   }
+}
+.view-dataset-requests .views-row .views-field-id,
+.view-blogs .views-row .views-field-id {
+  display: inline-block;
+  color: #999; 
+  background-color: #bbb;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background-image: url('/assets/img/comment.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-weight: bold;
+  padding-left: 26px;
+  padding-right: 10px;
+  font-size: 11px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  a { color: #fff; }
 }
 
 /* /odug-roadmap */
@@ -408,7 +426,7 @@ body.page-blog .view-blogs .views-row {
 .view-dataset-requests {
   .views-row {
     position: relative;
-    padding-right: 112px;
+    padding-right: 50px;
     min-height: 75px;
     padding-top: 4px;
     padding-bottom: 10px;
@@ -420,15 +438,6 @@ body.page-blog .view-blogs .views-row {
       position: absolute;
       right: 0;
       top: 3px;
-      color: #999; 
-      min-width: 85px;
-      text-align: center;
-      border: 1px solid #ccc;
-      padding: 2px 8px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-      display: block;
     }
     .views-field-field-review-status {
       .views-label { 
