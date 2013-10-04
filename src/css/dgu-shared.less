@@ -573,8 +573,8 @@ h1 .subheading {
     margin-left: 10px;
     position: relative;
     /* Gradient */
-    height: 50px;
     padding: 0;
+    padding-top: 50px;
     /* Controls on Drupal, textbox on CKAN */
     .controls,
     .textbox {
@@ -605,3 +605,18 @@ h1 .subheading {
     }
 }
 
+.apachesolr_search-results {
+  list-style-type: none;
+  margin-left: 0;
+  li.search-result {
+    border-bottom: 1px solid #eee;
+    .search-snippet {
+      margin-bottom: 2px;
+    }
+    .search-info {
+      padding: 2px 10px;
+      text-align: right;
+      color: #999;
+    }
+  }
+}
