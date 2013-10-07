@@ -38,6 +38,9 @@ header .submitted {
     display: inline;
   }
 }
+.field-name-body {
+  margin: 10px 0;
+}
 /* Generic styling for taxonomy attached to documents */
 .field-type-taxonomy-term-reference {
   .field-label {
@@ -778,5 +781,28 @@ body.page-home {
   background-repeat: no-repeat;
   background-position: 10px 9px;
   padding-left: 49px;
+}
+.disclaimer {
+  padding: 14px;
+  background: #eee;
+  color: #666;
+  font-size: 12px;
+  line-height: 14px;
+}
+/* Fivestars plugin overrides */
+
+div.fivestar-widget-static .star {
+  background: url('/assets/img/stars.png') no-repeat 0 0; /* RTL */
+  background-size: 16px 48px;
+}
+
+div.fivestar-widget-static .star span.on {
+  background: url('/assets/img/stars.png') no-repeat 0 -32px; /* RTL */
+  background-size: 16px 48px;
+}
+
+div.fivestar-widget-static .star span.off {
+  background: url('/assets/img/stars.png') no-repeat 0 0; /* RTL */
+  background-size: 16px 48px;
 }
 
