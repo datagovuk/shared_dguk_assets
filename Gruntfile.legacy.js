@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     watch: {
       lessresponsive: {
         files: 'legacy/css/**.less',
-        tasks: 'less:responsive'
+        tasks: ['less:responsive','less:original']
       }
     },
     timestamp: {

@@ -118,7 +118,7 @@ body {
 /* Branding space */
 /* -------------- */
 #branding {
-    height: 69px;
+    height: 72px;
     padding-top: 18px;
     padding-left: 55px;
     #dgu-header.retina-img {
@@ -142,6 +142,7 @@ ul#nav {
     li {
         padding: 0;
         width: 98px;
+        height: 40px;
         position: relative;
         float: left;
         background: #3A3A3A;
@@ -149,7 +150,8 @@ ul#nav {
             color: #ccc;
             text-align: center;
             display: block;
-            padding: 8px 10px;
+            padding: 11px 10px 10px 10px;
+
             font-size: 14px;
             font-weight: 300;
             border-top: 1px solid #000;
@@ -172,19 +174,21 @@ ul#nav {
         }
     } /* End of #nav li block */
     li.nav-home { 
-        width: 110px; 
         a { border-left: 1px solid #000; }
     }
-    li.nav-linked-data { 
-        width: 110px; 
-    }
-    li.nav-data-requests { 
-        width: 120px; 
-    }
     li.nav-about { 
-        width: 110px; 
         a { border-right: 1px solid #000; }
     }
+    li.nav-home          { width: 103px; }
+    li.nav-data          { width: 75px; }
+    li.nav-data-requests { width: 132px; }
+    li.nav-apps          { width: 75px; }
+    li.nav-blog          { width: 75px; }
+    li.nav-forum         { width: 84px; }
+    li.nav-library       { width: 84px; }
+    li.nav-location      { width: 94px; }
+    li.nav-linked-data   { width: 122px; }
+    li.nav-about         { width: 94px; }
     li.active {
         a {
             color: #fff;
