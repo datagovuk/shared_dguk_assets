@@ -576,21 +576,13 @@ body.page-odug .pane-custom.pane-2 img {
  * Fix ugly headers which Drupal is technically misusing within articles... 
  * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api 
  */
-.pane-node-content {
+.field-name-body,
+.field-name-field-reply-comment {
   h2 {
-    //margin-bottom: 0;
+    margin-bottom: 0;
     border-bottom: none;
-    // margin-top: 8px;
-    &.pane-title {
-      // margin-top: 0;
-      padding-top: 0;
-    }
-  }
-  @media(min-width:768px) {
-    header h2 {
-      padding-top: 0px;
-      background-position-y: 0;
-    }
+    margin-top: 8px;
+    background: none !important;
   }
 }
 
