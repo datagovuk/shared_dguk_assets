@@ -48,7 +48,7 @@ module.exports = function(grunt) {
           'src/js/jquery.chosen-0.9.7.js',
           'src/js/jquery.dotdotdot-1.5.9.js',
           'src/js/jquery.placeholder.js',
-          'src/js/bootstrap-2.0.3.min.js',
+          'src/js/bootstrap-3.0.0.js',
           'src/js/bootstrap-hashchange.js',
           'src/js/jquery.fancybox.js'
         ],
@@ -62,8 +62,7 @@ module.exports = function(grunt) {
       },
       shared: {
         src: [  /* Order of resources is important. */
-          'src/css/bootstrap.css',
-          'src/css/bootstrap-responsive.css',
+          'src/css/bootstrap-3.0.0.css',
           'src/css/jquery-ui-1.10.2.custom.css',
           'src/css/jquery.chosen.css',
           'src/css/jquery.fancybox.css',
