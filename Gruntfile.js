@@ -36,6 +36,10 @@ module.exports = function(grunt) {
         src: 'src/js/dgu-drupal.js',
         dest: 'assets/js/dgu-drupal.min.js',
       },
+      dgu_shared_js: {
+        src: 'src/js/dgu-shared.js',
+        dest: 'assets/js/dgu-shared.min.js',
+      },
       respondjs: {
         src: 'src/js/respond.src.js',
         dest: 'assets/js/respond.min.js',
@@ -85,9 +89,13 @@ module.exports = function(grunt) {
         files: 'src/css/**.less',
         tasks: 'styles'
       },
-      scripts: {
+      scripts_drupal: {
         files: 'src/js/dgu-drupal.js',
         tasks: 'uglify:dgu_drupal_js',
+      },
+      scripts_shared: {
+        files: 'src/js/dgu-shared.js',
+        tasks: 'uglify:dgu_shared_js',
       }
     },
     imagemin: {
