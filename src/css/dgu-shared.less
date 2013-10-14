@@ -43,35 +43,14 @@
   box-shadow: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+p, blockquote, body {
   font-family: 'Open Sans', Helvetica Neue, Helvetica;
-  font-weight: normal;
-}
-#login-or-signup {
-  font-family: 'Open Sans';
 }
 
-/* Bootstrap overrides */
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus {
-    border-color: #55AA00;
-    border-color: rgba(80, 160, 0, 0.8);
-    .box-shadow-double(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(50, 100, 0, 0.6));
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
 }
+
 
 
 /* Root Elements */
@@ -106,51 +85,6 @@ blockquote p {
   text-align: center;
 }
 
-/* Bootstrap overrides */
-/* ------------------- */
-.btn-primary {
-    /* Very delicate modified Bootstrap code here: */
-    background-color: #ade44e;
-    background-image: -moz-linear-gradient(top, #bae772, #a4d84a);
-    background-image: -ms-linear-gradient(top, #bae772, #a4d84a);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bae772), to(#a4d84a));
-    background-image: -webkit-linear-gradient(top, #bae772, #a4d84a);
-    background-image: -o-linear-gradient(top, #bae772, #a4d84a);
-    background-image: linear-gradient(top, #bae772, #a4d84a);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bae772', endColorstr='#a4d84a', GradientType=0);
-    border-color: #690;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
-    color: #333333;
-    &:hover,
-    &:active,
-    &.active,
-    &.disabled,
-    &[disabled] {
-        background-color: #a4d84a;
-    }
-    &:active,
-    &.active {
-        background-color: #79aa00 \9;
-    }
-    &.active {
-        color: #333333;
-        color: rgba(255, 255, 255, 0.75);
-    }
-    .caret {
-        border-top-color: #333;
-    }
-    &:hover {
-        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
-        color: #333333;
-    }
-}
-.btn-group .btn-primary.dropdown-toggle {
-    border-left: 1px solid #7b2;
-}
 
 /* Page Header */
 /* ----------- */
@@ -201,16 +135,26 @@ body {
 
 #blackbar {
   background: #1C1D1D;
-  @media(max-width: 767px) {
-    border-bottom: 1px solid darken(#9DC93D,10%);
-  }
 
   .container {
     position: relative;
   }
+  .chevron {
+    position: absolute;
+    bottom: 0px;
+    border: 7px solid transparent;
+    border-bottom-color: #8BC658;
+    transition: right 0.5s;
+    &.position1 { right: 491px; }
+    &.position2 { right: 426px; }
+    &.position3 { right: 363px; }
+    &.position4 { right: 290px; }
+    &.position5 { right: 51px;  }
+    &.position6 { right: 9px;   }
+  }
   #dgu-header.retina-img {
       margin-top: 16px;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       margin-left: 30px;
       width: 256px;
       height: 45px;
@@ -236,13 +180,30 @@ body {
 }
 #greenbar {
   background: #8BC658;
-  min-height: 20px;
+  min-height: 15px;
+  .subnav {
+    margin: 8px 0;
+    list-style-type: none;
+    display: none;
+    &.active {
+      display: block;
+    }
+    li {
+      display: inline-block;
+      padding: 3px 25px 4px 0;
+      a { 
+        color: #fff; 
+        font-weight: 300;
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 #dgu-nav {
   position: absolute;
   right: 0;
-  top: 24px;
+  top: 21px;
   > a,
   .nav-search {
     display: block;
@@ -265,7 +226,6 @@ body {
     }
   }
   > a {
-    font-family: 'Open Sans';
     font-size: 15px;
     font-weight: 300;
     color: #fff;
@@ -295,7 +255,7 @@ body {
         padding: 0 0 0 10px;
     }
     .links a {
-        color: #000;
+        color: #666;
     }
     @media (max-width: 767px) {
       margin-top: 0;
