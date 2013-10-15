@@ -80,15 +80,19 @@ module.exports = function(grunt) {
         src:  'src/css/dgu-drupal.less',
         dest: 'assets/css/dgu-drupal.min.css',
       },
-      less_than_ie9: {
-        src:  'src/css/less-than-ie9.less',
-        dest:  'assets/css/less-than-ie9.min.css',
+      bootstrap_ie7: {
+        src:   'src/css/dgu-ie7.less',
+        dest:  'assets/css/dgu-ie7.css',
       },
     },
     watch: {
-      styles: {
-        files: 'src/css/**.less',
-        tasks: 'styles'
+      styles_shared: {
+        files: 'src/css/dgu-shared.less',
+        tasks: 'less:shared'
+      },
+      styles_ie7: {
+        files: 'src/css/dgu-ie7.less',
+        tasks: 'less:bootstrap_ie7'
       },
       scripts_drupal: {
         files: 'src/js/dgu-drupal.js',
