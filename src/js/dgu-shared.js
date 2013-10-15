@@ -29,9 +29,14 @@ function initNav() {
     else {
       throw 'Unrecognised subnav trigger',target;
     }
+    var greenbar = $('#greenbar');
+    var old_height = greenbar.height();
     // Update subnav
     $('.subnav').removeClass('active');
     subnav.addClass('active');
+    var new_height = greenbar.outerHeight();
+    greenbar.height(old_height);
+    greenbar.stop().animate({height:new_height},300,'swing',function() { greenbar.css('height','auto'); });
     // Update chevron
     chevron.attr('class','chevron '+chevronClass);
     return false;
