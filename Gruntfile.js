@@ -49,6 +49,7 @@ module.exports = function(grunt) {
           'src/js/jquery-ui-1.10.2.custom.js',
           'src/js/jquery.tagcloud.js',
           'src/js/spin.min.js',
+          'src/js/modernizr.custom.05513.js',
           'src/js/jquery.chosen-0.9.7.js',
           'src/js/jquery.dotdotdot-1.5.9.js',
           'src/js/jquery.placeholder.js',
