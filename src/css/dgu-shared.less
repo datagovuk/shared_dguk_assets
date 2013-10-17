@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Root Elements */
 /* ------------- */
 h1 { font-size: 24px; line-height: 30px; margin-bottom: 16px; }
-h2 { font-size: 22px; line-height: 27px; margin-bottom: 12px; }
+h2 { font-size: 17px; line-height: 19px; margin-bottom: 12px; text-transform: uppercase; }
 h3 { font-size: 19px; line-height: 23px; margin-bottom: 12px; }
 h4 { font-size: 16px; line-height: 18px; margin-bottom: 12px; }
 h5 { font-size: 13px; line-height: 15px; margin-bottom: 12px; }
@@ -275,10 +275,10 @@ body {
 
 
 #main-content {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 20px;
   @media (max-width: 767px) {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 0;
     > h1 {
       background: #f4f4f4;
@@ -377,6 +377,16 @@ h1 .subheading {
 .boxed .boxed {
   border: none;
   margin: -14px -17px;
+}
+.boxed-append {
+  /* UI element appears after a normal .boxed */
+  border-top: 1px solid #E6E6E6;
+  background: #fff;
+  padding: 11px 22px 14px 22px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: right;
+  a { color: #aaa; }
 }
 
 .sidebar {
@@ -479,5 +489,26 @@ h1 .subheading {
   @media(min-width: 768px) {
     .left  { width: 80%; }
     .right { width: 20%; }
+  }
+}
+
+#breadcrumbs {
+  padding-left: 0;
+  margin-bottom: 15px;
+  list-style-type: none;
+  li {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+  }
+  a {
+    color: #999;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  .spacer {
+    color: #ccc;
   }
 }
