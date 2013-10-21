@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
-      //options: { beautify: true, mangle: false, compress: false, }, // <-- DEBUG MODE 
+      //options: { beautify: true, mangle: false, compress: false, }, // <-- DEBUG MODE
       dgu_drupal_js: {
         src: 'src/js/dgu-drupal.js',
         dest: 'assets/js/dgu-drupal.min.js',
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
     },
     imagemin: {
       build: {
-        options: { 
+        options: {
           optimizationLevel: 3
         },
         files: [
