@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Root Elements */
 /* ------------- */
-h1 { font-size: 24px; line-height: 30px; margin-bottom: 16px; }
+h1 { font-size: 29px; line-height: 35px; margin-bottom: 16px; margin-top: 0px; }
 h2 { font-size: 17px; line-height: 19px; margin-bottom: 12px; text-transform: uppercase; }
 h3 { font-size: 19px; line-height: 23px; margin-bottom: 12px; }
 h4 { font-size: 16px; line-height: 18px; margin-bottom: 12px; }
@@ -76,7 +76,7 @@ blockquote p {
 /* Page Header */
 /* ----------- */
 body {
-  background: #EFEFEF;
+  background-color: #EFEFEF;
   @media (max-width: 767px) {
     padding-left: 0;
     padding-right: 0;
@@ -232,7 +232,6 @@ body {
     background: #E1E1E1;
     border-top: 10px solid #8BC658;
     border-bottom: 1px solid #ccc;
-    margin-top: 30px;
     padding-top: 20px;
     padding-bottom: 40px;
     .links li {
@@ -274,12 +273,49 @@ body {
 }
 
 
+#pre-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  #breadcrumbs {
+    padding-left: 0;
+    margin-bottom: 0px;
+    list-style-type: none;
+    color: #ccc;
+    li {
+      color: #999;
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+    }
+    a {
+      color: #999;
+      &:hover {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+    .spacer {
+      color: #ccc;
+    }
+  }
+}
 #main-content {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  @media (max-width: 767px) {
-    margin-top: 10px;
-    margin-bottom: 0;
+  background-color: #EFEFEF;
+  .sidebar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #E0E0E0;
+    border-right: 1px solid #ccc;
+  }
+  .content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 35px;
+  }
+  h1 {
+    font-weight: bold;
+  }
+  @media (max-width: 991px) {
     > h1 {
       background: #f4f4f4;
       margin: 0 0 0 0;
@@ -287,6 +323,25 @@ body {
     }
   }
 }
+/* Sidebar mode */
+body.with-sidebar {
+  @media(min-width:992px) {
+    /*
+     * Hald-grey, half white page. 
+     * bootstrap containers arent full width so just use clever background images.
+     */
+    #main-content {
+      background-color: #E0E0E0;
+      /* This is a 1x1 white pixel: */
+      background-image: url('/assets/img/whitepixel.png');
+      /* Stretch it to be half page width */
+      background-size: 66.0% 1px;
+      background-repeat: repeat-y;
+      background-position: top right;
+    }
+  }
+}
+
 h1 .subheading {
     display: block;
     font-size: 19px;
@@ -395,17 +450,14 @@ h1 .subheading {
   }
   h4 {
       color: #656565;
-      padding-bottom: 5px;
-      margin: 0 -10px 4px -10px;
-      border-bottom: 1px solid #aaa;
-      padding-left: 15px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-size: 17px;
+      font-weight: 300;
   }
   @media(max-width: 767px) {
     h4 {
-      border-bottom: none;
       border-top: 1px solid #ddd;
-      margin: 0 -17px 6px -17px;
-      padding: 10px 17px 0 17px;
     }
   }
 }
@@ -427,6 +479,11 @@ h1 .subheading {
 }
 
 .search-area {
+  .mini {
+    button,input[type="text"] {
+      box-shadow: none !important;
+    }
+  }
   .left {
     width: 65%;
     float: left;
@@ -492,22 +549,3 @@ h1 .subheading {
   }
 }
 
-#breadcrumbs {
-  padding-left: 0;
-  margin-bottom: 15px;
-  list-style-type: none;
-  color: #ccc;
-  li {
-    color: #999;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-  }
-  a {
-    color: #999;
-    &:hover {
-      color: #000;
-      text-decoration: none;
-    }
-  }
-}
