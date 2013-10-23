@@ -273,30 +273,29 @@ body {
 }
 
 
-#pre-content {
+
+#breadcrumbs {
+  padding-left: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  #breadcrumbs {
-    padding-left: 0;
-    margin-bottom: 0px;
-    list-style-type: none;
+  margin-bottom: 0px;
+  list-style-type: none;
+  color: #ccc;
+  li {
+    color: #999;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+  }
+  a {
+    color: #999;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  .spacer {
     color: #ccc;
-    li {
-      color: #999;
-      display: inline-block;
-      zoom: 1;
-      *display: inline;
-    }
-    a {
-      color: #999;
-      &:hover {
-        color: #000;
-        text-decoration: none;
-      }
-    }
-    .spacer {
-      color: #ccc;
-    }
   }
 }
 #main-content {
@@ -327,7 +326,7 @@ body {
 body.with-sidebar {
   @media(min-width:992px) {
     /*
-     * Hald-grey, half white page. 
+     * Hald-grey, half white page.
      * bootstrap containers arent full width so just use clever background images.
      */
     #main-content {
