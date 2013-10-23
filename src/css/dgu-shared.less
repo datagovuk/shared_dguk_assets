@@ -273,29 +273,30 @@ body {
 }
 
 
-
-#breadcrumbs {
-  padding-left: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 0px;
-  list-style-type: none;
-  color: #ccc;
-  li {
-    color: #999;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-  }
-  a {
-    color: #999;
-    &:hover {
-      color: #000;
-      text-decoration: none;
-    }
-  }
-  .spacer {
+#pre-content {
+  #breadcrumbs {
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    list-style-type: none;
     color: #ccc;
+    li {
+      color: #999;
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+    }
+    a {
+      color: #999;
+      &:hover {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+    .spacer {
+      color: #ccc;
+    }
   }
 }
 #main-content {
@@ -428,11 +429,7 @@ h1 .subheading {
       padding: 0 0 0 0;
     }
 }
-// Not sure of use case for below, but breaks article layout
-// .boxed .boxed {
-//   border: none;
-//   margin: -14px -17px;
-// }
+
 .boxed-append {
   /* UI element appears after a normal .boxed */
   border-top: 1px solid #E6E6E6;
