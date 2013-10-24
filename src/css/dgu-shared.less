@@ -317,7 +317,9 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #E0E0E0;
-    border-right: 1px solid #ccc;
+    @media(min-width:992px) {
+      border-right: 1px solid #ccc;
+    }
   }
   .content {
     padding-top: 10px;
@@ -333,6 +335,9 @@ body {
 }
 /* Sidebar mode */
 body.with-sidebar {
+  .content {
+    background: #fff;
+  }
   @media(min-width:992px) {
     /*
      * Hald-grey, half white page.
@@ -436,9 +441,6 @@ h1 .subheading {
 }
 
 .sidebar {
-  .widget-container {
-    margin-bottom: 16px;
-  }
   h4 {
       color: #656565;
       margin-bottom: 8px;
@@ -538,8 +540,5 @@ h1 .subheading {
     .left  { width: 80%; }
     .right { width: 20%; }
   }
-}
-body {
-  background: #f0f !important;
 }
 

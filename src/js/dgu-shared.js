@@ -65,7 +65,7 @@ $(function() {
       cachedWidth = newWidth;
       children.height('auto');
       // Affect only browser windows
-      if (w.width()>=768) {
+      if (w.width()>=992) {
         var maxHeight = 0; 
         children.each(function(i,x){ maxHeight=Math.max(maxHeight,$(x).height())});
         children.height(maxHeight);
