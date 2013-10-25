@@ -340,7 +340,7 @@ body.with-sidebar {
   }
   @media(min-width:992px) {
     /*
-     * Hald-grey, half white page.
+     * Half-grey, half white page.
      * bootstrap containers arent full width so just use clever background images.
      */
     #main-content {
@@ -419,16 +419,26 @@ h1 .subheading {
 .facet-box,
 .boxed {
     //.drop-shadow(0px, 2px, 6px, 0.10);
-    background: #fff;
+//background: #fff;
     margin-bottom: 10px;
-    padding: 20px 22px;
+    //padding: 20px 22px;
     overflow: hidden;
     word-wrap: break-word;
     &.boxed-no-padding {
       padding: 0 0 0 0;
     }
 }
+.panel-panel {
+  background-color: #fff;
+  padding: 20px 11px;
+  margin: 0 10px;
+}
 
+// Disabling to check if required
+// .boxed .boxed {
+//   border: none;
+//   margin: -14px -17px;
+// }
 .boxed-append {
   /* UI element appears after a normal .boxed */
   border-top: 1px solid #E6E6E6;
