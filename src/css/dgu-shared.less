@@ -478,7 +478,6 @@ h1 .subheading {
     }
   }
   .left {
-    width: 65%;
     float: left;
     .left-inner {
       background: #fff;
@@ -496,7 +495,6 @@ h1 .subheading {
     }
   }
   .right {
-    width: 35%;
     float: left;
     .right-inner {
       background: #A2A2A2;
@@ -531,14 +529,17 @@ h1 .subheading {
       }
     }
   }
+
   /* Non-standard breakpoints */
-  @media(min-width: 500px) {
+  .left  { width: 80%; }
+  .right { width: 20%; }
+  @media(max-width: 500px) {
+    .left  { width: 65%; }
+    .right { width: 35%; }
+  }
+  @media(max-width: 768px) {
     .left  { width: 72%; }
     .right { width: 28%; }
-  }
-  @media(min-width: 768px) {
-    .left  { width: 80%; }
-    .right { width: 20%; }
   }
 }
 
