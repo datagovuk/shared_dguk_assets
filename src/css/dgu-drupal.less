@@ -32,8 +32,8 @@ header .submitted {
 .field-name-field-resource-file {
   border-left: 3px solid #ccc;
   padding: 3px 15px;
-  .field-label, 
-  .field-items, 
+  .field-label,
+  .field-items,
   .field-items .field-item {
     display: inline;
   }
@@ -52,8 +52,8 @@ header .submitted {
     display: inline;
     .field-item {
       display: inline;
-      a { 
-        color: #fff; 
+      a {
+        color: #fff;
         display: inline-block;
         zoom: 1;
         *display: inline;
@@ -106,7 +106,7 @@ header .submitted {
       margin-bottom: 10px;
       color: #999;
     }
-    > a { 
+    > a {
       position: absolute;
       top: 0;
       left: 0;
@@ -252,9 +252,9 @@ html.js input.form-autocomplete {
     &.views-field-title {
       border-left: 1px solid #ccc;
     }
-    a { 
-      color: #555; 
-      img { 
+    a {
+      color: #555;
+      img {
         padding-left: 5px;
         padding-bottom: 5px;
       }
@@ -406,8 +406,8 @@ body.page-blog .view-blogs .views-row {
       top: 7px;
     }
     .views-field-title {
-      font-size: 19px;
-      line-height: 23px;
+      font-size: 14px;
+      line-height: 18px;
       display: inline;
     }
     .views-field-field-submitter-name {
@@ -423,7 +423,7 @@ body.page-blog .view-blogs .views-row {
 .view-dataset-requests .views-row .views-field-id,
 .view-blogs .views-row .views-field-id {
   display: inline-block;
-  color: #999; 
+  color: #999;
   background-color: #bbb;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -441,19 +441,24 @@ body.page-blog .view-blogs .views-row {
   a { color: #fff; }
 }
 .node-blog {
-  h2 {
-    background-image: url('/assets/img/icon-blog.png');
-    background-size: 30px;
-    background-repeat: no-repeat;
-    background-position: 10px 9px;
-    padding-left: 49px;
+  .avatar {
+    @media (min-width: 991px) {
+      position: absolute;
+      left: -22%;
+      top:-0.5%;
+    }
+    @media (max-width: 500px) {
+      display: none;
+    }
+    float: left;
+    margin: 0 10px 10px 0;
   }
 }
 
 /* /odug-roadmap */
 .tableauPlaceholder {
   padding: 20px 0;
-  margin: 0 auto !important; 
+  margin: 0 auto !important;
   border: 1px solid #000 !important;
 }
 
@@ -483,8 +488,8 @@ body.page-odug .pane-custom.pane-2 img {
       top: 3px;
     }
     .views-field-field-review-status {
-      .views-label { 
-        color: #999; 
+      .views-label {
+        color: #999;
       }
       .field-content {
         display: inline;
@@ -510,7 +515,7 @@ body.page-odug .pane-custom.pane-2 img {
   padding-left: 49px;
 }
 /* This looks ridiculous on tablet */
-@media (min-width: 768px) and (max-width: 979px) { 
+@media (min-width: 768px) and (max-width: 979px) {
   .view-dataset-requests {
     .views-row {
       padding-right: 0;
@@ -553,7 +558,7 @@ body.page-odug .pane-custom.pane-2 img {
     }
     .field-items {
       display: inline;
-      .field-item { 
+      .field-item {
         display: inline-block;
         zoom: 1;
         max-width: 50%;
@@ -569,9 +574,9 @@ body.page-odug .pane-custom.pane-2 img {
   }
 }
 
-/* 
- * Fix ugly headers which Drupal is technically misusing within articles... 
- * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api 
+/*
+ * Fix ugly headers which Drupal is technically misusing within articles...
+ * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api
  */
 .field-name-body,
 .field-name-field-reply-comment {
@@ -595,13 +600,13 @@ body.page-odug .pane-custom.pane-2 img {
     margin-bottom: 18px;
     font-style: normal;
     // From bootstrap h1
-    font-size: 24px; line-height: 30px; margin-bottom: 10px; 
+    font-size: 24px; line-height: 30px; margin-bottom: 10px;
   }
   .login-forgot {
     margin: 5px 0 10px 20px;
     &:after { content: ' »' }
   }
-  #login-form, 
+  #login-form,
   #register-form {
     background: #fff;
     padding: 10px 14px;
@@ -664,9 +669,9 @@ body.page-odug .pane-custom.pane-2 img {
 
 }
 body.page-home {
-  .pane-1 { 
-    padding-left: 0; 
-    padding-right: 0; 
+  .pane-1 {
+    padding-left: 0;
+    padding-right: 0;
   }
   #homepage-promo-container {
     position: relative;
@@ -677,7 +682,7 @@ body.page-home {
     height: @h * 6.5;
     padding: 0 0 0 0;
     br { display: none; }
-    > div { 
+    > div {
       position: absolute;
       width: @w;
       height: @h;
@@ -700,7 +705,7 @@ body.page-home {
         #small_right    { top: @h*3 ; left: 0  ; }
         #small_single   { top: @h*3 ; left: @w ; }
     }
-    @media (min-width: 980px) { 
+    @media (min-width: 980px) {
         width: @w*4;
         height: @h*2;
         #big_vertical   { top: 0  ; left: 0    ; }
@@ -718,8 +723,8 @@ body.page-home {
       width: 100%;
       background: rgba(255,255,255,0.9);
       padding: 9px 9px;
-      color: #000; 
-      h3 { 
+      color: #000;
+      h3 {
         border: none !important;
         font-size: 16px;
         font-weight: bold;
