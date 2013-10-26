@@ -370,21 +370,36 @@ html.js input.form-autocomplete {
 /* Drupal blogs */
 body.page-blog .view-blogs .views-row {
   /* Leave extra room for the larger avatars on this page */
-  padding-left: 110px;
-  padding-right: 112px;
+  padding-left: 120px;
+  padding-right: 20px;
   min-height: 120px;
+  @media (max-width: 480px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .views-field-title {
     display: block;
   }
   .views-field-id {
-    position: absolute;
-    right: 0;
-    top: 3px;
-    display: block;
+    float: right;
+    display: inline-block;
     margin-bottom: 0;
   }
   .views-field-field-avatar {
     top: 4px;
+    @media (max-width: 480px) {
+      display: none;
+    }
+    img {
+      border:1px solid #;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+    }
+  }
+  h3 {
+    padding: 10px 0 4px;
+    margin-bottom: 0;
   }
 }
 .view-display-id-blogs_same_author .views-row {
