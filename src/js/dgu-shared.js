@@ -71,7 +71,9 @@ $(function() {
         children.height(maxHeight);
       }
     }
-    w.resize( resizeChildren );
-    resizeChildren();
+    if (children.length>1) {
+      w.resize( resizeChildren );
+      resizeChildren();
+    }
   });
 });
