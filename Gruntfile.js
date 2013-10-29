@@ -94,6 +94,10 @@ module.exports = function(grunt) {
         files: 'src/css/dgu-ie7.less',
         tasks: 'less:bootstrap_ie7'
       },
+      styles_drupal: {
+        files: 'src/css/dgu-drupal.less',
+        tasks: 'less:drupal'
+      },
       scripts_drupal: {
         files: 'src/js/dgu-drupal.js',
         tasks: 'uglify:dgu_drupal_js',
