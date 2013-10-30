@@ -77,3 +77,20 @@ $(function() {
     }
   });
 });
+
+/* 
+ * New plugin: Hashtab
+ */
+$(function() {
+  var hashtabs = $('a[data-hash]');
+  if (hashtabs.length==0) { return; }
+  var wHash = (window.location.hash || '#').substring(1);
+  var initially_open = hashtabs.filter('[data-hash="'+wHash+'"]');
+  if (initially_open.length == 1) {
+    $(initially_open).tab('show');
+  }
+  hashtabs.on('shown.bs.tab',function(e) {
+    var target = $(e.delegateTarget);
+    window.location.hash = target.attr('data-hash');
+  });
+});
