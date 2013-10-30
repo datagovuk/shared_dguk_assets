@@ -431,9 +431,8 @@ body.page-blog .view-blogs .views-row {
     padding-bottom: 10px;
     min-height: 40px;
     .views-field-field-avatar {
-      position: absolute;
-      left: 0;
-      top: 7px;
+      float:left;
+      margin: 0 10px 10px 0;
     }
     .views-field-title {
       font-size: 14px;
@@ -511,6 +510,16 @@ body.page-odug {
   }
   .pane-custom.pane-2 img {
   width: 100%;
+  }
+  .view-blogs {
+    .views-row {
+      min-height: 80px;
+      .views-field-id {
+        position: absolute;
+        top:50px;
+        left: 0;
+      }
+    }
   }
 }
 .view-dataset-requests {
@@ -835,10 +844,11 @@ body.page-home {
 /* Library pages*/
 .node-resource h2 {
   background-image: url('/assets/img/icon-library.png');
-  background-size: 30px;
+  background-size: 25px;
   background-repeat: no-repeat;
-  background-position: 10px 9px;
-  padding-left: 49px;
+  background-position: 0 6px;
+  padding-left: 30px;
+  line-height: 35px
 }
 /* Book pages*/
 .node-book h2 {
