@@ -6,12 +6,12 @@ function initNav() {
   var triggers = $('.trigger-subnav');
   var chevron = $('.chevron');
   triggers.click(function(e) {
-    e.preventDefault();
     var target = $(e.delegateTarget);
-    var subnav, chevronClass;
+    var subnav, chevronClass, propagateEvent;
     if (target.hasClass('nav-home')) {
       subnav = $();
       chevronClass = 'position1';
+      propagateEvent = true;
     }
     else if (target.hasClass('nav-data')) {
       subnav = $('.subnav-data');
@@ -39,12 +39,19 @@ function initNav() {
     greenbar.stop().animate({height:new_height},300,'swing',function() { greenbar.css('height','auto'); });
     // Update chevron
     chevron.attr('class','chevron '+chevronClass);
-    return false;
+
+    // Finally, work out if event should be propagated
+    // back to the browser
+    if (!propagateEvent) {
+      e.preventDefault();
+      // This isn't necessary but is someone else's code
+      return false;
+    }
   });
 }
-/* 
+/*
  * New plugin: Equal height boxes.
- * When the parent container is resized (eg. browser resizes, 
+ * When the parent container is resized (eg. browser resizes,
  * hitting a breakpoint) each "foo" is set to equal height.
  * eg.
  * <div class="dgu-equal-height" data-selector="foo">
@@ -66,7 +73,7 @@ $(function() {
       children.height('auto');
       // Affect only browser windows
       if (w.width()>=992) {
-        var maxHeight = 0; 
+	var maxHeight = 0;
         children.each(function(i,x){ maxHeight=Math.max(maxHeight,$(x).height())});
         children.height(maxHeight);
       }
