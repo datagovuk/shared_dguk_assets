@@ -960,9 +960,44 @@ div.fivestar-widget-static .star span.off {
   margin:5px 0 0 20px;
 }
 
+/* Home page */
 .pane-bundle-tile-big, .pane-bundle-tile-small {
   padding:0;
   margin-bottom: 30px;
+  a {
+    color: #111;
+  }
+  p {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 26px;
+    text-transform: none;
+    line-height: 27px;
+    margin-bottom: 8px;
+  }
+}
+.pane-bundle-tile-big {
+  min-height: 500px;
+  .tile-text {
+    padding: 18px 6px 15px 18px;
+    display: block;
+    h2 {
+      font-size: 32px;
+      line-height: 34px;
+    }
+  }
+}
+.pane-bundle-tile-small {
+  img {
+    float:left;
+  }
+  .tile-text {
+    padding: 15px 6px 4px 15px;
+    float:left;
+    max-width: 240px;
+    height: 120px;
+  }
 }
 
 /* Location page changes */
