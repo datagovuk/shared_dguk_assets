@@ -7,16 +7,24 @@
 
 /* Google fonts repo */
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+    font-family: 'Open Sans';
+    src: url('assets/font/OpenSans-Regular-webfont.eot');
+    src: url('assets/font/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/font/OpenSans-Regular-webfont.woff') format('woff'),
+         url('assets/font/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('assets/font/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+    font-family: 'Open Sans';
+    src: url('assets/font/OpenSans-Bold-webfont.eot');
+    src: url('assets/font/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/font/OpenSans-Bold-webfont.woff') format('woff'),
+         url('assets/font/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('assets/font/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
 }
 
 .drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
@@ -30,8 +38,10 @@
   box-shadow: none;
 }
 
-p, blockquote, body {
-  font-family: 'Open Sans', Helvetica Neue, Helvetica;
+p,blockquote,body {
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  font-family:'Open Sans',Helvetica Neue,Helvetica;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -108,7 +118,7 @@ body {
     @gap3: 73px;
     @gap4: 239px;
     @gap5: 42px;
-    @offset: 24px;
+    @offset: 27px;
     &.position1 { right: @offset + @gap5 + @gap4 + @gap3 + @gap2 + @gap1; }
     &.position2 { right: @offset + @gap5 + @gap4 + @gap3 + @gap2; }
     &.position3 { right: @offset + @gap5 + @gap4 + @gap3; }
