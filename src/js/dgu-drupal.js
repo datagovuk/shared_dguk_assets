@@ -1,8 +1,7 @@
-
 jQuery(function() {
   window.$ = jQuery;
 
-  $.each($('.field-name-field-screen-shots'), useFancyboxForScreenshots);
+  $.each($('article.node-app .field-name-field-screen-shots'), useFancyboxForScreenshots);
 });
 
 
