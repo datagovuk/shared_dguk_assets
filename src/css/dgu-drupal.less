@@ -902,7 +902,9 @@ div.fivestar-widget-static .star span.off {
   }
 }
 .pane-bundle-tile-big {
-  min-height: 500px;
+  @media(min-width:415px) {
+    min-height: 500px;
+  }
   .tile-text {
     padding: 18px 6px 15px 18px;
     display: block;
