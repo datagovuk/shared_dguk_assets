@@ -138,21 +138,25 @@ html.js input.form-autocomplete {
     }
     .views-field-name {
       font-size: 18px;
-      position: absolute;
-      top: @topPadding;
-      left: @l + @gutter;
-      right: @r + @gutter;
-      height: @titleheight;
+      @media(min-width:500px) {
+        position: absolute;
+        top: @topPadding;
+        left: @l + @gutter;
+        right: @r + @gutter;
+        height: @titleheight;
+      }
     }
     .views-field-description {
       p { margin-bottom: 0; }
     }
     .views-field-nid {
-      display: block;
-      position: absolute;
+      @media(min-width:500px) {
+        display: block;
+        position: absolute;
+        top: @topPadding + 7px;
+        right: @gutter;
+      }
       width: @r - 10px;
-      top: @topPadding + 7px;
-      right: @gutter;
       color: #aaa;
       font-weight: bold;
       font-size: 15px;
@@ -160,15 +164,28 @@ html.js input.form-autocomplete {
       .field-content { color: #333; }
     }
     .views-field-id {
-      position: absolute;
+      @media(min-width:500px) {
+        position: absolute;
+        top: @topPadding + 28px;
+        right: @gutter;
+      }
       width: @r - 10px;
-      top: @topPadding + 28px;
-      right: @gutter;
       color: #aaa;
       font-weight: bold;
       font-size: 15px;
       text-align: right;
       .field-content { color: #333; }
+    }
+    @media(max-width:501px) {
+      .views-row {
+        padding: 10px 17px 5px 15px;
+      }
+      .views-field-nothing {
+        display: none;
+      }
+      .views-field-nid, .views-field-id {
+        float: right;
+      }
     }
   }
 }
