@@ -7,16 +7,24 @@
 
 /* Google fonts repo */
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+    font-family: 'Open Sans';
+    src: url('assets/font/OpenSans-Regular-webfont.eot');
+    src: url('assets/font/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/font/OpenSans-Regular-webfont.woff') format('woff'),
+         url('assets/font/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('assets/font/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+    font-family: 'Open Sans';
+    src: url('assets/font/OpenSans-Bold-webfont.eot');
+    src: url('assets/font/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/font/OpenSans-Bold-webfont.woff') format('woff'),
+         url('assets/font/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('assets/font/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
 }
 
 .drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
@@ -30,8 +38,10 @@
   box-shadow: none;
 }
 
-p, blockquote, body {
-  font-family: 'Open Sans', Helvetica Neue, Helvetica;
+p,blockquote,body {
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  font-family:'Open Sans',Helvetica Neue,Helvetica;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,7 +49,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
 }
 
-
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Root Elements */
 /* ------------- */
@@ -88,9 +101,11 @@ body {
 
 #blackbar {
   background: #1C1D1D;
-
   .container {
     position: relative;
+  }
+  &.with-publisher .chevron {
+    margin-right: 46px;
   }
   .chevron {
     position: absolute;
@@ -98,27 +113,24 @@ body {
     border: 7px solid transparent;
     border-bottom-color: #8BC658;
     transition: right 0.5s;
-    &.position1 { right: 506px; }
-    &.position2 { right: 441px; }
-    &.position3 { right: 378px; }
-    &.position4 { right: 305px; }
-    &.position5 { right: 66px;  }
-    &.position6 { right: 24px;  }
+    @gap1: 65px;
+    @gap2: 63px;
+    @gap3: 73px;
+    @gap4: 239px;
+    @gap5: 42px;
+    @offset: 27px;
+    &.position1 { right: @offset + @gap5 + @gap4 + @gap3 + @gap2 + @gap1; }
+    &.position2 { right: @offset + @gap5 + @gap4 + @gap3 + @gap2; }
+    &.position3 { right: @offset + @gap5 + @gap4 + @gap3; }
+    &.position4 { right: @offset + @gap5 + @gap4; }
+    &.position5 { right: @offset + @gap5; }
+    &.position6 { right: @offset; }
     @media(max-width: 991px) {
-      &.position1 { right: 235px; }
-      &.position2 { right: 170px; }
-      &.position3 { right: 109px; }
-      &.position4 { right:  34px; }
-      &.position5 { right: 73px;  }
-      &.position6 { right: 24px;  }
-    }
-    @media(max-width: 560px) {
-      &.position1 { right: inherit; left: 40px; }
-      &.position2 { right: inherit; left: 109px; }
-      &.position3 { right: inherit; left: 171px; }
-      &.position4 { right: inherit; left: 244px; }
-      &.position5 { right: inherit; left: 205px; }
-      &.position6 { right: inherit; left: 255px; }
+      @offset2: 47px;
+      &.position1 { margin-right: 0; right: @offset2 + @gap3 + @gap2 + @gap1; }
+      &.position2 { margin-right: 0; right: @offset2 + @gap3 + @gap2; }
+      &.position3 { margin-right: 0; right: @offset2 + @gap3; }
+      &.position4 { margin-right: 0; right: @offset2; }
     }
   }
   .brand {
@@ -173,14 +185,37 @@ body {
 #dgu-nav {
   position: absolute;
   right: 15px;
-  top: 21px;
-  > a,
+  bottom: 0px;
+  height: 50px;
+  background: rbga(255,0,255,0.3);
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  .btn {
+    line-height: 26px;
+    width: 32px;
+    height: 30px;
+    font-size: 15px;
+    padding: 0 0 0 0;
+  }
+  .text-links a,
+  .nav-user,
+  .nav-publisher,
   .nav-search {
     display: block;
     float: left;
     height: 30px;
     margin-left: 30px;
-    &.nav-home { margin-left: 0; }
+    color: #fff;
+  }
+  .text-links {
+    float: left;
+    margin: 3px 0 0 0;
+  }
+  .text-links .nav-home { margin-left: 0; }
+  .nav-user             { margin-left: 12px; }
+  .nav-publisher        { margin-left: 12px; }
+  .nav-search {
     input[type="text"] {
       border: none;
     }
@@ -195,37 +230,18 @@ body {
       }
     }
   }
-  > a {
-    font-family: 'Open Sans';
-    font-size: 15px;
-    font-weight: 300;
-    color: #fff;
-    margin-top: 3px;
-  }
-  .nav-user {
-    margin-top: 0;
-    line-height: 26px;
-    width: 32px;
-    padding: 0 0 0 0 ;
-    margin-left: 12px;
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+    top: 32px;
   }
   @media(max-width: 991px) {
-    top: 39px;
-    .nav-search {
+    height: 68px;
+    .text-links {
       position: absolute;
-      top: -35px;
-      right: 50px;
+      bottom: 3px;
+      right: 13px;
     }
-    .nav-user {
-      position: absolute;
-      top: -35px;
-      right: 0px;
-    }
-  }
-  @media(max-width: 560px) {
-    top: 103px;
-    left: 28px;
-    right: inherit;
   }
 }
 
@@ -420,7 +436,7 @@ h1 .subheading {
 .boxed {
     //.drop-shadow(0px, 2px, 6px, 0.10);
 //background: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     //padding: 20px 22px;
     overflow: hidden;
     word-wrap: break-word;
@@ -428,9 +444,22 @@ h1 .subheading {
       padding: 0 0 0 0;
     }
 }
+.whitebox {
+  padding: 20px 22px;
+  background: #fff;
+  overflow: hidden;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
 .panel-pane {
   background-color: #fff;
   padding: 20px 15px;
+  .panel-pane {
+    padding: 0;
+  }
+  .pane-title i {
+    padding-right: 10px;
+  }
 }
 
 // Disabling to check if required
@@ -501,7 +530,16 @@ h1 .subheading {
       i {
         font-size: 25px;
       }
+      input[type="text"].loading {
+        background-image: url('/assets/img/ajax-loader.gif');
+        background-position: 97% 10px;
+        background-repeat: no-repeat;
+      }
     }
+  }
+  .search-all-label {
+    color:#ccc;
+    margin:5px 0 0 35px;
   }
   .right {
     float: left;
@@ -555,3 +593,14 @@ h1 .subheading {
 .dgu-pagination {
   text-align: center;
 }
+
+table.table {
+  td {
+    background: #fff;
+    border-color: #EFEFEF !important;
+  }
+  .value {
+    word-wrap: break-word;
+  }
+}
+

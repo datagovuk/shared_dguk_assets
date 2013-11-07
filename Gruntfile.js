@@ -54,7 +54,6 @@ module.exports = function(grunt) {
           'src/js/jquery.dotdotdot-1.5.9.js',
           'src/js/jquery.placeholder.js',
           'src/js/bootstrap-3.0.0.js',
-          'src/js/bootstrap-hashchange.js',
           'src/js/jquery.fancybox.js'
         ],
         dest: 'assets/js/vendor.min.js'
@@ -93,6 +92,10 @@ module.exports = function(grunt) {
       styles_ie7: {
         files: 'src/css/dgu-ie7.less',
         tasks: 'less:bootstrap_ie7'
+      },
+      styles_drupal: {
+        files: 'src/css/dgu-drupal.less',
+        tasks: 'less:drupal'
       },
       scripts_drupal: {
         files: 'src/js/dgu-drupal.js',
