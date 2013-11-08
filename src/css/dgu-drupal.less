@@ -72,80 +72,6 @@ header .submitted {
 }
 
 
-/* Drupal comments and forum pages */
-.replies-header {
-  margin-top: 10px;
-}
-.replies-wrapper {
-  .reply {
-    padding: 10px;
-    padding-bottom: 2px;
-    margin-bottom: 9px;
-    position: relative;
-    border: 0;
-    &.push-1 {margin-left: 30px;}
-    &.push-2 {margin-left: 60px;}
-    &.push-3 {margin-left: 90px;}
-    &.push-4 {margin-left: 120px;}
-    &.push-5 {margin-left: 140px;}
-    &.push-6 {margin-left: 160px;}
-    &.push-7 {margin-left: 180px;}
-    &.push-8 {margin-left: 190px;}
-    &.push-9 {margin-left: 200px;}
-    &.push-10 {margin-left: 210px;}
-    h3 {
-      padding-left: 60px;
-      padding-top: 0;
-      margin-left: 0px;
-      margin-bottom: 3px;
-    }
-    .submitted {
-      display: block;
-      padding-left: 60px;
-      padding-bottom: 3px;
-      color: #999;
-    }
-    > a {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .reply-body {
-      padding-left: 10px;
-      margin-left: 44px;
-      border-left: 6px solid #E0E0E0;
-    }
-    .field-name-field-reply-subject {
-      .field-label {
-        display: none;
-      }
-      .field-items {
-        font-size: 19px;
-        line-height: 23px;
-      }
-    }
-    .field-name-field-reply-comment {
-      .field-label {
-        display: none;
-      }
-      .field-items {
-        padding-bottom: 0;
-      }
-    }
-  }
-  @media(max-width:767px) {
-    h3 {
-      border-top: none;
-    }
-  }
-  .reply-links a {
-    padding: 15px;
-    margin-right: 15px;
-  }
-}
-
-
-
 /* Drupal throbber  eg. Search Forums */
 html.js input.form-autocomplete {
   background-image: none;
@@ -212,21 +138,25 @@ html.js input.form-autocomplete {
     }
     .views-field-name {
       font-size: 18px;
-      position: absolute;
-      top: @topPadding;
-      left: @l + @gutter;
-      right: @r + @gutter;
-      height: @titleheight;
+      @media(min-width:500px) {
+        position: absolute;
+        top: @topPadding;
+        left: @l + @gutter;
+        right: @r + @gutter;
+        height: @titleheight;
+      }
     }
     .views-field-description {
       p { margin-bottom: 0; }
     }
     .views-field-nid {
-      display: block;
-      position: absolute;
+      @media(min-width:500px) {
+        display: block;
+        position: absolute;
+        top: @topPadding + 7px;
+        right: @gutter;
+      }
       width: @r - 10px;
-      top: @topPadding + 7px;
-      right: @gutter;
       color: #aaa;
       font-weight: bold;
       font-size: 15px;
@@ -234,15 +164,28 @@ html.js input.form-autocomplete {
       .field-content { color: #333; }
     }
     .views-field-id {
-      position: absolute;
+      @media(min-width:500px) {
+        position: absolute;
+        top: @topPadding + 28px;
+        right: @gutter;
+      }
       width: @r - 10px;
-      top: @topPadding + 28px;
-      right: @gutter;
       color: #aaa;
       font-weight: bold;
       font-size: 15px;
       text-align: right;
       .field-content { color: #333; }
+    }
+    @media(max-width:501px) {
+      .views-row {
+        padding: 10px 17px 5px 15px;
+      }
+      .views-field-nothing {
+        display: none;
+      }
+      .views-field-nid, .views-field-id {
+        float: right;
+      }
     }
   }
 }
@@ -453,15 +396,15 @@ body.page-blog .view-blogs .views-row {
   display: inline-block;
   color: #999;
   background-color: #bbb;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   background-image: url('/assets/img/comment.png');
-  background-size: 20px;
+  background-size: 16px;
   background-repeat: no-repeat;
   color: #fff;
   font-weight: bold;
-  padding-left: 26px;
+  padding-left: 24px;
   padding-right: 10px;
   font-size: 11px;
   margin-bottom: 6px;
@@ -532,18 +475,13 @@ body.page-odug {
     background-size: 23px;
     padding-left: 30px;
     position: relative;
-    padding-right: 50px;
+    padding-right: 10px;
     min-height: 75px;
     padding-top: 4px;
     padding-bottom: 10px;
     .views-field-title {
       font-size: 19px;
       line-height: 23px;
-    }
-    .views-field-id {
-      position: absolute;
-      right: 0;
-      top: 3px;
     }
     .views-field-field-review-status {
       .views-label {
@@ -981,7 +919,9 @@ div.fivestar-widget-static .star span.off {
   }
 }
 .pane-bundle-tile-big {
-  min-height: 500px;
+  @media(min-width:415px) {
+    min-height: 500px;
+  }
   .tile-text {
     padding: 18px 6px 15px 18px;
     display: block;
