@@ -658,8 +658,10 @@ body.page-odug {
     border: 1px solid #ddd;
     margin-top: -1px;
     .avatar {
-      position: absolute;
-      margin: 0 10px 10px 0;
+      margin: 10px;
+      @media(min-width:640px) {
+        position: absolute;
+      }
       img {
         border:1px solid #;
         -webkit-border-radius: 60px;
@@ -671,14 +673,20 @@ body.page-odug {
       float:left;
       display: inline-block;
       padding: 4px 12px;
-      width:150px;
+      width:95px;
+      @media(min-width:480px) {
+        width:150px;
+      }
       font-size: 13px;
       font-weight: bold;
       text-align: right;
       background-color: #E0E0E0;
     }
     dd {
-      margin-left: 170px;
+      margin-left: 105px;
+      @media(min-width:480px) {
+        width:170px;
+      }
     }
   }
   .avatar {
