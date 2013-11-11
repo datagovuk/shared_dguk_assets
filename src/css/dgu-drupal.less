@@ -643,6 +643,21 @@ body.page-odug {
         border-bottom-color: #fff !important;
       }
     }
+    @media (max-width:390px) {
+      min-height: 36px;
+      height: auto;
+      padding-bottom: 36px;
+      position: relative;
+      border-bottom: 0;
+      a {
+        float:none;
+        width: 100%;
+        &.lt-active {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
   }
 }
 /* User pages */
