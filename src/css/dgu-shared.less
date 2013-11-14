@@ -328,52 +328,73 @@ body {
     }
   }
 }
-#main-content {
-  background-color: #EFEFEF;
-  .sidebar {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #E0E0E0;
-    @media(min-width:992px) {
-      border-right: 1px solid #ccc;
+/* Sidebar mode */
+body.with-sidebar {
+  background: #f0f0f0;
+  #main-content {
+    background-color: #fff;
+    background-image: url('/assets/img/sidebar-bg.png');
+    background-repeat: repeat-y;
+    background-position: 49% 0;
+    .sidebar {
+      float: left;
+      width: 29%;
+      margin-right: 1%;
+      background: #e0e0e0;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .content {
+      float: left;
+      width: 67%;
+      margin-left: 3%;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
-  .content {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  /* Responsive sidebar (IE7 doesn't get this) */
+  @media(min-width: 992px) {
+    #main-content {
+      background-position: 48.91% 0;
+    }
   }
-  @media (max-width: 991px) {
-    > h1 {
-      background: #f4f4f4;
-      margin: 0 0 0 0;
-      padding: 10px 10px 10px 10px;
+  /* Responsive sidebar behaviour */
+  @media(min-width: 1200px) {
+    #main-content {
+      background-position: 50% 0;
+    }
+  }
+  @media(max-width: 991px) {
+    #main-content {
+      background: #fff;
+      .content {
+        float: none;
+        width: auto;
+        margin-left: 0;
+      }
+      .sidebar {
+        float: none;
+        width: auto;
+        margin-right: 0;
+        background: none;
+      }
     }
   }
 }
-/* Sidebar mode */
-body.with-sidebar {
-  .content {
-    background: #fff;
-  }
-  @media(min-width:992px) {
-    /*
-     * Half-grey, half white page.
-     * bootstrap containers arent full width so just use clever background images.
-     */
-    #main-content {
-      background-color: #E0E0E0;
-      /* This is a 1x1 white pixel: */
-      background-image: url('/assets/img/whitepixel.png');
-      /* Stretch it to be half page width */
-      background-size: 66.0% 1px;
-      background-repeat: repeat-y;
-      background-position: top right;
-      .content {
-        padding-left: 35px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
+body.without-sidebar {
+  #main-content {
+    .content {
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
+  }
+}
+/* Pretty responsive headers */
+@media (max-width: 991px) {
+  .content > h1 {
+    background: #f4f4f4;
+    margin: 0 0 0 0;
+    padding: 10px 10px 10px 10px;
   }
 }
 
