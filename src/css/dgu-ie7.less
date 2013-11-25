@@ -36,18 +36,70 @@ input[type="radio"],input[type="checkbox"]{margin-top:0}
     padding-left: 4px;
   }
 }
-.col-md-1  { width: 72px; float: left; }
-.col-md-2  { width: 144px; float: left; }
-.col-md-3  { width: 216px; float: left; }
-.col-md-4  { width: 274px; float: left; }
-.col-md-5  { width: 360px; float: left; }
-.col-md-6  { width: 432px; float: left; }
-.col-md-7  { width: 504px; float: left; }
-.col-md-8  { width: 576px; float: left; }
-.col-md-9  { width: 648px; float: left; }
-.col-md-10 { width: 720px; float: left; }
-.col-md-11 { width: 792px; float: left; }
-.col-md-12 { width: 894px; float: left; }
+.col-sm-1 , .col-md-1  { width: 72px; float: left; }
+.col-sm-2 , .col-md-2  { width: 144px; float: left; }
+.col-sm-3 , .col-md-3  { width: 216px; float: left; }
+.col-sm-4 , .col-md-4  { width: 274px; float: left; }
+.col-sm-5 , .col-md-5  { width: 360px; float: left; }
+.col-sm-6 , .col-md-6  { width: 432px; float: left; }
+.col-sm-7 , .col-md-7  { width: 504px; float: left; }
+.col-sm-8 , .col-md-8  { width: 576px; float: left; }
+.col-sm-9 , .col-md-9  { width: 648px; float: left; }
+.col-sm-10, .col-md-10 { width: 720px; float: left; }
+.col-sm-11, .col-md-11 { width: 792px; float: left; }
+.col-sm-12, .col-md-12 { width: 894px; float: left; }
+
+#form-tabs .col-sm-4 {
+  width: 220px;
+}
+#form-tabs .col-sm-8 {
+  width: 720px;
+}
+.modal-backdrop {
+  display: none !important;
+}
+body.controller-package.action-new,
+body.controller-package.action-edit {
+  #section-name-fields {
+    input[type="text"] {
+      width: 500px;
+    }
+    .input-group {
+      .input-group-addon { width: 100px; display:inline; zoom: 1;}
+      input[type="text"] { width: 400px; display:inline; zoom: 1;}
+    }
+  }
+  #individual_resources-table,
+  #additional_resources-table,
+  #timeseries_resources-table {
+    table-layout: fixed;
+    .resource-move-cell {
+      width: 50px !important;
+      max-width: 50px !important;
+    }
+    input[type="text"] {
+      min-width: 120px !important;
+      max-width: 120px !important;
+      width: 120px !important;
+    }
+    .input-group {
+      min-width: 120px !important;
+      max-width: 120px !important;
+      width: 120px !important;
+      display: block;
+      .input-group-btn,
+      button,
+      input[type="text"] {
+        display: block;
+        min-width: 120px !important;
+        max-width: 120px !important;
+        width: 120px !important;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
 .visible-md { display: block !important; }
 .clearfix-ie7 {
   height: 1px;
@@ -77,6 +129,5 @@ input[type="radio"],input[type="checkbox"]{margin-top:0}
     top: 0;
     right: 0;
   }
-
 }
 
