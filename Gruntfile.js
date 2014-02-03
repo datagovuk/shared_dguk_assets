@@ -54,7 +54,8 @@ module.exports = function(grunt) {
           'src/js/jquery.dotdotdot-1.5.9.js',
           'src/js/jquery.placeholder.js',
           'src/js/bootstrap-3.0.0.js',
-          'src/js/jquery.fancybox.js'
+          'src/js/jquery.fancybox.js',
+          'src/js/jquery.tablesorter.js'
         ],
         dest: 'assets/js/vendor.min.js'
       }
