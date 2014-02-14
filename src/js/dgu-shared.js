@@ -5,6 +5,9 @@ $(function() {
 function initNav() {
   var triggers = $('.trigger-subnav');
   var chevron = $('.chevron');
+  var greenbar = $('#greenbar');
+  window.navOpen = false;
+  $('body').addClass('navClosed');
   triggers.click(function(e) {
     var target = $(e.delegateTarget);
     var subnav, chevronClass, propagateEvent;
@@ -30,7 +33,17 @@ function initNav() {
       throw 'Unrecognised subnav trigger',target;
     }
     var greenbar = $('#greenbar');
+    //--  The navOpen behaviour is only visible on mobile.
+    if (chevron.hasClass(chevronClass)) {
+      window.navOpen = !window.navOpen;
+    } 
+    else {
+      window.navOpen = true
+    }
+    // --
     var old_height = greenbar.height();
+    $('body').toggleClass('navOpen',window.navOpen);
+    $('body').toggleClass('navClosed',!window.navOpen);
     // Update subnav
     $('.subnav').removeClass('active');
     subnav.addClass('active');
