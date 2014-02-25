@@ -1020,6 +1020,123 @@ div.fivestar-widget-static .star span.off {
   }
 }
 
+/* Assume full control of the front page.
+   This overwrites a lot of the above rules.
+   They might be used somewhere else? I don't know. */
+body.front {
+  .row-second,
+  .row-third {
+    /* Pseudo-apply the Bootstrap "row" attributes because Drupal forgot to do this. */
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+    &:after {
+      clear: both;
+    }
+  }
+  .pane-bundle-tile-text-big, 
+  .pane-bundle-tile-big,
+  .pane-bundle-tile-text-small, 
+  .pane-bundle-tile-small {
+    a {
+      color: #666;
+      &:hover { 
+        color: #000;
+        text-decoration: none;
+      }
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 22px;
+      font-family: 'Open Sans', Helvetica Neue, Helvetica;
+      margin-bottom: 0;
+      min-height: 40px;
+      vertical-align: middle;
+    }
+  }
+  .pane-bundle-tile-text-big, 
+  .pane-bundle-tile-big {
+    min-height: inherit;
+    background: #fff;
+    .field-type-image {
+      width: 92%;
+      margin: 4%;
+      margin-bottom: 0;
+    }
+    .tile-text {
+      background: rgba(255,255,255,0.8);
+      padding: 12px 14px;
+      position: static;
+      margin-bottom: 2%;
+      p { margin: 0 0 0 0; }
+    }
+  }
+  .pane-bundle-tile-text-small, 
+  .pane-bundle-tile-small {
+    position: relative;
+    padding-left: 110px;
+    background: #fff;
+    height: 120px;
+    .field-type-image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 100px;
+      width: 100px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        max-width: inherit;
+      }
+    }
+    h2 {
+      font-size: 17px;
+      line-height: 21px;
+    }
+    .tile-text {
+      padding: 10px;
+      padding-right: 20px;
+      padding-top: 30px;
+    }
+  }
+}
+@media(max-width:991px) {
+  body.front {
+    .pane-bundle-tile-text-big, 
+    .pane-bundle-tile-big {
+      height: 120px;
+      .field-type-image {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100px;
+        height: 100px;
+        margin: 0 0 0 0;
+      }
+      h2 {
+        text-align: left;
+        padding-top: 27px;
+        padding-left: 110px;
+      }
+    }
+  }
+}
+@media(max-width:500px) {
+  body.front {
+    .pane-bundle-tile-text-big, 
+    .pane-bundle-tile-big {
+      h2 {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+
 /* Location page changes */
 .pane-uk-location-infrastructure ul {
   padding-left: 15px;
