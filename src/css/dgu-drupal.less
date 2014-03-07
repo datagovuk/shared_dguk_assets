@@ -5,12 +5,37 @@
   border: none;
 }
 
+.form-item input.error, .form-item textarea.error, .form-item select.error {
+  border: 2px solid #FF0000;
+}
+
+select {
+  -webkit-appearance: none;
+}
+
+input[type="file"] {
+  display: inline;
+}
+
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 1.75em;
+}
+
+.bg-colour-0 {background: #98B0B1}
+.bg-colour-1 {background: #ABB075}
+.bg-colour-2 {background: #A19175}
+.bg-colour-3 {background: #ABA8A1}
+.bg-colour-4 {background: #D9B0A1}
+.bg-colour-5 {background: #A19175}
+.bg-colour-6 {background: #DBBAB3}
+.bg-colour-7 {background: #A99A71}
+.bg-colour-8 {background: #C6CAAC}
+.bg-colour-9 {background: #E9CB87}
+
+
 /* Drupal Library pages */
 /* -------------------- */
 header .submitted {
-  padding-left: 17px;
-  padding-right: 17px;
-  // background: #f0f;
   color: #aaa;
   background: #eee;
   display: block;
@@ -204,11 +229,6 @@ html.js input.form-autocomplete {
 .views-table {
   th {
     background: #eee;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    &.views-field-title {
-      border-left: 1px solid #ccc;
-    }
     a {
       color: #555;
       img {
@@ -344,7 +364,6 @@ body.page-blog .view-blogs .views-row {
       display: none;
     }
     img {
-      border:1px solid #;
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
       border-radius: 50px;
@@ -392,7 +411,6 @@ body.page-blog .view-blogs .views-row {
 .view-dataset-requests .views-row .views-field-id,
 .view-blogs .views-row .views-field-id {
   display: inline-block;
-  color: #999;
   background-color: #bbb;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -421,7 +439,6 @@ body.page-blog .view-blogs .views-row {
     float: left;
     margin: 0 10px 10px 0;
     img {
-      border:1px solid #;
       -webkit-border-radius: 60px;
       -moz-border-radius: 60px;
       border-radius: 60px;
@@ -586,59 +603,162 @@ body.page-odug {
 }
 
 /* Login pages */
-.toboggan-unified {
-  .help-block {
-    font-style: italic;
-    color: #999;
+
+
+div.password-confirm,
+.password-strength > * {
+  float: right;
+  margin-right: 4px;
+
+  @media (max-width: 1200px) {
+    font-size: 10px;
+    line-height: 18px;
   }
+  @media (max-width: 992px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+
+#user-profile-form {
+  label{
+    @media (max-width: 1200px) {
+      font-size: 12px;
+    }
+  }
+
+  .form-actions,
+  .field-name-field-first-name,
+  .field-name-field-twitter {
+    clear: both;
+  }
+
+  .imagefield-crop-preview,
+  .imagefield-crop-cropbox {
+    float: left;
+  }
+  .imagefield-crop-cropbox {
+    margin-left: 10px;
+    @media (max-width: 1200px) {
+      margin: 10px 0 0 0;
+    }
+    @media (max-width: 992px) {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  .field-name-field-avatar {
+    img {
+      max-width: none;
+      display: none;
+    }
+    div.jcrop-holder img {
+      display: block;
+    }
+    .file {
+      display: none;
+    }
+    .btn-danger {
+      margin-top: 10px;
+    }
+    .form-type-managed-file input {
+      float: left;
+      clear: none;
+    }
+    .form-type-managed-file p {
+      margin-left: 15px;
+      float: left;
+      width: 250px;
+      margin-top: 7px;
+      @media (max-width: 1200px) {
+        margin-left: 0;
+      }
+      @media (max-width: 992px) {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  fieldset {
+    padding-left: 0;
+    margin: 15px;
+    width: 30.65%;
+    @media (max-width: 1200px) {
+      width: 30%;
+    }
+    @media (max-width: 992px) {
+      width: 95.5%;
+    }
+    @media (max-width: 767px) {
+      width: 95%;
+    }
+    @media (max-width: 560px) {
+      width: 93%;
+    }
+  }
+  fieldset.redirect-list {
+    width: 95%;
+    @media (max-width: 560px) {
+      width: 93%;
+    }
+
+  }
+}
+.help-block {
+  color: #999;
+  font-size: 13px;
+  line-height: 17px;
+
+  @media (max-width: 1200px) {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  @media (max-width: 992px) {
+    font-size: 13px;
+    line-height: 17px;
+  }
+}
+
+.toboggan-unified {
+
+  #user-login,
+  #user-register-form {
+    max-width: 500px;
+    padding-top: 20px;
+    clear: both;
+  }
+
   #login-message {
     text-align: left;
     @media(max-width: 767px) { margin-top: 15px; }
-    margin-bottom: 18px;
     font-style: normal;
     // From bootstrap h1
-    font-size: 24px; line-height: 30px; margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 10px;
   }
   .login-forgot {
-    margin: 5px 0 10px 20px;
+    margin: 15px 0;
     &:after { content: ' »' }
   }
-  #login-form,
-  #register-form {
-    background: #fff;
-    padding: 10px 14px;
-    border: 1px solid #ccc;
-    border-top: none;
-    .boxed {
-      border: 0;
-    }
-  }
-  .password-parent {
-    max-width: 500px;
-  }
-  .password-strength > * {
-    float: right;
-    margin: 0 4px;
-  }
+
   #login-links {
-    border-bottom: 1px solid #ccc;
     height: 36px;
     a {
       display: block;
       float: left;
-      padding-top: 8px;
+      padding: 10px 15px;
       font-size: 15px;
       line-height: 20px;
-      border: 1px solid transparent !important;
-      -webkit-border-radius: 4px 4px 0 0;
-         -moz-border-radius: 4px 4px 0 0;
-              border-radius: 4px 4px 0 0;
+      border: none !important;
       background: none !important;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
       &.lt-active {
-        color: #000;
-        background: #fff !important;
-        border-color: #ccc !important;
-        border-bottom-color: #fff !important;
+        color: #fff;
+        background: #8bc658 !important;
       }
     }
     @media (max-width:390px) {
@@ -660,74 +780,49 @@ body.page-odug {
 }
 /* User pages */
 .page-user {
-  .tabs,
-  .tabs ul {
-    margin-bottom: 0px;
-  }
-  #user-profile-form,
+
   .profile {
-    background: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-top: -1px;
     .avatar {
-      margin: 10px;
-      @media(min-width:640px) {
-        position: absolute;
-        top:10px;
-        @media (max-width:768px) {
-          left: 76%;
-        }
-        @media (min-width:992px) {
-          left: 35px;
-        }
-        left:20px;
-      }
-      img {
-        border:1px solid #;
-        -webkit-border-radius: 60px;
-        -moz-border-radius: 60px;
-        border-radius: 60px;
-      }
+      margin-bottom: 20px;
     }
-    dt {
-      float:left;
-      display: inline-block;
-      padding: 4px 12px;
-      width:95px;
-      @media(min-width:480px) {
-        width:150px;
-      }
-      font-size: 13px;
-      font-weight: bold;
-      text-align: right;
-      background-color: #E0E0E0;
+    .member-for,
+    .job-title {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 8px;
     }
-    dd {
-      margin-left: 20px;
-      display: inline-block;
+    .member-for {
+      margin-bottom: 14px;
     }
-  }
-  .avatar {
-    left:50px;
-    top: 20px;
-    .field-label {
-    display: none;
+
+    .solcial-media {
+      line-height: 20px;
+      padding-left: 32px;
+      margin: 2px 0;
+      padding-bottom: 10px;
     }
+    .twitter { background: url('/assets/img/icon-twitter.png') no-repeat; background-size: 20px;}
+    .linkedin { background: url('/assets/img/icon-linkedin.png') no-repeat; background-size: 20px;}
+    .facebook { background: url('/assets/img/icon-facebook.png') no-repeat; background-size: 20px;}
+    .googleplus { background: url('/assets/img/icon-googleplus.png') no-repeat; background-size: 20px;}
   }
 }
 
 /* Workbench pages*/
-.page-admin-workbench .view-filters {
-  padding-bottom: 15px;
-}
-
-.page-admin-workbench .view-content {
-  clear: both;
-}
-
-div.admin.my-workbench .left {
-  width: 30%;
+.page-admin-workbench {
+  .view-filters {
+    padding-bottom: 15px;
+  }
+  .views-table {
+    th {
+      background: #f8f8f8;
+    }
+  }
+  .workbench-add-content {
+    dd {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 /* /taxonomy/term/23 */
@@ -936,7 +1031,7 @@ div.fivestar-widget-static .star span.off {
     }
     @media(max-width: 767px) {
       padding-top: 10px;
-      background-position-y: 11px;
+      background-position: 100% 11px;
     }
   }
   .node-type-app              h3 { background-image: url('/assets/img/icon-app.png'); }
@@ -1143,7 +1238,7 @@ body.front {
 }
 
 /* hiding Breadcrumbs */
-.page-user, .page-search {
+.page-search {
   #pre-content {
     #breadcrumbs {
       visibility: hidden;
@@ -1151,7 +1246,6 @@ body.front {
     }
   }
 }
-
 
 /* Hack to fix the Add content issue with option panels */
 .page-node-add .collapse {
@@ -1167,4 +1261,61 @@ body.front {
 
 .pane-title a {
   float: right;
+}
+
+nav.tabs {
+  margin-bottom: 10px;
+}
+
+fieldset.field-group-fieldset {
+
+}
+//fieldset.panel-default {
+fieldset {
+  background-color: #fff;
+  position: relative;
+  padding-top: 40px;
+}
+
+fieldset .panel-body {
+  padding-right: 0;
+}
+
+fieldset legend.panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;  position: absolute;
+  top: 0;
+  height: 40px;
+  padding-top: 3px;
+}
+
+input.form-file {
+  height: 34px;
+  padding: 5px;
+  font-size: 14px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  margin-right: 10px;
+  max-width: 265px;
+}
+
+#toolbar {
+  background: #000;
+  div.toolbar-menu,
+  div.toolbar-drawer {
+    padding: 2px;
+    margin: 2px auto 0 auto;
+    max-width: 1170px;
+    @media (max-width: 1200px) {
+      max-width: 970px;
+    }
+    @media (max-width: 992px) {
+      max-width: 750px;
+    }
+  }
 }
