@@ -808,23 +808,6 @@ div.password-confirm,
   }
 }
 
-/* Workbench pages*/
-.page-admin-workbench {
-  .view-filters {
-    padding-bottom: 15px;
-  }
-  .views-table {
-    th {
-      background: #f8f8f8;
-    }
-  }
-  .workbench-add-content {
-    dd {
-      margin-bottom: 15px;
-    }
-  }
-}
-
 /* /taxonomy/term/23 */
 .lexicon-links {
   background-color: transparent;
@@ -1267,9 +1250,6 @@ nav.tabs {
   margin-bottom: 10px;
 }
 
-fieldset.field-group-fieldset {
-
-}
 //fieldset.panel-default {
 fieldset {
   background-color: #fff;
@@ -1316,6 +1296,56 @@ input.form-file {
     }
     @media (max-width: 992px) {
       max-width: 750px;
+    }
+  }
+}
+
+/* Workbench Moderation pages */
+
+//form.workbench-moderation-moderate-form,
+//form.workbench-moderation-moderate-form div,
+//form.workbench-moderation-moderate-form label {
+//  display: inline;
+//}
+
+body.page-admin-workbench,
+body.page-node-moderation {
+
+  .view-filters {
+    padding-bottom: 15px;
+  }
+
+  th {
+    background: #f8f8f8;
+  }
+  .workbench-add-content {
+    dd {
+      margin-bottom: 15px;
+    }
+  }
+
+  .form-type-select {
+    width: 150px;
+    float: left;
+  }
+  input.form-submit {
+    float: left;
+    margin-left: 10px;
+  }
+  .workbench-moderation-moderate-form,
+  .moderation-actions {
+    float: left;
+  }
+  tr {
+    ul {
+      clear: both;
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 3px 5px;
+      margin: 2px;
+      background: #eee;
     }
   }
 }
