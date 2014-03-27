@@ -1,8 +1,41 @@
 /* Drupal will helpfully put articles inside .boxed area. I do not want it to do this. */
-.boxed article {
-  padding: 0 0 0 0;
-  overflow: visible;
-  border: none;
+//.boxed article {
+//  padding: 0 0 0 0;
+//  overflow: visible;
+//  border: none;
+//}
+
+article.node {
+  header,
+  .field {
+    background: #fff;
+    padding: 10px;
+    position: relative;
+  }
+  header {
+    min-height: 90px;
+  }
+  header.with-avatar {
+    padding: 20px 10px 10px 90px;
+    .field-type-taxonomy-term-reference {
+      padding: 5px 0 0 0;
+    }
+  }
+
+  .taxonomy {
+    display: block;
+    .field {
+      display: inline-block;
+    }
+  }
+}
+
+
+
+
+.unboxed {
+  background: none;
+  padding: 0;
 }
 
 .form-item input.error, .form-item textarea.error, .form-item select.error {
@@ -17,53 +50,150 @@ input[type="file"] {
   display: inline;
 }
 
+.bg-colour-0 img {background: #ccc}
+.bg-colour-1 img {background: #ccd}
+.bg-colour-2 img {background: #cdc}
+.bg-colour-3 img {background: #dcc}
+.bg-colour-4 img {background: #ddc}
+.bg-colour-5 img {background: #cdd}
+.bg-colour-6 img {background: #dcd}
+.bg-colour-7 img {background: #cda}
+.bg-colour-8 img {background: #acd}
+.bg-colour-9 img {background: #adc}
+
+.page-header {
+  margin: 0 0 15px;
+}
+
+.drupal-messages {
+  margin: 10px;
+}
+
+.panel-pane {
+  position: relative;
+}
+
+/* Nodes */
+body.page-node .panel-col-first .panel-pane {
+  background: none;
+  padding: 0;
+}
+
+/* Pagers */
+.pagination {
+  .active {
+    a,
+    span {
+      background-color: #fff;
+      border-color: #ddd;
+      color: #333;
+      cursor: default;
+      z-index: 2;
+    }
+
+    a:focus,
+    span:focus,
+    a:hover,
+    span:hover {
+      background-color: #eee;
+      border-color: #ddd;
+      color: #333;
+    }
+  }
+}
+
+.pagination > .disabled > span, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  color: #333;
+  cursor: default;
+}
+
+/* Views base */
+.view {
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #000;
+  }
+}
+.views-field-title {
+  h3 {
+    padding: 0 0 7px;
+    margin-bottom: 0;
+  }
+}
+
+
+.views-field-body {
+  margin: 5px 0;
+}
+
+.grey-text,
+.views-field-field-submitter-name {
+  color: #666;
+}
+.submitted,
+.views-field-taxonomy-forums,
+.views-field-name {
+  font-size: 13px;
+  color: #999;
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #000;
+  }
+}
+
+.views-field-created {
+  font-size: 13px;
+  color: #999;
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #000;
+  }
+}
+
 .views-exposed-form .views-exposed-widget .form-submit {
   margin-top: 1.75em;
 }
 
-.bg-colour-0 img {background: #98B0B1}
-.bg-colour-1 img  {background: #ABB075}
-.bg-colour-2 img  {background: #A19175}
-.bg-colour-3 img  {background: #ABA8A1}
-.bg-colour-4 img  {background: #D9B0A1}
-.bg-colour-5 img  {background: #A19175}
-.bg-colour-6 img  {background: #DBBAB3}
-.bg-colour-7 img  {background: #A99A71}
-.bg-colour-8 img  {background: #C6CAAC}
-.bg-colour-9 img  {background: #E9CB87}
-
-
-/* Drupal Library pages */
-/* -------------------- */
-header .submitted {
-  color: #aaa;
-  background: #eee;
-  display: block;
-  padding: 5px;
-  margin-bottom: 8px;
-  font-style: italic;
-  a {
-    color: #999;
-    text-decoration: underline;
-  }
-}
-/* Drupal Tags/Categories/etc */
-/* -------------------------- */
-/* These two fields appear at the bottom of library documents */
-.field-name-field-developed-by,
-.field-name-field-rating,
-.field-name-field-app-link,
-.field-name-field-app-charge,
-.field-name-field-tags,
-.field-name-field-resource-file {
-  border-left: 3px solid #ccc;
-  padding: 3px 15px;
-  .field-label,
-  .field-items,
-  .field-items .field-item {
-    display: inline;
-  }
-}
+///* Drupal Library pages */
+///* -------------------- */
+//header .submitted {
+//  color: #aaa;
+//  background: #eee;
+//  display: block;
+//  padding: 5px;
+//  margin-bottom: 8px;
+//  font-style: italic;
+//  a {
+//    color: #999;
+//    text-decoration: underline;
+//  }
+//}
+///* Drupal Tags/Categories/etc */
+///* -------------------------- */
+///* These two fields appear at the bottom of library documents */
+//.field-name-field-developed-by,
+//.field-name-field-rating,
+//.field-name-field-app-link,
+//.field-name-field-app-charge,
+//.field-name-field-tags,
+//.field-name-field-resource-file {
+//  border-left: 3px solid #ccc;
+//  padding: 3px 15px;
+//  .field-label,
+//  .field-items,
+//  .field-items .field-item {
+//    display: inline;
+//  }
+//}
 .field-name-body {
   margin: 10px 0;
 }
@@ -107,146 +237,266 @@ html.js input.form-autocomplete {
   background-position: 97% 5px;
 }
 
-/* Forum Categories */
-.view-forum-categories {
-  .views-field-name {
-    display: inline;
-  }
-  .views-field-nid {
-    display: inline;
-    font-weight: bold;
-    color: #666;
-  }
-  .views-row.active a {
-    font-weight: bold;
-    color: #000;
-  }
-}
-/* Forum categories on the front page of /forum */
+
+/* Forums */
+#blog,
+#forum-category,
 #forum {
   h2 {
     margin-bottom: 20px;
   }
-  .view-forum-categories {
-    @gutter: 17px;
-    @topPadding: 10px;
-    @l: 55px;
-    @r: 100px;
-    @titleheight: 20px;
-    margin: -14px -@gutter;
-    .views-row {
-      position: relative;
-      padding-left: @l + @gutter;
-      padding-top: @topPadding + @titleheight + 3px;
-      padding-right: @r + @gutter;
-      padding-bottom: 5px;
-      overflow: hidden;
-      min-height: 65px;
-      border-bottom: 1px solid #ccc;
-      &.views-row-last { border-bottom: none; }
+  .new {
+    background: #8bc658;
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 2px 6px;
+    vertical-align: top;
+  }
+}
+
+
+.page-blog .pane-blogs,
+.pane-forum-topics-panel-pane-3,
+.pane-forum-topics-panel-pane-2,
+.pane-forum-topics-panel-pane-1 {
+  background: none;
+  padding: 0;
+  overflow: visible;
+  margin-bottom: 0;
+
+  .new {
+    margin-left: 5px;
+  }
+
+  .view-header {
+    position: absolute;
+    top: -40px;
+    right: 0;
+  }
+
+  .views-row {
+    position: relative;
+  }
+
+  .blog-posts,
+  .blog-posts-comments,
+  .forum-topic,
+  .forum-topic-replies {
+    min-height: 90px;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .blog-posts,
+  .forum-topic {
+    width: 100%;
+    padding: 12px 220px 10px 90px;
+    @media (max-width: 768px) {
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
-    .views-row-odd {
-      background: #ecf6e3;
-    }
-    .views-row-even {
-    }
-    .views-field-nothing {
+    .new {
       position: absolute;
-      display: block;
-      top: @topPadding;
-      left: @gutter;
-      background-image: url('/assets/img/icon-forum.png');
-      background-size: 45px;
-      width: 45px;
-      height: 45px;
-      img { display: none; }
+      right: 220px;
+      top: 10px;
     }
-    .views-field-name {
-      font-size: 18px;
-      @media(min-width:500px) {
-        position: absolute;
-        top: @topPadding;
-        left: @l + @gutter;
-        right: @r + @gutter;
-        height: @titleheight;
-      }
+  }
+
+  .blog-posts-comments,
+  .forum-topic-replies {
+    border-left: 5px solid #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 210px;
+    text-align: center;
+    color: #666;
+    padding: 25px 5px 10px 5px;
+    .no-replies {
+      margin-top: 10px;
     }
-    .views-field-description {
-      p { margin-bottom: 0; }
-    }
-    .views-field-nid {
-      @media(min-width:500px) {
-        display: block;
-        position: absolute;
-        top: @topPadding + 7px;
-        right: @gutter;
-      }
-      width: @r - 10px;
-      color: #aaa;
-      font-weight: bold;
-      font-size: 15px;
-      text-align: right;
-      .field-content { color: #333; }
-    }
-    .views-field-id {
-      @media(min-width:500px) {
-        position: absolute;
-        top: @topPadding + 28px;
-        right: @gutter;
-      }
-      width: @r - 10px;
-      color: #aaa;
-      font-weight: bold;
-      font-size: 15px;
-      text-align: right;
-      .field-content { color: #333; }
-    }
-    @media(max-width:501px) {
-      .views-row {
-        padding: 10px 17px 5px 15px;
-      }
-      .views-field-nothing {
-        display: none;
-      }
-      .views-field-nid, .views-field-id {
-        float: right;
+    @media (max-width: 768px) {
+      position: relative;
+      border: none;
+      text-align: left;
+      padding: 0 15px;
+      min-height: 0;
+      .no-replies {
+        margin-top: 0;
       }
     }
   }
 }
-.node-forum h2,
-.pane-forum-topics-panel-pane-1 h2 {
-  background-image: url('/assets/img/icon-forum.png');
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position: 0;
-  padding-left: 35px;
-  line-height: 30px;
+
+.node-type-blog .pane-blogs {
+  background: none;
+  padding: 0;
   margin-bottom: 20px;
 }
 
-/* Drupal tables eg. list of forum posts */
-.views-table {
-  th {
-    background: #eee;
-    a {
-      color: #555;
-      img {
-        padding-left: 5px;
-        padding-bottom: 5px;
-      }
+
+.pane-frequent-bloggers,
+.pane-forum-categories {
+  background: none;
+  padding: 0;
+  .views-row {
+    padding: 10px 15px;
+    border-bottom: 5px solid #eee;
+  }
+  .forum-category-stats,
+  .views-row a {
+    color: #666;
+    text-decoration: none;
+    cursor: hand;
+  }
+
+  .views-field-name:hover,
+  .views-row a:hover {
+    color: #000
+  }
+
+  .views-row .inner {
+    display: block;
+    padding: 10px 15px;
+    background: #fff;
+    min-height: 140px;
+
+    @media (min-width: 768px) {
+      min-height: 120px;
+    }
+    @media (min-width: 992px) {
+      min-height: 160px;
+    }
+    @media (min-width: 1200px) {
+      min-height: 140px;
     }
   }
-  td.views-field-id {
-    font-weight: bold;
-    text-align: right;
+
+}
+
+.forum-categories-rhs-block {
+  background: #fff;
+  padding: 0px 15px;
+  h4 {
+    margin-bottom: 4px;
   }
-  td.views-field-created,
-  td.views-field-created-1 {
-    font-size: 10px;
-    line-height: 11px;
+
+  .forum-category-stats {
+    margin: 5px 0 0 0;
+    span {
+      margin-right: 5px;
+    }
+  }
+
+  .active a,
+  .active h4,
+  .active {
+    background: #f8f8f8;
+    color: #000 !important;
   }
 }
+
+.forum-categories-main  {
+  position: relative;
+  .views-field-name {
+    font-size: 18px;
+    color: #666;
+  }
+
+  .views-field-description {
+    p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+  }
+  .forum-category-stats {
+    position: absolute;
+    bottom: 10px;
+    span {
+      margin-right: 5px;
+    }
+  }
+
+  .views-field-id {
+    left: 110px;
+  }
+  .views-field-nid {
+    left: 20px;
+  }
+}
+
+.forum-category-stats,
+.reply-counter {
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.forum-category-stats span.counter,
+.reply-counter span {
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 0;
+}
+
+.reply-last {
+  font-size: 13px;
+}
+
+
+/* Tabs menus */
+#menu-tabs {
+  background: none;
+  padding: 0;
+  margin-bottom: 10px;
+
+  ul.nav  {
+    display: inline-block;
+    zoom: 1; // Make IE7 display inline-block correctly
+    *display: inline; // Only targets IE6 & IE7
+    li {
+      float: left;
+      @media (max-width: 768px) {
+        clear: both;
+      }
+    }
+    li a {
+      color: #999;
+      font-size: 19px;
+      padding-top: 12px;
+    }
+    li.active a {
+      color: #000;
+      font-size: 25px;
+      padding-top: 5px;
+    }
+  }
+}
+
+///* Drupal tables eg. list of forum posts */
+//.views-table {
+//  th {
+//    background: #eee;
+//    a {
+//      color: #555;
+//      img {
+//        padding-left: 5px;
+//        padding-bottom: 5px;
+//      }
+//    }
+//  }
+//  td.views-field-id {
+//    font-weight: bold;
+//    text-align: right;
+//  }
+//  td.views-field-created,
+//  td.views-field-created-1 {
+//    font-size: 10px;
+//    line-height: 11px;
+//  }
+//}
 
 /* Drupal apps */
 .view-apps {
@@ -270,10 +520,6 @@ html.js input.form-autocomplete {
         background-size: 45px;
         img { display: none; }
       }
-    }
-    .views-field-title {
-      font-size: 19px;
-      line-height: 23px;
     }
     .views-field-field-submitter-name {
       color: #666;
@@ -334,80 +580,80 @@ html.js input.form-autocomplete {
 
 
 /* Blogs: Frequent Bloggers */
+.pane-frequent-bloggers {
+  margin-top: 25px;
+}
+
 .view-frequent-bloggers {
+  background: #fff;
+
+  .views-field-name a {
+    font-size: 14px;
+  }
   .views-field-nid {
-    color: #777;
+    color: #666;
   }
 }
 
-
-/* Drupal blogs */
-body.page-blog .view-blogs .views-row {
-  /* Leave extra room for the larger avatars on this page */
-  padding-right: 20px;
-  min-height: 80px;
-  @media (max-width: 480px) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .views-field-title {
-    display: block;
-  }
-  .views-field-id {
-    float: right;
-    display: inline-block;
-    margin-bottom: 0;
-  }
-  .views-field-field-avatar {
-    top: 4px;
-    @media (max-width: 480px) {
-      display: none;
-    }
-    img {
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      border-radius: 50px;
-    }
-  }
-  h3 {
-    padding: 0 0 4px;
-    margin-bottom: 0;
-  }
-}
+/* Blogs: Blogs by this autor */
 .view-display-id-blogs_same_author .views-row {
-  padding-left: 0 !important;
-  .views-field-title {
-    display: block !important;
-  }
+  background: #fff;
+  padding: 10px 15px;
+  border-bottom: 5px solid #eee;
 }
 
 
-.view-blogs {
-  .views-row {
-    position: relative;
-    // padding-left: 50px;
-    padding-top: 4px;
-    padding-bottom: 10px;
-    min-height: 40px;
-    .views-field-field-avatar {
-      float:left;
-      margin: 0 10px 10px 0;
-    }
-    .views-field-title {
-      font-size: 14px;
-      line-height: 18px;
-      display: block;
-    }
-    .views-field-field-submitter-name {
-      color: #666;
-    }
-    .views-field-name,
-    .views-field-created {
-      color: #999;
-      a { color: #666; }
-    }
-  }
-}
+///* Drupal blogs */
+//body.page-blog .view-blogs .views-row {
+//  /* Leave extra room for the larger avatars on this page */
+//  padding-right: 20px;
+//  min-height: 80px;
+//  @media (max-width: 480px) {
+//    padding-left: 0;
+//    padding-right: 0;
+//  }
+//  .views-field-title {
+//    display: block;
+//  }
+//  .views-field-id {
+//    float: right;
+//    display: inline-block;
+//    margin-bottom: 0;
+//  }
+//  .views-field-field-avatar {
+//    top: 4px;
+//    @media (max-width: 480px) {
+//      display: none;
+//    }
+//    img {
+//      -webkit-border-radius: 50px;
+//      -moz-border-radius: 50px;
+//      border-radius: 50px;
+//    }
+//  }
+//}
+//.view-display-id-blogs_same_author .views-row {
+//  padding-left: 0 !important;
+//  .views-field-title {
+//    display: block !important;
+//  }
+//}
+//
+//
+//.view-blogs {
+//  .views-row {
+//    position: relative;
+//    padding-top: 4px;
+//    padding-bottom: 10px;
+//    min-height: 40px;
+//    .views-field-field-avatar {
+//      float:left;
+//      margin: 0 10px 10px 0;
+//      clear: left;
+//    }
+//  }
+//}
+
 .view-dataset-requests .views-row .views-field-id,
 .view-blogs .views-row .views-field-id {
   display: inline-block;
@@ -448,10 +694,26 @@ body.page-blog .view-blogs .views-row {
     }
   }
 }
-.pane-apachesolr-search-mlt-001, .pane-10-seconds-tour {
+.pane-10-seconds-tour,
+.pane-apachesolr-search-mlt-001 {
+  background: none;
+  padding: 0;
   ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
+  }
+  li {
+    background: #fff;
+    padding: 10px 15px;
+    border-bottom: 5px solid #eee;
+  }
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #333;
   }
 }
 
@@ -471,17 +733,8 @@ body.page-odug {
   .pane-custom.pane-2 img {
   width: 100%;
   }
-  .view-blogs {
-    .views-row {
-      min-height: 80px;
-      .views-field-id {
-        position: absolute;
-        top:50px;
-        left: 0;
-      }
-    }
-  }
 }
+
 .view-dataset-requests {
   .views-row {
     background-image: url('/assets/img/icon-dataset-request.png');
@@ -494,10 +747,7 @@ body.page-odug {
     min-height: 75px;
     padding-top: 4px;
     padding-bottom: 10px;
-    .views-field-title {
-      font-size: 19px;
-      line-height: 23px;
-    }
+
     .views-field-field-review-status {
       .views-label {
         color: #999;
@@ -647,15 +897,31 @@ div.password-confirm,
       margin: 0 0 0 10px;
     }
   }
-
   .field-name-field-avatar {
     img {
+      border-radius: 0;
       max-width: none;
       display: none;
     }
-    div.jcrop-holder img {
-      display: block;
+
+    .jcrop-preview-wrapper {
+      border-radius: 100px;
     }
+
+    div.jcrop-holder {
+      img {
+        display: block;
+      }
+      div div.jcrop-tracker {
+        border-radius: 100px;
+        border: 1px dashed #ccc;
+      }
+      .jcrop-vline,
+      .jcrop-hline {
+        background: none;
+      }
+    }
+
     .file {
       display: none;
     }
@@ -778,21 +1044,57 @@ div.password-confirm,
     }
   }
 }
+
+/* User avatar */
+.field-avatar,
+.field-name-field-avatar {
+  img {
+    border-radius: 100px;
+  }
+}
+.field-avatar {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
 /* User pages */
 .page-user {
 
+  h3 {
+    margin: 8px 0;
+  }
+
+  .profile,
+  .user-engagement {
+    .inside {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+  }
+
   .profile {
+    .user-profile {
+      text-align: center;
+      .field-name-field-avatar {
+        margin-bottom: 15px;
+      }
+    }
+
+    .user-stats {
+      text-align: left;
+    }
+
     .avatar {
       margin-bottom: 20px;
     }
+
     .member-for,
     .job-title {
       font-size: 12px;
       line-height: 14px;
-      margin-bottom: 8px;
-    }
-    .member-for {
-      margin-bottom: 14px;
+      margin: 10px 0;
     }
 
     .solcial-media {
@@ -800,11 +1102,41 @@ div.password-confirm,
       padding-left: 32px;
       margin: 2px 0;
       padding-bottom: 10px;
+      text-align: left;
     }
     .twitter { background: url('/assets/img/icon-twitter.png') no-repeat; background-size: 20px;}
     .linkedin { background: url('/assets/img/icon-linkedin.png') no-repeat; background-size: 20px;}
     .facebook { background: url('/assets/img/icon-facebook.png') no-repeat; background-size: 20px;}
     .googleplus { background: url('/assets/img/icon-googleplus.png') no-repeat; background-size: 20px;}
+    .bio {
+      text-align: left;
+      font-size: 13px;
+      line-height: 22px;
+    }
+  }
+
+  .user-stats div,
+  .views-row {
+    background: #fff;
+    padding: 10px 15px;
+    border-bottom: 2px solid #eee;
+  }
+
+  .view-user-content,
+  .view-user-replies {
+    .views-field-title a {
+      font-size: 16px;
+    }
+    .views-field-type {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .more-link {
+      background: #fff;
+      padding: 5px 15px;
+      text-align: right;
+    }
   }
 }
 
@@ -1220,15 +1552,15 @@ body.front {
   padding-left: 15px;
 }
 
-/* hiding Breadcrumbs */
-.page-search {
-  #pre-content {
-    #breadcrumbs {
-      visibility: hidden;
-      padding: 0;
-    }
-  }
-}
+///* hiding Breadcrumbs */
+//.page-search {
+//  #pre-content {
+//    #breadcrumbs {
+//      visibility: hidden;
+//      padding: 0;
+//    }
+//  }
+//}
 
 /* Hack to fix the Add content issue with option panels */
 .page-node-add .collapse {
@@ -1237,8 +1569,9 @@ body.front {
 
 .icon-rss-sign {
   color: #e75e00;
+//  color: #999;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 32px;
   vertical-align: middle;
 }
 
@@ -1250,15 +1583,47 @@ nav.tabs {
   margin-bottom: 10px;
 }
 
-//fieldset.panel-default {
 fieldset {
   background-color: #fff;
   position: relative;
   padding-top: 40px;
+  .panel-body {
+    padding-right: 0;
+  }
 }
 
-fieldset .panel-body {
-  padding-right: 0;
+#app-node-form fieldset {
+  background: none;
+  padding-top: 0;
+}
+
+#dataset-request-node-form fieldset {
+  margin-bottom: 30px;
+  padding-right: 15px;
+  legend {
+    padding-top: 10px;
+  }
+}
+
+fieldset.filter-wrapper {
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  .panel-body {
+    padding: 0;
+    .form-type-select {
+      max-width: 170px;
+    }
+    .filter-help {
+      float: right;
+    }
+    ul {
+      font-size: 12px;
+      color: #666;
+      padding-left: 20px;
+    }
+  }
 }
 
 fieldset legend.panel-heading {
@@ -1288,14 +1653,16 @@ input.form-file {
   background: #000;
   div.toolbar-menu,
   div.toolbar-drawer {
-    padding: 2px;
+    padding: 2px 10px 5px 10px;
     margin: 2px auto 0 auto;
-    max-width: 1170px;
-    @media (max-width: 1200px) {
+    @media (min-width: 768px) {
+      max-width: 750px;
+    }
+    @media (min-width: 992px) {
       max-width: 970px;
     }
-    @media (max-width: 992px) {
-      max-width: 750px;
+    @media (min-width: 1200px) {
+      max-width: 1170px;
     }
   }
 }
@@ -1347,5 +1714,22 @@ body.page-node-moderation {
       margin: 2px;
       background: #eee;
     }
+  }
+}
+
+.form-wrapper {
+  //clear: both;
+  margin: 10px 0 20px 0;
+  .form-radios .form-item,
+  .form-checkboxes .form-item {
+    min-width: 180px;
+    margin: 5px 0;
+    display: inline-block;
+  }
+
+  #edit-field-provide-estimates-und .form-item,
+  #edit-field-barriers-attempted-und .form-item,
+  #edit-field-organisation-type-und .form-item {
+    display: block;
   }
 }
