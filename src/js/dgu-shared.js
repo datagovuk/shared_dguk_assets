@@ -1,5 +1,6 @@
 $(function() {
   initNav();
+  comments();
 });
 
 function initNav() {
@@ -61,6 +62,63 @@ function initNav() {
       return false;
     }
   });
+}
+
+function comments() {
+    $('.replies-header').prepend('<a class="comments-collapse expanded pull-right" href="#">Collapse all comments <i class="icon-collapse-top"></i></a>');
+    $('.comments-collapse').click(function(){
+        $(this).toggleClass('expanded');
+        if ($(this).hasClass('expanded')) {
+            $(this).parent().parent().find('.reply-body').show();
+            $(this).parent().parent().find('.reply').removeClass('collapsed');
+            $(this).parent().parent().find('.comment-collapse').addClass('expanded');
+            $(this).parent().parent().find('.comment-collapse').html('<i class="icon-collapse-top"></i>');
+            $(this).html('Collapse all comments <i class="icon-collapse-top"></i>');
+        }
+        else {
+            $(this).parent().parent().find('.reply-body').hide();
+            $(this).parent().parent().find('.reply').addClass('collapsed');
+            $(this).parent().parent().find('.comment-collapse').removeClass('expanded');
+            $(this).parent().parent().find('.comment-collapse').html('<i class="icon-expand"></i>');
+            $(this).html('Expand all comments <i class="icon-expand"></i>');
+
+        }
+        return false;
+    });
+
+    $('body:not(.page-reply) .reply .inner').prepend('<a title="Collapse this comment" class="comment-collapse expanded" href="#"><i class="icon-collapse-top"></i></a>');
+    $('.comment-collapse').click(function(){
+        $(this).toggleClass('expanded');
+        $(this).parent().parent().toggleClass('collapsed');
+        if ($(this).hasClass('expanded')) {
+            $(this).parent().find('.reply-body').show();
+//            $(this).parent().find('.reply-links').show();
+//            $(this).parent().find('.flag-wrapper').show();
+            $(this).html('<i class="icon-collapse-top"></i>');
+            $(this).prop('title', 'Collapse this comment');
+        }
+        else {
+            $(this).parent().find('.reply-body').hide();
+//            $(this).parent().find('.reply-links').hide();
+//            $(this).parent().find('.flag-wrapper').hide();
+            $(this).html('<i class="icon-expand"></i>');
+            $(this).prop('title', 'Expand this comment');
+        }
+        return false;
+    });
+
+    $('body:not(.page-reply) .reply:not(.push-0)').prepend('<a title="See start of thread" class="go-to-parent" href="#"><i class="icon-circle-arrow-up"></i></a>');
+    $('.go-to-parent').click(function(){
+        var parent = $(this).parent().attr("class").match(/parent-(\d*)/)[1];
+        //$('.body').scrollTo('#reply-' + parent);
+        $('html, body').animate({'scrollTop' : $('#reply-' + parent).offset().top - 50},800, 'swing', function(){
+            $('#reply-' + parent).fadeOut(100);
+            $('#reply-' + parent).fadeIn(200);
+        });
+        //alert( $('#reply-' + parent).offset().top );
+
+        return false;
+    });
 }
 /*
  * New plugin: Equal height boxes.
