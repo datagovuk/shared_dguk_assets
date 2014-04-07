@@ -50,17 +50,6 @@ input[type="file"] {
   display: inline;
 }
 
-.bg-colour-0 img {background: #ccc}
-.bg-colour-1 img {background: #ccd}
-.bg-colour-2 img {background: #cdc}
-.bg-colour-3 img {background: #dcc}
-.bg-colour-4 img {background: #ddc}
-.bg-colour-5 img {background: #cdd}
-.bg-colour-6 img {background: #dcd}
-.bg-colour-7 img {background: #cda}
-.bg-colour-8 img {background: #acd}
-.bg-colour-9 img {background: #adc}
-
 .page-header {
   margin: 0 0 15px;
 }
@@ -449,9 +438,11 @@ html.js input.form-autocomplete {
 
 
 /* Tabs menus */
+.toboggan-unified #login-links,
 #menu-tabs {
   background: none;
   padding: 0;
+  margin-left: -15px;
   margin-bottom: 10px;
 
   ul.nav  {
@@ -464,16 +455,19 @@ html.js input.form-autocomplete {
         clear: both;
       }
     }
-    li a {
-      color: #999;
-      font-size: 19px;
-      padding-top: 12px;
-    }
-    li.active a {
-      color: #000;
-      font-size: 25px;
-      padding-top: 5px;
-    }
+  }
+  a.login-link,
+  li a {
+    color: #999;
+    font-size: 19px;
+    padding-top: 12px;
+  }
+
+  a.lt-active,
+  li.active a {
+    color: #000;
+    font-size: 25px;
+    padding-top: 5px;
   }
 }
 
@@ -998,13 +992,7 @@ div.password-confirm,
   }
 
   #login-message {
-    text-align: left;
-    @media(max-width: 767px) { margin-top: 15px; }
-    font-style: normal;
-    // From bootstrap h1
-    font-size: 24px;
-    line-height: 30px;
-    margin-bottom: 10px;
+    display: none;
   }
   .login-forgot {
     margin: 15px 0;
@@ -1014,20 +1002,26 @@ div.password-confirm,
   #login-links {
     height: 36px;
     a {
+      text-decoration: none;
       display: block;
       float: left;
-      padding: 10px 15px;
-      font-size: 15px;
+      padding: 12px 15px !important;
+//      font-size: 15px;
       line-height: 20px;
       border: none !important;
       background: none !important;
       -webkit-border-radius: 4px;
          -moz-border-radius: 4px;
               border-radius: 4px;
-      &.lt-active {
-        color: #fff;
-        background: #8bc658 !important;
-      }
+//      &.lt-active {
+//        color: #fff;
+//        background: #8bc658 !important;
+//      }
+
+    &.lt-active {
+      padding-top: 10px !important;
+    }
+
     }
     @media (max-width:390px) {
       min-height: 36px;
