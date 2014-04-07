@@ -92,15 +92,11 @@ function comments() {
         $(this).parent().parent().toggleClass('collapsed');
         if ($(this).hasClass('expanded')) {
             $(this).parent().find('.reply-body').show();
-//            $(this).parent().find('.reply-links').show();
-//            $(this).parent().find('.flag-wrapper').show();
             $(this).html('<i class="icon-collapse-top"></i>');
             $(this).prop('title', 'Collapse this comment');
         }
         else {
             $(this).parent().find('.reply-body').hide();
-//            $(this).parent().find('.reply-links').hide();
-//            $(this).parent().find('.flag-wrapper').hide();
             $(this).html('<i class="icon-expand"></i>');
             $(this).prop('title', 'Expand this comment');
         }
@@ -110,13 +106,10 @@ function comments() {
     $('body:not(.page-reply) .reply:not(.push-0)').prepend('<a title="See start of thread" class="go-to-parent" href="#"><i class="icon-circle-arrow-up"></i></a>');
     $('.go-to-parent').click(function(){
         var parent = $(this).parent().attr("class").match(/parent-(\d*)/)[1];
-        //$('.body').scrollTo('#reply-' + parent);
         $('html, body').animate({'scrollTop' : $('#reply-' + parent).offset().top - 50},800, 'swing', function(){
             $('#reply-' + parent).fadeOut(100);
             $('#reply-' + parent).fadeIn(200);
         });
-        //alert( $('#reply-' + parent).offset().top );
-
         return false;
     });
 }
