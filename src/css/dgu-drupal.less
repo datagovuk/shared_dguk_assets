@@ -1294,6 +1294,7 @@ div.fivestar-widget-static .star span.off {
 /* Search page */
 
 #search-sort-by {
+
   label {
     display:inline-block;
   }
@@ -1304,12 +1305,20 @@ div.fivestar-widget-static .star span.off {
   }
 }
 
+.pane-apachesolr-result {
+  background: none;
+  ul {
+    clear: left;
+    padding: 16px 0 0 0;
+    margin-left: 12px;
+  }
+}
+
 .apachesolr_search-results {
   clear: both;
   list-style-type: none;
   margin: 0;
-  padding: 10px 0 0 0;
-  
+
   // Private data request.
   li.publication-preference-0 {
     background: #fee;
@@ -1460,9 +1469,11 @@ div.fivestar-widget-static .star span.off {
 }
 
 body.page-search {
-  background-color: #fff;
-  background-image: url("/assets/img/sidebar-bg.png");
-  background-repeat: repeat-y;
+
+  #main-content {
+    background: #fff url("/assets/img/sidebar-bg.png") repeat-y;
+    background-position: 50% 0;
+  }
 
   @media (min-width: 768px) {
 
@@ -1601,12 +1612,13 @@ body.page-search {
     }
   }
   .pane-dgu-search-info {
-    position: absolute;
-    left: 15px;
-    top: 0;
+    float: left;
     padding: 20px 10px 0 10px;
     margin: 0;
     background: none;
+    h1 {
+      margin-bottom: 0;
+    }
   }
 
 }
