@@ -1291,7 +1291,7 @@ div.fivestar-widget-static .star span.off {
   background-size: 16px 48px;
 }
 
-/* Search page */
+/* Search and Library pages */
 
 #search-sort-by {
 
@@ -1335,6 +1335,7 @@ div.fivestar-widget-static .star span.off {
   }
 
   li.search-result {
+    clear: both;
     border-left: 6px solid #E0E0E0;
     margin-bottom: 30px;
     padding-left: 10px;
@@ -1468,6 +1469,13 @@ div.fivestar-widget-static .star span.off {
 
 }
 
+body.page-library {
+  ul.search-results {
+    padding-top: 50px;
+  }
+}
+
+body.page-library,
 body.page-search {
 
   #main-content {
@@ -1733,6 +1741,11 @@ body.page-search {
     }
   }
 
+  @media(max-width: 767px) {
+    #main-content .pane-apachesolr-result ul {
+      clear: both;
+    }
+  }
 
 }
 
