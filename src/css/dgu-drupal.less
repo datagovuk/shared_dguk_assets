@@ -124,6 +124,8 @@ body.page-node .panel-col-first .panel-pane {
 .views-field-field-submitter-name {
   color: #666;
 }
+
+.views-field-field-organisation-name,
 .submitted,
 .views-field-taxonomy-forums,
 .views-field-name {
@@ -246,7 +248,48 @@ html.js input.form-autocomplete {
   }
 }
 
+.page-data-request .pane-1,
+.page-data-request .pane-2,
+.page-data-request .pane-3,
+.page-data-request .pane-4,
+.page-data-request .pane-5,
+.page-data-request .pane-6,
+.page-data-request .pane-dataset-requests,
+.page-data-request-minutes .pane-minutes {
+  background: none;
+  padding: 0;
+  overflow: visible;
+  position: relative;
 
+  &.pane-custom .pane-content,
+  .views-row {
+    min-height: 90px;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+
+    h3 {
+      margin-bottom: 5px;
+    }
+
+    .views-field-field-review-status {
+      margin-top: 5px;
+    }
+
+    ul {
+      padding-left: 15px;
+    }
+
+  }
+  .view-header {
+    position: absolute;
+    top: -40px;
+    right: 0;
+  }
+
+}
+
+.page-data-request-blogs .pane-blogs,
 .page-blog .pane-blogs,
 .pane-forum-topics-panel-pane-3,
 .pane-forum-topics-panel-pane-2,
@@ -321,6 +364,7 @@ html.js input.form-autocomplete {
   }
 }
 
+.page-data-request-blogs .pane-blogs,
 .node-type-blog .pane-blogs {
   background: none;
   padding: 0;
@@ -599,57 +643,6 @@ html.js input.form-autocomplete {
 }
 
 
-///* Drupal blogs */
-//body.page-blog .view-blogs .views-row {
-//  /* Leave extra room for the larger avatars on this page */
-//  padding-right: 20px;
-//  min-height: 80px;
-//  @media (max-width: 480px) {
-//    padding-left: 0;
-//    padding-right: 0;
-//  }
-//  .views-field-title {
-//    display: block;
-//  }
-//  .views-field-id {
-//    float: right;
-//    display: inline-block;
-//    margin-bottom: 0;
-//  }
-//  .views-field-field-avatar {
-//    top: 4px;
-//    @media (max-width: 480px) {
-//      display: none;
-//    }
-//    img {
-//      -webkit-border-radius: 50px;
-//      -moz-border-radius: 50px;
-//      border-radius: 50px;
-//    }
-//  }
-//}
-//.view-display-id-blogs_same_author .views-row {
-//  padding-left: 0 !important;
-//  .views-field-title {
-//    display: block !important;
-//  }
-//}
-//
-//
-//.view-blogs {
-//  .views-row {
-//    position: relative;
-//    padding-top: 4px;
-//    padding-bottom: 10px;
-//    min-height: 40px;
-//    .views-field-field-avatar {
-//      float:left;
-//      margin: 0 10px 10px 0;
-//      clear: left;
-//    }
-//  }
-//}
-
 .view-dataset-requests .views-row .views-field-id,
 .view-blogs .views-row .views-field-id {
   display: inline-block;
@@ -720,42 +713,8 @@ html.js input.form-autocomplete {
   border: 1px solid #000 !important;
 }
 
-/* /odug */
-body.page-odug {
-  ul {
-    list-style: none;
-    padding:0;
-  }
-  .pane-custom.pane-2 img {
-  width: 100%;
-  }
-}
+/* Data requests */
 
-.view-dataset-requests {
-  .views-row {
-    background-image: url('/assets/img/icon-dataset-request.png');
-    background-position: 0 5px;
-    background-repeat: no-repeat;
-    background-size: 23px;
-    padding-left: 30px;
-    position: relative;
-    padding-right: 10px;
-    min-height: 75px;
-    padding-top: 4px;
-    padding-bottom: 10px;
-
-    .views-field-field-review-status {
-      .views-label {
-        color: #999;
-      }
-      .field-content {
-        display: inline;
-        color: #666;
-        font-weight: bold;
-      }
-    }
-  }
-}
 .node-dataset-request h2,
 .node-type-dataset-request h2 {
   background-image: url('/assets/img/icon-dataset-request.png');
