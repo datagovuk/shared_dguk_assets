@@ -8,18 +8,32 @@
 article.node {
   header,
   .field {
-    background: #fff;
     padding: 10px;
     position: relative;
+    background: #fff;
+    margin-bottom: 10px;
   }
+
+
+  /* Data request node view */
+  .field-name-field-review-status,
+  .field-name-field-data-set-link,
+  .field-name-field-review-notes {
+    margin: 0;
+  }
+  .group_about_data {
+    margin-top: 10px;
+  }
+
   header {
     min-height: 90px;
+    .field-type-taxonomy-term-reference {
+      padding: 5px 0 0 0;
+      margin: 0;
+    }
   }
   header.with-avatar {
     padding: 20px 10px 10px 90px;
-    .field-type-taxonomy-term-reference {
-      padding: 5px 0 0 0;
-    }
   }
 
   .taxonomy {
@@ -30,12 +44,19 @@ article.node {
   }
 }
 
-
-
-
 .unboxed {
   background: none;
   padding: 0;
+}
+
+.confidential {
+  color: #fff;
+  background: #f33;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 13px;
+  margin-right: 10px
 }
 
 .form-item input.error, .form-item textarea.error, .form-item select.error {
@@ -713,17 +734,6 @@ html.js input.form-autocomplete {
   border: 1px solid #000 !important;
 }
 
-/* Data requests */
-
-.node-dataset-request h2,
-.node-type-dataset-request h2 {
-  background-image: url('/assets/img/icon-dataset-request.png');
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position: 0 6px;
-  padding-left: 35px;
-  line-height: 35px;
-}
 .node-app h2 {
   background-image: url('/assets/img/icon-app.png');
   background-size: 30px;
@@ -744,55 +754,6 @@ html.js input.form-autocomplete {
   }
 }
 
-/* Odug view pages */
-.node-dataset-request {
-  .field-name-field-organisation-name,
-  .field-name-field-submitter-name,
-  .field-name-field-submitter-email,
-  .field-name-field-organisation-type,
-  .field-name-field-issue-type,
-  .field-name-field-barriers-detail,
-  .field-name-field-data-use,
-  .field-name-field-data-holder,
-  .field-name-field-data-use-detail,
-  .field-name-field-benefits-overview,
-  .field-name-field-provide-estimates,
-  .field-name-field-publication-preference,
-  .field-name-field-review-status,
-  .field-name-field-review-notes,
-  .field-name-field-data-set-description,
-  .field-name-field-data-themes,
-  .field-name-field-barriers-attempted,
-  .field-name-field-barriers-reason {
-    border-top: 1px solid #ccc;
-    .field-label {
-      display: inline-block;
-      zoom: 1;
-      *display: inline;
-      vertical-align: top;
-      width: 40%;
-      max-width: 250px;
-      text-align: right;
-      padding: 4px;
-    }
-    .field-items {
-      display: inline;
-      .field-item {
-        display: inline-block;
-        zoom: 1;
-        max-width: 50%;
-        vertical-align: top;
-        *display: inline;
-        margin-left: 10px;
-        padding: 4px;
-      }
-    }
-  }
-  .field-name-field-barriers-reason {
-    border-bottom: 1px solid #ccc;
-  }
-}
-
 /*
  * Fix ugly headers which Drupal is technically misusing within articles...
  * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api
@@ -809,7 +770,6 @@ html.js input.form-autocomplete {
 
 /* Login pages */
 
-
 div.password-confirm,
 .password-strength > * {
   float: right;
@@ -824,7 +784,6 @@ div.password-confirm,
     line-height: 16px;
   }
 }
-
 
 #user-profile-form {
   label{
@@ -1282,15 +1241,6 @@ div.fivestar-widget-static .star span.off {
   li.publication-preference-0 {
     background: #fee;
     padding: 10px 0;
-    .confidential {
-      color: #fff;
-      background: #f33;
-      font-weight: 800;
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 13px;
-      margin-right: 10px
-    }
   }
 
   li.search-result {
