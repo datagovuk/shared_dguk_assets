@@ -8,18 +8,32 @@
 article.node {
   header,
   .field {
-    background: #fff;
     padding: 10px;
     position: relative;
+    background: #fff;
+    margin-bottom: 10px;
   }
+
+
+  /* Data request node view */
+  .field-name-field-review-status,
+  .field-name-field-data-set-link,
+  .field-name-field-review-notes {
+    margin: 0;
+  }
+  .group_about_data {
+    margin-top: 10px;
+  }
+
   header {
     min-height: 90px;
+    .field-type-taxonomy-term-reference {
+      padding: 5px 0 0 0;
+      margin: 0;
+    }
   }
   header.with-avatar {
     padding: 20px 10px 10px 90px;
-    .field-type-taxonomy-term-reference {
-      padding: 5px 0 0 0;
-    }
   }
 
   .taxonomy {
@@ -30,12 +44,19 @@ article.node {
   }
 }
 
-
-
-
 .unboxed {
   background: none;
   padding: 0;
+}
+
+.confidential {
+  color: #fff;
+  background: #f33;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 13px;
+  margin-right: 10px
 }
 
 .form-item input.error, .form-item textarea.error, .form-item select.error {
@@ -124,6 +145,8 @@ body.page-node .panel-col-first .panel-pane {
 .views-field-field-submitter-name {
   color: #666;
 }
+
+.views-field-field-organisation-name,
 .submitted,
 .views-field-taxonomy-forums,
 .views-field-name {
@@ -246,7 +269,48 @@ html.js input.form-autocomplete {
   }
 }
 
+.page-data-request .pane-1,
+.page-data-request .pane-2,
+.page-data-request .pane-3,
+.page-data-request .pane-4,
+.page-data-request .pane-5,
+.page-data-request .pane-6,
+.page-data-request .pane-dataset-requests,
+.page-data-request-minutes .pane-minutes {
+  background: none;
+  padding: 0;
+  overflow: visible;
+  position: relative;
 
+  &.pane-custom .pane-content,
+  .views-row {
+    min-height: 90px;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+
+    h3 {
+      margin-bottom: 5px;
+    }
+
+    .views-field-field-review-status {
+      margin-top: 5px;
+    }
+
+    ul {
+      padding-left: 15px;
+    }
+
+  }
+  .view-header {
+    position: absolute;
+    top: -40px;
+    right: 0;
+  }
+
+}
+
+.page-data-request-blogs .pane-blogs,
 .page-blog .pane-blogs,
 .pane-forum-topics-panel-pane-3,
 .pane-forum-topics-panel-pane-2,
@@ -321,6 +385,7 @@ html.js input.form-autocomplete {
   }
 }
 
+.page-data-request-blogs .pane-blogs,
 .node-type-blog .pane-blogs {
   background: none;
   padding: 0;
@@ -599,57 +664,6 @@ html.js input.form-autocomplete {
 }
 
 
-///* Drupal blogs */
-//body.page-blog .view-blogs .views-row {
-//  /* Leave extra room for the larger avatars on this page */
-//  padding-right: 20px;
-//  min-height: 80px;
-//  @media (max-width: 480px) {
-//    padding-left: 0;
-//    padding-right: 0;
-//  }
-//  .views-field-title {
-//    display: block;
-//  }
-//  .views-field-id {
-//    float: right;
-//    display: inline-block;
-//    margin-bottom: 0;
-//  }
-//  .views-field-field-avatar {
-//    top: 4px;
-//    @media (max-width: 480px) {
-//      display: none;
-//    }
-//    img {
-//      -webkit-border-radius: 50px;
-//      -moz-border-radius: 50px;
-//      border-radius: 50px;
-//    }
-//  }
-//}
-//.view-display-id-blogs_same_author .views-row {
-//  padding-left: 0 !important;
-//  .views-field-title {
-//    display: block !important;
-//  }
-//}
-//
-//
-//.view-blogs {
-//  .views-row {
-//    position: relative;
-//    padding-top: 4px;
-//    padding-bottom: 10px;
-//    min-height: 40px;
-//    .views-field-field-avatar {
-//      float:left;
-//      margin: 0 10px 10px 0;
-//      clear: left;
-//    }
-//  }
-//}
-
 .view-dataset-requests .views-row .views-field-id,
 .view-blogs .views-row .views-field-id {
   display: inline-block;
@@ -720,51 +734,6 @@ html.js input.form-autocomplete {
   border: 1px solid #000 !important;
 }
 
-/* /odug */
-body.page-odug {
-  ul {
-    list-style: none;
-    padding:0;
-  }
-  .pane-custom.pane-2 img {
-  width: 100%;
-  }
-}
-
-.view-dataset-requests {
-  .views-row {
-    background-image: url('/assets/img/icon-dataset-request.png');
-    background-position: 0 5px;
-    background-repeat: no-repeat;
-    background-size: 23px;
-    padding-left: 30px;
-    position: relative;
-    padding-right: 10px;
-    min-height: 75px;
-    padding-top: 4px;
-    padding-bottom: 10px;
-
-    .views-field-field-review-status {
-      .views-label {
-        color: #999;
-      }
-      .field-content {
-        display: inline;
-        color: #666;
-        font-weight: bold;
-      }
-    }
-  }
-}
-.node-dataset-request h2,
-.node-type-dataset-request h2 {
-  background-image: url('/assets/img/icon-dataset-request.png');
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position: 0 6px;
-  padding-left: 35px;
-  line-height: 35px;
-}
 .node-app h2 {
   background-image: url('/assets/img/icon-app.png');
   background-size: 30px;
@@ -785,55 +754,6 @@ body.page-odug {
   }
 }
 
-/* Odug view pages */
-.node-dataset-request {
-  .field-name-field-organisation-name,
-  .field-name-field-submitter-name,
-  .field-name-field-submitter-email,
-  .field-name-field-organisation-type,
-  .field-name-field-issue-type,
-  .field-name-field-barriers-detail,
-  .field-name-field-data-use,
-  .field-name-field-data-holder,
-  .field-name-field-data-use-detail,
-  .field-name-field-benefits-overview,
-  .field-name-field-provide-estimates,
-  .field-name-field-publication-preference,
-  .field-name-field-review-status,
-  .field-name-field-review-notes,
-  .field-name-field-data-set-description,
-  .field-name-field-data-themes,
-  .field-name-field-barriers-attempted,
-  .field-name-field-barriers-reason {
-    border-top: 1px solid #ccc;
-    .field-label {
-      display: inline-block;
-      zoom: 1;
-      *display: inline;
-      vertical-align: top;
-      width: 40%;
-      max-width: 250px;
-      text-align: right;
-      padding: 4px;
-    }
-    .field-items {
-      display: inline;
-      .field-item {
-        display: inline-block;
-        zoom: 1;
-        max-width: 50%;
-        vertical-align: top;
-        *display: inline;
-        margin-left: 10px;
-        padding: 4px;
-      }
-    }
-  }
-  .field-name-field-barriers-reason {
-    border-bottom: 1px solid #ccc;
-  }
-}
-
 /*
  * Fix ugly headers which Drupal is technically misusing within articles...
  * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api
@@ -850,7 +770,6 @@ body.page-odug {
 
 /* Login pages */
 
-
 div.password-confirm,
 .password-strength > * {
   float: right;
@@ -865,7 +784,6 @@ div.password-confirm,
     line-height: 16px;
   }
 }
-
 
 #user-profile-form {
   label{
@@ -1323,15 +1241,6 @@ div.fivestar-widget-static .star span.off {
   li.publication-preference-0 {
     background: #fee;
     padding: 10px 0;
-    .confidential {
-      color: #fff;
-      background: #f33;
-      font-weight: 800;
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 13px;
-      margin-right: 10px
-    }
   }
 
   li.search-result {
