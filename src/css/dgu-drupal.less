@@ -309,7 +309,7 @@ html.js input.form-autocomplete {
   }
 
 }
-
+.pane-apps,
 .page-data-request-blogs .pane-blogs,
 .page-blog .pane-blogs,
 .pane-forum-topics-panel-pane-3,
@@ -536,66 +536,96 @@ html.js input.form-autocomplete {
   }
 }
 
-///* Drupal tables eg. list of forum posts */
-//.views-table {
-//  th {
-//    background: #eee;
-//    a {
-//      color: #555;
-//      img {
-//        padding-left: 5px;
-//        padding-bottom: 5px;
-//      }
-//    }
-//  }
-//  td.views-field-id {
-//    font-weight: bold;
-//    text-align: right;
-//  }
-//  td.views-field-created,
-//  td.views-field-created-1 {
-//    font-size: 10px;
-//    line-height: 11px;
-//  }
-//}
-
 /* Drupal apps */
 .view-apps {
-  td,
+
   .views-row {
+    width: 205px;
+    background: #fff;
+    padding: 15px;
+    margin-left: 28px;
+    float: left;
+    height: 270px;
     position: relative;
-    padding-left: 54px;
-    padding-right: 97px;
-    min-height: 54px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    .views-field-nothing {
-      position: absolute;
-      left: 0;
-      top: 4px;
-      .field-content {
-        width: 45px;
-        height: 45px;
-        display:block;
-        background: url('/assets/img/icon-app.png');
-        background-size: 45px;
-        img { display: none; }
-      }
+
+    &.views-row-first {
+      margin-left: 0;
     }
-    .views-field-field-submitter-name {
-      color: #666;
+
+    .views-field-title {
+      margin-top: 10px;
     }
+
     .views-field-field-rating {
       position: absolute;
-      right: 0;
-      top: 8px;
+      left: 15px;
+      bottom: 0;
     }
+
+    @media (max-width: 1199px) {
+      width: 175px;
+      padding: 0;
+      margin-left: 16px;
+      .views-field-title {
+        margin-left: 10px;
+      }
+      .views-field-field-rating {
+        left: 10px;
+      }
+
+    }
+
+    @media (max-width: 991px) {
+      margin-left: 0;
+      float: none;
+      width: 100%;
+      height: 130px;
+      margin-bottom: 20px;
+      padding: 15px;
+
+
+      .views-field-field-screen-shots {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 130px !important;
+        height: 130px !important;
+      }
+      .views-field-title {
+        font-size: 20px;
+        margin: 0 0 0 135px;
+      }
+      .views-field-field-rating {
+        left: 150px;
+        right: 10px;
+      }
+    }
+
   }
+
 }
 
 .node-app {
   position: relative;
+
+  header {
+    .taxonomy {
+      margin-bottom: 10px;
+      padding-right: 155px;
+    }
+    .field {
+      padding: 0;
+    }
+  }
+
   .field-name-field-rating {
+    float: right;
+    width: 150px;
+
+    .fivestar-widget {
+      float: right;
+    }
+
     .help-block {
       display: none;
     }
@@ -603,7 +633,7 @@ html.js input.form-autocomplete {
       color: #666;
       font-size: 11px;
       line-height: 12px;
-      padding-top: 2px;
+      padding-top: 20px;
     }
     .average-rating {
       color: #aaa;
@@ -613,19 +643,8 @@ html.js input.form-autocomplete {
   .field-name-field-submitter-email div{
     display: inline !important;
   }
-  h2 {
-    padding-right: 110px;
-  }
-  .field-name-field-rating {
-    padding: 0 0 0 0;
-    .field-label {
-      display: none;
-    }
-    .field-items {
-      position: absolute;
-      right: 5px;
-      top: 10px;
-    }
+  .disclaimer-app {
+    background: #f5fff2;
   }
 }
 
@@ -1192,6 +1211,8 @@ body.page-home {
   line-height: 14px;
   clear: both;
 }
+
+
 /* Fivestars plugin overrides */
 
 div.fivestar-widget-static .star {
@@ -1204,6 +1225,7 @@ div.fivestar-widget-static .star span.on {
   background-size: 16px 48px;
 }
 
+div.fivestar-widget .star, div.fivestar-widget .star a,
 div.fivestar-widget-static .star span.off {
   background: url('/assets/img/stars.png') no-repeat 0 0; /* RTL */
   background-size: 16px 48px;
