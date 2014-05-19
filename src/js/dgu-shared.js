@@ -22,8 +22,9 @@ function initNav() {
       chevronClass = 'position2';
     }
     else if (target.hasClass('nav-apps')) {
-      subnav = $('.subnav-apps');
+      subnav = $();
       chevronClass = 'position3';
+      propagateEvent = true;
     }
     else if (target.hasClass('nav-interact')) {
       subnav = $('.subnav-interact');
