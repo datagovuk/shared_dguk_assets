@@ -104,7 +104,7 @@ function comments() {
         return false;
     });
 
-    $('body:not(.page-reply) .reply:not(.push-0)').prepend('<a title="See start of thread" class="go-to-parent" href="#"><i class="icon-circle-arrow-up"></i></a>');
+    $('body:not(.page-reply) .reply:not(.parent-0)').prepend('<a title="See start of thread" class="go-to-parent" href="#"><i class="icon-circle-arrow-up"></i></a>');
     $('.go-to-parent').click(function(){
         var parent = $(this).parent().attr("class").match(/parent-(\d*)/)[1];
         $('html, body').animate({'scrollTop' : $('#reply-' + parent).offset().top - 50},800, 'swing', function(){
