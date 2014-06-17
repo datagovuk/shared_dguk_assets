@@ -777,6 +777,28 @@ html.js input.form-autocomplete {
   }
 }
 
+
+.form-type-publisher-tree {
+  .form-control {
+    border: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  ul {
+    li {
+      list-style: inside;
+      list-style-type: none;
+      .form-radio {
+        float: none;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
 /*
  * Fix ugly headers which Drupal is technically misusing within articles...
  * eg. http://localhost:4567/forum/food-hygiene-rating-data/uk-food-hygiene-ratings-data-api
@@ -2087,6 +2109,7 @@ body.toolbar {
       padding: 0;
       .field-name-field-review-comment {
       padding: 10px 0 0 0;
+      background: none;
     }
     }
   }
