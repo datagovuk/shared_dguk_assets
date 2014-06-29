@@ -2061,21 +2061,20 @@ body.page-node-moderation {
 }
 
 .form-wrapper {
-  //clear: both;
   margin: 10px 0 20px 0;
   .form-radios .form-item,
   .form-checkboxes .form-item {
-    min-width: 180px;
     margin: 5px 0;
-    display: inline-block;
-  }
-
-  #edit-field-provide-estimates-und .form-item,
-  #edit-field-barriers-attempted-und .form-item,
-  #edit-field-organisation-type-und .form-item {
     display: block;
   }
 }
+
+.field-type-taxonomy-term-reference .form-checkboxes .checkbox {
+  display: inline-block;
+  min-width: 150px;
+
+}
+
 #toolbar {
   position: static;
   -moz-box-shadow: none;
