@@ -13,7 +13,11 @@ article.node {
     background: #fff;
     margin-bottom: 10px;
   }
-
+  .field-type-reply {
+    background: none;
+    padding: 0;
+    clear: both;
+  }
 
   /* Data request node view */
   .field-name-field-review-status,
@@ -777,6 +781,28 @@ html.js input.form-autocomplete {
     }
   }
 }
+
+
+.form-type-publisher-tree {
+  .form-control {
+    border: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  ul {
+    li {
+      list-style: inside;
+      list-style-type: none;
+      .form-radio {
+        float: none;
+        margin: 0;
+      }
+    }
+  }
+}
+
 
 /*
  * Fix ugly headers which Drupal is technically misusing within articles...
@@ -2040,21 +2066,20 @@ body.page-node-moderation {
 }
 
 .form-wrapper {
-  //clear: both;
   margin: 10px 0 20px 0;
   .form-radios .form-item,
   .form-checkboxes .form-item {
-    min-width: 180px;
     margin: 5px 0;
-    display: inline-block;
-  }
-
-  #edit-field-provide-estimates-und .form-item,
-  #edit-field-barriers-attempted-und .form-item,
-  #edit-field-organisation-type-und .form-item {
     display: block;
   }
 }
+
+.field-type-taxonomy-term-reference .form-checkboxes .checkbox {
+  display: inline-block;
+  min-width: 150px;
+
+}
+
 #toolbar {
   position: static;
   -moz-box-shadow: none;
@@ -2063,4 +2088,36 @@ body.page-node-moderation {
 }
 body.toolbar {
   padding-top: 0 !important;
+}
+
+.field-name-field-review-comments {
+  div.reply {
+    .inner {
+      padding: 10px;
+    }
+    .note-author {
+      font-size: 13px;
+      color: #999;
+      a {
+        color: #666;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #000;
+      }
+    }
+
+    .reply-body {
+      border-top: 1px solid #ddd;
+      margin-top: 5px;
+      padding: 0;
+      .field-name-field-review-comment {
+        padding: 10px 0 0 0;
+        background: none;
+      }
+    }
+  }
+  #field-review-comment-add-more-wrapper .filter-wrapper {
+    display: none;
+  }
 }
