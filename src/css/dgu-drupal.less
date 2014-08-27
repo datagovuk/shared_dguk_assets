@@ -914,10 +914,18 @@ div.password-confirm,
     }
   }
 
-  .form-actions,
-  .field-name-field-first-name,
-  .field-name-field-twitter {
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-item {
+    margin-bottom: 10px;
+  }
+
+  .form-wrapper,
+  .form-actions {
     clear: both;
+    margin: 0 0 10px 0;
   }
 
   .imagefield-crop-preview,
@@ -967,11 +975,12 @@ div.password-confirm,
     .form-type-managed-file input {
       float: left;
       clear: none;
+      margin: 0 20px 10px 0;
     }
     .form-type-managed-file p {
-      margin-left: 15px;
+//      margin-left: 15px;
       float: left;
-      width: 250px;
+      //width: 250px;
       margin-top: 7px;
       @media (max-width: 1200px) {
         margin-left: 0;
@@ -983,21 +992,34 @@ div.password-confirm,
   }
 
   fieldset {
+    background: none;
+    border: none;
+    border-radius: 0;
     padding-left: 0;
-    margin: 15px;
-    width: 30.65%;
-    @media (max-width: 1200px) {
-      width: 30%;
+    box-shadow: none;
+
+    legend.panel-heading {
+      background: none;
+      border: none;
+      left: 0;
+      padding: 0;
+
+      .fieldset-legend {
+        font-size: 19px;
+        line-height: 23px;
+      }
     }
-    @media (max-width: 992px) {
-      width: 95.5%;
+
+    .panel-body {
+      background: #fff;
+      padding-right: 15px;
+      min-height: 730px;
+      @media (max-width: 1200px) {
+        min-height: 715px;
+      }
     }
-    @media (max-width: 767px) {
-      width: 95%;
-    }
-    @media (max-width: 560px) {
-      width: 93%;
-    }
+
+
   }
   fieldset.redirect-list {
     width: 95%;
@@ -1007,6 +1029,13 @@ div.password-confirm,
 
   }
 }
+
+body.page-user-message-subscribe {
+  #block-system-main .view {
+    margin-top: 20px;
+  }
+}
+
 .help-block {
   color: #999;
   font-size: 13px;
@@ -2175,4 +2204,27 @@ body.toolbar {
 
 .views-field a.flag {
   padding: 0;
+}
+
+.view-subscribe-node {
+  .flag-wrapper {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .flag-link-toggle {
+    float: right !important;
+    line-height: 13px;
+  }
+  .flag-message {
+    position: absolute;
+    top: 15px;
+  }
+  .flag-flagged-message {
+    left: 45px;
+  }
+  .flag-unflagged-message {
+    left: 20px;
+  }
 }
