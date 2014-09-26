@@ -48,6 +48,12 @@ article.node {
   }
 }
 
+
+body.page-node #block-system-main,
+article.node.boxed {
+  overflow: visible;
+}
+
 .unboxed {
   background: none;
   padding: 0;
@@ -978,7 +984,7 @@ div.password-confirm,
       margin: 0 20px 10px 0;
     }
     .form-type-managed-file p {
-//      margin-left: 15px;
+      //      margin-left: 15px;
       float: left;
       //width: 250px;
       margin-top: 7px;
@@ -2228,6 +2234,98 @@ body.toolbar {
     left: 20px;
   }
 }
+
 .ckan-publisher-tree {
   height: 100%;
 }
+
+.quickedit-toolbar-container {
+  .quickedit-toolbar-content {
+    background: url("/profiles/dgu/modules/contrib/quickedit/icons/5181c6/pencil.svg") no-repeat  8px 8px #f0f0f0 !important;
+    border: none;
+    box-shadow: 0px 0px 15px 0px #333;
+    border-radius: 10px;
+    .quickedit-toolbar-label {
+
+      font-size: 0px;
+      float: left;
+      padding: 3px 0 0 30px;
+
+      .field {
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Open Sans',Helvetica Neue,Helvetica;
+        font-style: normal;
+      }
+
+      .field:after {
+        content: "";
+      }
+    }
+
+    .icon-pencil:before {
+      background: none;
+    }
+
+    .quickedit-toolgroup {
+
+      .action-save {
+        background: #8bc658;
+        border-color: #7ec045;
+        color: #fff;
+        border-radius: 4px;
+        padding: 3px 8px;
+      }
+      .action-save:focus,
+      .action-save:hover {
+        background: #76b73e;
+      }
+
+      .action-cancel {
+        height: 30px;
+        padding: 0;
+      }
+    }
+  }
+
+  .quickedit-toolbar-pointer {
+    background: #f0f0f0;
+    bottom: 0;
+    box-shadow: 0 2px 0 0 #aaa;
+    height: 16px;
+    left: 18px;
+    transform: rotate(45deg);
+    width: 13px;
+    z-index: 4;
+  }
+  .quickedit-toolbar-lining {
+    box-shadow: none;
+    border-radius: 10px;
+    border: 2px solid #999;
+  }
+}
+
+.quickedit-form-container {
+  .quickedit-form-submit {
+    display: none;
+  }
+}
+
+.quickedit-field.quickedit-editable,
+.quickedit-field .quickedit-editable {
+  box-shadow: none;
+}
+.field-items .quickedit-editable,
+.quickedit-editable .field-items {
+  box-shadow: 0 0 0 2px #74B7FF;
+  padding: 1px;
+}
+
+.quickedit-form.quickedit-highlighted {
+  margin-left: 4px;
+}
+
+article.quickedit-entity-active .field {
+  width: 100% !important;
+}
+
