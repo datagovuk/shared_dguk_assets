@@ -48,6 +48,22 @@ article.node {
   }
 }
 
+.ajax-progress-throbber {
+  background: url("/misc/throbber.gif") no-repeat;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-position: 3px -14px;
+  i.glyphicon {
+    display: none;
+  }
+}
+
+
+select.form-control,
+input.form-control {
+  width: inherit;
+}
 
 body.page-node #block-system-main,
 article.node.boxed {
@@ -2336,3 +2352,18 @@ article.quickedit-entity-active .field {
   width: 100% !important;
 }
 
+form.node-dataset_request-form {
+  #edit-field-publisher-ref {
+    width: 45%;
+    float: left
+  }
+  #edit-field-publisher-assignee {
+    width: 45%;
+    margin-left: 2%;
+    float: left;
+  }
+  #edit-field-data-set-link,
+  #edit-field-review-notes {
+    clear: both;
+  }
+}
