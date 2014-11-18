@@ -923,3 +923,73 @@ div.reply {
   vertical-align: text-bottom;
   width: 11px;
 }
+
+body.page-admin {
+
+  table {
+    thead {
+      border-top: 2px solid #ddd;
+    }
+    td {
+      .radio, .checkbox {
+        margin-top: 0;
+      }
+    }
+  }
+
+  ul.action-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  a.btn-xs,
+  input.form-submit {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    color: #fff;
+    padding: 6px 12px;
+  }
+
+  .container-inline {
+    .panel-body {
+      padding: 0;
+    }
+
+    .form-item {
+      margin: 10px;
+    }
+  }
+
+  legend.panel-heading div {
+    display: inline;
+  }
+
+  .container-inline .form-group,
+  .form-inline .form-group {
+    display: inline-block;
+  }
+
+
+  fieldset {
+    legend {
+      margin-bottom: 5px;
+    }
+
+    .form-horizontal {
+      .form-group {
+        margin: 0;
+
+        .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11 {
+          padding: 0;
+          float: none;
+          width: inherit;
+        }
+
+      }
+    }
+  }
+
+  li a[href$="admin/people/permissions"] {
+    display: none;
+  }
+}
