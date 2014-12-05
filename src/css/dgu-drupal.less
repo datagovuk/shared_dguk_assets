@@ -2382,12 +2382,19 @@ article.node-book {
 
 div.book-navigation {
   float: left;
-  width: 30%;
+  width: 26%;
+  margin-right: 10px;
+}
+div.consultation-index {
+  background-color: #fff;
+  padding: 10px;
 }
 
 div.book-navigation h4 {
   margin: 0;
   padding: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 div.book-navigation ul {
@@ -2417,6 +2424,10 @@ span.subsection {
 .field.field-name-field-paragraph.field-type-text-long.field-label-above.boxed {
   background: none;
   padding: 0;
+}
+// fix for replies to comments being broken by article.node header, article.node .field background.
+.field.field-name-field-reply-comment.field-type-text-long.field-label-hidden {
+  background: none;
 }
 
 h3.popover-title {
