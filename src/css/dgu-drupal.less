@@ -46,6 +46,20 @@ article.node {
       display: inline-block;
     }
   }
+
+  table {
+    thead {
+      background: #ddd;
+    }
+    th, td {
+      border: 1px solid #888;
+      padding: 5px;
+      p {
+        margin: 0;
+      }
+    }
+  }
+
 }
 
 .ajax-progress-throbber {
@@ -364,6 +378,7 @@ html.js input.form-autocomplete {
 .page-data-request .pane-4,
 .page-data-request .pane-5,
 .page-data-request .pane-6,
+.page-data-request .pane-blogs,
 .page-data-request .pane-dataset-requests,
 .page-data-request-minutes .pane-minutes {
   background: none;
@@ -2540,4 +2555,31 @@ div.d3 svg {
     z-index: 1030;
   }
 }
+
+
+.page-data-request {
+
+  .view-dataset-requests .views-field-title h3 {margin: 0; padding: 0 0 5px 0;}
+
+  .panel-col-second .view-blogs {
+    .views-row {clear: both; padding-bottom: 20px;}
+    .views-field-field-avatar {
+      float: left;
+      padding-right: 10px;
+    }
+    .more-link {
+      clear: both;
+      padding-top: 10px;
+      text-align: right;
+      a {
+        color: #fff;
+        background-color: #8bc658;
+        border-color: #7ec045;
+        border-radius: 4px;
+        padding: 6px 12px;
+      }
+    }
+  }
+}
+
 
