@@ -142,6 +142,10 @@ input.form-file {
   margin: 0 0 15px;
 }
 
+.drupal-messages {
+  margin: 10px;
+}
+
 .panel-pane {
   position: relative;
 }
@@ -293,6 +297,37 @@ body.page-node .panel-col-first .panel-pane {
   margin-top: 1.75em;
 }
 
+///* Drupal Library pages */
+///* -------------------- */
+//header .submitted {
+//  color: #aaa;
+//  background: #eee;
+//  display: block;
+//  padding: 5px;
+//  margin-bottom: 8px;
+//  font-style: italic;
+//  a {
+//    color: #999;
+//    text-decoration: underline;
+//  }
+//}
+///* Drupal Tags/Categories/etc */
+///* -------------------------- */
+///* These two fields appear at the bottom of library documents */
+//.field-name-field-developed-by,
+//.field-name-field-rating,
+//.field-name-field-app-link,
+//.field-name-field-app-charge,
+//.field-name-field-tags,
+//.field-name-field-resource-file {
+//  border-left: 3px solid #ccc;
+//  padding: 3px 15px;
+//  .field-label,
+//  .field-items,
+//  .field-items .field-item {
+//    display: inline;
+//  }
+//}
 .field-name-body {
   margin: 10px 0;
 }
@@ -1251,21 +1286,6 @@ body.page-user-message-subscribe {
       padding: 5px 15px;
       text-align: right;
     }
-  }
-}
-
-a.active-requests {
-  background: #8bc658;
-  font-size: 12px;
-  line-height: 20px;
-  padding: 2px 6px;
-  vertical-align: top;
-  color: #fff;
-
-  &:hover {
-    color: #fff;
-    text-decoration: underline;
-
   }
 }
 
@@ -2385,6 +2405,68 @@ body.toolbar {
 
 article.quickedit-entity-active .field {
   width: 100% !important;
+}
+
+article.node-book {
+  float: left;
+  width: 70%;
+}
+article.node-book header {
+  min-height: 13px;
+}
+
+div.book-navigation {
+  float: left;
+  width: 26%;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+div.consultation-index {
+  background-color: #fff;
+  padding: 10px;
+}
+
+div.book-navigation h4 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+div.book-navigation ul {
+  padding-bottom: 5px;
+  padding-left: 20px;
+  margin: 0;
+}
+div.book-navigation ul li {
+  list-style: none;
+}
+span.subsection {
+  display: block;
+  margin-bottom: 10px;
+}
+.subsection a {
+  color: #333;
+}
+.consultation-paragraph {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+.consultation-paragraph-inner {
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+}
+.field-name-field-paragraph .replies {
+  margin-left: 20px;
+}
+.field.field-name-field-paragraph.field-type-text-long.field-label-above.boxed {
+  background: none;
+  padding: 0;
+}
+// fix for replies to comments being broken by article.node header, article.node .field background.
+.field.field-name-field-reply-comment.field-type-text-long.field-label-hidden {
+  background: none;
 }
 
 h3.popover-title {
