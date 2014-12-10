@@ -102,6 +102,23 @@ article.node.boxed {
   border: 2px solid #FF0000;
 }
 
+
+.form-type-select {
+  .form-control {
+    height: inherit;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    width: inherit;
+    height: 13px;
+    display: inline;
+    margin: 0;
+  }
+  .form-type-bef-checkbox label {
+    margin: 0;
+  }
+}
+
+
 select {
   -webkit-appearance: none;
 }
@@ -2167,7 +2184,7 @@ body.page-node-moderation {
   }
 
   .form-type-select {
-    width: 150px;
+    //width: 150px;
     float: left;
   }
   input.form-submit {
