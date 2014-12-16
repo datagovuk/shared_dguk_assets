@@ -235,6 +235,41 @@ body.page-node .panel-col-first .panel-pane {
   cursor: default;
 }
 
+
+/* Landing pages */
+.page-data-request,
+.page-apps,
+.page-forum,
+.page-blog {
+
+  .view {
+    .more-link {
+      clear: both;
+      text-align: right;
+      padding-top: 5px;
+      a {
+        background-color: #8bc658;
+        border-color: #7ec045;
+        color: #fff;
+        padding: 6px 12px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 4px;
+        &:hover {
+          background: #76b73e;
+        }
+      }
+    }
+    .pagination {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.page-apps .view .more-link {
+  padding-top: 20px;
+}
+
 /* Views base */
 .view {
   a {
@@ -247,8 +282,8 @@ body.page-node .panel-col-first .panel-pane {
   .text-center {
     clear: both;
   }
-
 }
+
 .views-field-title {
   h3 {
     padding: 0 0 7px;
