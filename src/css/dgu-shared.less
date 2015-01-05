@@ -367,12 +367,14 @@ body {
 /* Sidebar mode */
 body.with-sidebar {
   background: #f0f0f0;
-  #main-content {
+  #main-content, #content {
     background-color: #fff;
     background-image: url('/assets/img/sidebar-bg.png');
     background-repeat: repeat-y;
     background-position: 49% 0;
-    .sidebar {
+
+    /* .sidebar and .content are genshi-related, while .secondary and .primary are used in jinja*/
+    .sidebar, .secondary {
       float: left;
       width: 29%;
       margin-right: 1%;
@@ -380,28 +382,31 @@ body.with-sidebar {
       margin-top: 20px;
       margin-bottom: 20px;
     }
-    .content {
+    .content, .primary {
       float: left;
       width: 67%;
       margin-left: 3%;
       margin-top: 20px;
       margin-bottom: 20px;
     }
+    .primary {  /* due to legacy structure in ckan page.html, primary block must float right*/
+      float: right;
+    }
   }
   /* Responsive sidebar (IE7 doesn't get this) */
   @media(min-width: 992px) {
-    #main-content {
+    #main-content, #content {
       background-position: 48.91% 0;
     }
   }
   /* Responsive sidebar behaviour */
   @media(min-width: 1200px) {
-    #main-content {
+    #main-content, #content {
       background-position: 50% 0;
     }
   }
   @media(max-width: 991px) {
-    #main-content {
+    #main-content, #content {
       background: #fff;
       .content {
         float: none;
@@ -418,7 +423,7 @@ body.with-sidebar {
   }
 }
 body.without-sidebar {
-  #main-content {
+  #main-content, #content {
     .content {
       padding-top: 10px;
       padding-bottom: 10px;
@@ -629,7 +634,7 @@ h1 .subheading {
       }
     }
   }
-.search #main-content {
+.search #main-content, .search #content {
   .main-height-columns {
     float: none;
     display: table-cell;
