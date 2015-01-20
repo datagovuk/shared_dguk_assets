@@ -367,14 +367,14 @@ body {
 /* Sidebar mode */
 body.with-sidebar {
   background: #f0f0f0;
+  /* NB #main-content is only for genshi templates, #content is only for jinja */
   #main-content, #content {
     background-color: #fff;
     background-image: url('/assets/img/sidebar-bg.png');
     background-repeat: repeat-y;
     background-position: 49% 0;
 
-    /* .sidebar and .content are genshi-related, while .secondary and .primary are used in jinja*/
-    .sidebar, .secondary {
+    .secondary {
       float: left;
       width: 29%;
       margin-right: 1%;
@@ -382,15 +382,13 @@ body.with-sidebar {
       margin-top: 20px;
       margin-bottom: 20px;
     }
+    /* NB .content is only for genshi templates, while .primary is for jinja ones */
     .content, .primary {
       float: left;
       width: 67%;
       margin-left: 3%;
       margin-top: 20px;
       margin-bottom: 20px;
-    }
-    .primary {  /* due to legacy structure in ckan page.html, primary block must float right*/
-      float: right;
     }
   }
   /* Responsive sidebar (IE7 doesn't get this) */
@@ -408,12 +406,12 @@ body.with-sidebar {
   @media(max-width: 991px) {
     #main-content, #content {
       background: #fff;
-      .content {
+      .content, .primary {
         float: none;
         width: auto;
         margin-left: 0;
       }
-      .sidebar {
+      .secondary {
         float: none;
         width: auto;
         margin-right: 0;
@@ -424,7 +422,7 @@ body.with-sidebar {
 }
 body.without-sidebar {
   #main-content, #content {
-    .content {
+    .content, .primary {
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -432,7 +430,7 @@ body.without-sidebar {
 }
 /* Pretty responsive headers */
 @media (max-width: 991px) {
-  .content > h1 {
+  .content > h1, .primary > h1 {
     background: #f4f4f4;
     margin: 0 0 0 0;
     padding: 10px 10px 10px 10px;
@@ -536,7 +534,7 @@ h1 .subheading {
   a { color: #aaa; }
 }
 
-.sidebar {
+.secondary {
   h4 {
       color: #656565;
       margin-bottom: 8px;
