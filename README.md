@@ -55,3 +55,20 @@ See `Gruntfile.js` to understand how each compiled file is created. Some notes:
   * modernizr 1.7
   * spin.js
   * underscore 1.1.6
+
+# Copyright and Licence
+
+Copyright (C) 2015 Crown Copyright
+
+The files in this repo (aside from exceptions mentioned below) are openly dual licensed under:
+
+1. the Open Government Licence v3 <https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/>
+
+2. the MIT licence - see LICENCE.txt.
+
+Exceptions:
+
+* departmental or public sector organisation logos, such as: dgu-header*, crown-*
+
+* third party imports, such as: ckan-* & glyphicons-* which remain copyright of their respective owners.
+
