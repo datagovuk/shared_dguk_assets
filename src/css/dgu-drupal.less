@@ -1,9 +1,7 @@
-/* Drupal will helpfully put articles inside .boxed area. I do not want it to do this. */
-//.boxed article {
-//  padding: 0 0 0 0;
-//  overflow: visible;
-//  border: none;
-//}
+th.actions {
+  text-align: right;
+  padding-right: 12px !important;
+}
 
 article.node {
   header,
@@ -2545,6 +2543,17 @@ div.workbench-info-block {
     display: inline-block;
   }
 
+}
+
+
+body.page-user-subscriptions table {
+  thead {
+    border-top: 2px solid #ddd;
+  }
+  tbody>tr:nth-child(odd)>td,
+  tbody>tr:nth-child(odd)>th {
+    background-color: #fff;
+  }
 }
 
 body.page-admin {
