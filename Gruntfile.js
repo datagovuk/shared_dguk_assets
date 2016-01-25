@@ -50,7 +50,7 @@ module.exports = function(grunt) {
           'src/js/jquery.tagcloud.js',
           'src/js/spin.min.js',
           'src/js/modernizr.custom.05513.js',
-          'src/js/jquery.chosen-0.9.7.js',
+          'src/js/jquery.chosen-1.4.2.js',
           'src/js/jquery.dotdotdot-1.5.9.js',
           'src/js/jquery.placeholder.js',
           'src/js/bootstrap-3.0.0.js',
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
         src: [  /* Order of resources is important. */
           'src/css/bootstrap-3.0.0.css',
           'src/css/jquery-ui-1.10.2.custom.css',
-          'src/css/jquery.chosen.css',
+          'src/css/jquery.chosen-1.4.2.css',
           'src/css/jquery.fancybox.css',
           'src/css/font-awesome.css',
           'src/css/dgu-shared.less',
