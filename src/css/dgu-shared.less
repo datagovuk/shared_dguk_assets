@@ -575,6 +575,9 @@ h1 .subheading {
     float: left;
     .left-inner {
       background: #fff;
+      @media (max-width: 767px) {
+        background: #efefef;
+      }
       padding: 6px;
       button, input[type="text"] {
         .border-radius(0);
@@ -582,6 +585,12 @@ h1 .subheading {
         box-shadow: none !important;
         height: 50px;
         font-size: 27px;
+        @media (max-width: 767px) {
+          font-size: 21px;
+        }
+        @media (max-width: 370px) {
+          font-size: 16px;
+        }
       }
       i {
         font-size: 25px;
@@ -617,6 +626,12 @@ h1 .subheading {
       }
       .result-count {
           font-size: 40px;
+          @media (max-width: 767px) {
+            font-size: 30px;
+          }
+          @media (max-width: 370px) {
+            font-size: 21px;
+          }
           text-align: center;
           border: none !important;
           line-height: 30px;
