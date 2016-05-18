@@ -674,13 +674,13 @@ h1 .subheading {
   /* Non-standard breakpoints */
   .left  { width: 80%; }
   .right { width: 20%; }
+  @media(max-width: 768px) {
+    .left  { width: 75%; }
+    .right { width: 25%; }
+  }
   @media(max-width: 500px) {
     .left  { width: 65%; }
     .right { width: 35%; }
-  }
-  @media(max-width: 768px) {
-    .left  { width: 72%; }
-    .right { width: 28%; }
   }
 }
 
