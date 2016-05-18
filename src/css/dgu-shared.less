@@ -576,9 +576,14 @@ h1 .subheading {
     .left-inner {
       background: #fff;
       @media (max-width: 767px) {
-        background: #efefef;
+        border: 1px solid #a2a2a2;
+        border-right-width: 0;
       }
       padding: 6px;
+      min-height: 90px;
+      @media (max-width: 767px) {
+        min-height: 64px;
+      }
       button, input[type="text"] {
         .border-radius(0);
         border: none;
@@ -600,6 +605,11 @@ h1 .subheading {
         background-position: 97% 10px;
         background-repeat: no-repeat;
       }
+      input.form-control {
+        @media (max-width: 500px) {
+          padding: 0;
+        }
+      }
     }
   }
   .search-all-label {
@@ -613,6 +623,9 @@ h1 .subheading {
       color: #fff;
       position: relative;
       min-height: 90px;
+      @media (max-width: 767px) {
+        min-height: 64px;
+      }
       padding: 6px;
       .chevron {
           border: 10px solid transparent;
