@@ -575,13 +575,27 @@ h1 .subheading {
     float: left;
     .left-inner {
       background: #fff;
+      @media (max-width: 767px) {
+        border: 1px solid #a2a2a2;
+        border-right-width: 0;
+      }
       padding: 6px;
+      min-height: 90px;
+      @media (max-width: 767px) {
+        min-height: 64px;
+      }
       button, input[type="text"] {
         .border-radius(0);
         border: none;
         box-shadow: none !important;
         height: 50px;
         font-size: 27px;
+        @media (max-width: 767px) {
+          font-size: 21px;
+        }
+        @media (max-width: 370px) {
+          font-size: 16px;
+        }
       }
       i {
         font-size: 25px;
@@ -590,6 +604,11 @@ h1 .subheading {
         background-image: url('/assets/img/ajax-loader.gif');
         background-position: 97% 10px;
         background-repeat: no-repeat;
+      }
+      input.form-control {
+        @media (max-width: 500px) {
+          padding: 0;
+        }
       }
     }
   }
@@ -601,9 +620,16 @@ h1 .subheading {
     float: left;
     .right-inner {
       background: #A2A2A2;
+      @media (max-width: 767px) {
+        border: 1px solid #a2a2a2;
+        border-left-width: 0;
+      }
       color: #fff;
       position: relative;
       min-height: 90px;
+      @media (max-width: 767px) {
+        min-height: 64px;
+      }
       padding: 6px;
       .chevron {
           border: 10px solid transparent;
@@ -617,6 +643,12 @@ h1 .subheading {
       }
       .result-count {
           font-size: 40px;
+          @media (max-width: 767px) {
+            font-size: 30px;
+          }
+          @media (max-width: 370px) {
+            font-size: 21px;
+          }
           text-align: center;
           border: none !important;
           line-height: 30px;

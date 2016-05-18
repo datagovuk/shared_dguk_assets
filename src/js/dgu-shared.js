@@ -124,10 +124,9 @@ function comments() {
     });
 }
 /*
- * New plugin: Equal height boxes.
+ * New plugin: Equal height boxes - excluding mobile
  * When the parent container is resized (eg. browser resizes,
  * hitting a breakpoint) each "foo" is set to equal height.
- * eg.
  * <div class="dgu-equal-height" data-selector="foo">
  *   <div class="foo"> ... </div>
  *   <div class="foo"> ... </div>
@@ -145,17 +144,44 @@ $(function() {
       if (newWidth==cachedWidth) { return; }
       cachedWidth = newWidth;
       children.height('auto');
-      // Affect only browser windows
-      if (w.width()>=992) {
-	var maxHeight = 0;
-        children.each(function(i,x){ maxHeight=Math.max(maxHeight,$(x).height())});
-        children.height(maxHeight);
-      }
+    	var maxHeight = 0;
+      children.each(function(i,x){ maxHeight=Math.max(maxHeight,$(x).height())});
+      children.height(maxHeight);
     }
     if (children.length>1) {
       w.resize( resizeChildren );
       resizeChildren();
     }
+  });
+});
+/* Equal height boxes BUT only on desktop screen sizes (for small objects) 
+ *
+ * This function only resizes when on a desktop screen, since on a mobile the
+ * things being resized would no longer be next to each other.
+ * eg.
+*/
+ (function() {
+  var w = $(window);
+  $('.dgu-equal-height-on-desktop').each(function(i,target) {
+    target = $(target);
+    var selector = target.attr('data-selector');
+    var children = target.find(selector);
+    var cachedWidth = -1;
+    function resizeChildren() {
+      var newWidth = target.width();
+      if (newWidth==cachedWidth) { return; }
+      cachedWidth = newWidth;
+      children.height('auto');
+      var maxHeight = 0;
+      // Affect only desktop windows
+      if (w.width()>=992) {
+        children.each(function(i,x){ maxHeight=Math.max(maxHeight,$(x).height())});
+        console.log(maxHeight);
+        children.height(maxHeight);
+      }
+    }
+    w.resize( resizeChildren );
+    resizeChildren();
   });
 });
 
