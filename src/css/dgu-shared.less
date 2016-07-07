@@ -120,6 +120,7 @@ body {
     @gap4: 239px;
     @gap5: 42px;
     @offset: 27px;
+    @offset: -15px;
     &.position1 { right: @offset + @gap5 + @gap4 + @gap3 + @gap2 + @gap1; }
     &.position2 { right: @offset + @gap5 + @gap4 + @gap3 + @gap2; }
     &.position3 { right: @offset + @gap5 + @gap4 + @gap3; }
@@ -140,7 +141,7 @@ body {
     display: block;
     width: 213px;
     height: 39px;
-    margin-top: 16px;
+    margin-top: 0px;
     margin-bottom: 18px;
     margin-left: 30px;
     @media(max-width: 560px) {
@@ -208,7 +209,7 @@ body {
   position: absolute;
   right: 15px;
   bottom: 0px;
-  height: 50px;
+  height: 46px;
   background: rbga(255,0,255,0.3);
   font-family:'Open Sans',Helvetica Neue,Helvetica;
   font-size: 15px;
@@ -221,6 +222,7 @@ body {
     padding: 0 0 0 0;
   }
   .text-links a,
+  .text-links-rhs a,
   .nav-user,
   .nav-publisher,
   .nav-search {
@@ -240,6 +242,10 @@ body {
   }
   .text-links {
     float: left;
+    margin: 3px 0 0 0;
+  }
+  .text-links-rhs {
+    float: right;
     margin: 3px 0 0 0;
   }
   .text-links .nav-home { margin-left: 0; }
@@ -899,6 +905,7 @@ div.reply {
 #toolbar {
   background: #1c1d1d;
   font: normal small "Lucida Grande",Verdana,sans-serif;
+  height: 19px;
   * {
     border: 0;
     font-size: 100%;
@@ -921,7 +928,7 @@ div.reply {
   }
   a {
     color: #fff;
-    font-size: .846em;
+    font-size: 10pt;
     text-decoration: none;
     display: block;
   }
@@ -932,7 +939,7 @@ div.reply {
   }
   div.toolbar-menu {
     background: #1c1d1d;
-    padding: 2px 10px;
+    padding: 4px 2px;
     margin: 0 auto;
     @media (min-width: 768px) {
       max-width: 750px;
