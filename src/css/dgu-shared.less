@@ -221,9 +221,12 @@ body {
     font-size: 14px;
     padding: 0 5px;
   }
-  .nav-publisher {
+  a.nav-publisher {
     // Predictable width, so the chevron position is easier
     width: 113px;
+    @media(max-width: 374px) {
+      display: none;
+    }
   }
   .text-links a,
   .text-links-rhs a,
