@@ -9,26 +9,30 @@ function initNav() {
   var greenbar = $('#greenbar');
   window.navOpen = false;
   $('body').addClass('navClosed');
+  $('.subnav-item').attr('tabindex', -1);
   triggers.click(function(e) {
     var target = $(e.delegateTarget);
     var subnav, chevronClass, propagateEvent;
     if (target.hasClass('nav-home')) {
       subnav = $();
+      subnavItems = $();
       chevronClass = 'position1';
       propagateEvent = true;
     }
     else if (target.hasClass('nav-data')) {
       subnav = $('.subnav-data');
+      subnavItems = $('.subnav-data-item');
       chevronClass = 'position2';
     }
     else if (target.hasClass('nav-apps')) {
       subnav = $();
+      subnavItems = $();
       chevronClass = 'position3';
       propagateEvent = true;
     }
     else if (target.hasClass('nav-interact')) {
       subnav = $('.subnav-interact');
-      //subnav = $();
+      subnavItems = $('.subnav-interact-item');
       chevronClass = 'position4';
     }
     else {
@@ -38,7 +42,7 @@ function initNav() {
     //--  The navOpen behaviour is only visible on mobile.
     if (chevron.hasClass(chevronClass)) {
       window.navOpen = !window.navOpen;
-    } 
+    }
     else {
       window.navOpen = true
     }
@@ -49,6 +53,8 @@ function initNav() {
     // Update subnav
     $('.subnav').removeClass('active');
     subnav.addClass('active');
+    $('.subnav-item').attr('tabindex', -1);
+    subnavItems.attr('tabindex', 0);
     var new_height = greenbar.outerHeight();
     greenbar.height(old_height);
     greenbar.stop().animate({height:new_height},300,'swing',function() { greenbar.css('height','auto'); });
