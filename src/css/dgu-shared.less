@@ -76,6 +76,7 @@ blockquote p {
   line-height: 16px;
   color: #555;
 }
+
 /* Utility classes */
 .center-me {
   display: block;
@@ -270,6 +271,19 @@ body {
       width: 200px;
       height: 30px;
       * { display: none; }
+    }
+    /* Input box placeholder text color */
+    ::-webkit-input-placeholder {
+      color: #333;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: #333;
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+     color: #333;
+    }
+    :-ms-input-placeholder {
+     color: #333;
     }
   }
   .text-links {
@@ -942,6 +956,7 @@ div.reply {
 
 #toolbar {
   background: #1c1d1d;
+  border: 3px solid #1c1d1d;  /* get rid of white hairline below toolbar seen on iOS */
   font: normal small "Lucida Grande",Verdana,sans-serif;
   height: 24px;
   @media(max-width: 500px) {
