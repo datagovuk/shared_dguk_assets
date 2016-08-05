@@ -120,6 +120,7 @@ body {
 
 
 #blackbar {
+  margin-top: -1px;  /* to avoid hairline gap on iOS */
   background: #1C1D1D;
   .container {
     position: relative;
@@ -959,11 +960,10 @@ div.reply {
 
 #toolbar {
   background: #1c1d1d;
-  border-bottom: 5px solid #1c1d1d;  /* get rid of white hairline below toolbar seen on iOS */
   font: normal small "Lucida Grande",Verdana,sans-serif;
-  height: 24px;
+  height: 25px;
   @media(max-width: 500px) {
-    height: 30px;
+    height: 31px;
   }
   * {
     border: 0;
